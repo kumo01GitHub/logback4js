@@ -1,0 +1,30 @@
+{
+  "name": "logback4js",
+  "version": "0.0.1",
+  "description": "Logger for JavaScript inspired by Logback.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumo01GitHub/logback4js.git"
+  },
+  "author": "kumo01",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/gtag.js": "^0.0.20",
+    "@types/jest": "^29.5.13",
+    "@types/uuid": "^10.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "axios": "^1.7.7",
+    "firebase": "^10.13.1",
+    "uuid": "^10.0.0"
+  }
+}
