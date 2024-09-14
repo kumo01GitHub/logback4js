@@ -16,7 +16,7 @@ export interface ILogger {
 }
 
 /**
- * Logger Factory.
+ * Factory class of Loggers.
  */
 export class LoggerFactory {
     /**

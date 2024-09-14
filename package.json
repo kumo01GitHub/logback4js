@@ -1,7 +1,14 @@
 {
   "name": "logback4js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Logger for JavaScript inspired by Logback.",
+  "keywords": [
+    "log",
+    "logger",
+    "Google Analytics",
+    "GA4",
+    "Firebase"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
