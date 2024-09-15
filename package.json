@@ -1,6 +1,6 @@
 {
   "name": "logback4js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Logger for JavaScript inspired by Logback.",
   "keywords": [
     "log",
@@ -13,7 +13,8 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "prepack": "npm run test && npm run build"
   },
   "repository": {
     "type": "git",

@@ -2,6 +2,7 @@ import { Logger } from "./logger";
 import { Appender } from "../appender/appender";
 import { ConsoleAppender } from "../appender/console.appender";
 import { LogLevel } from "../types/loglevel";
+import { BaseLogger } from "./baseLogger";
 
 /**
  * Interface to add Logger.
@@ -28,35 +29,40 @@ export class LoggerFactory {
     /**
      * Loggers.
      */
-    private static loggers: Map<string, Logger> = new Map<string, Logger>();
+    private static _loggers: Map<string, Logger> = new Map<string, Logger>();
 
     /**
-     * @constructor
+     * Initialize Logger Factory. When already initialized, do nothing.
      * @param {LogLevel} rootLoglevel Root Logger's log level. Default value is Trace.
      */
-    constructor(
+    public static initialize(
         rootLoglevel: LogLevel = LogLevel.Trace
-    ) {
-        // Initialize Root Logger.
-        if (!LoggerFactory.loggers.has(LoggerFactory.ROOT_LOGGER_NAME)) {
-            LoggerFactory.loggers.set(
-                LoggerFactory.ROOT_LOGGER_NAME,
-                new Logger(
-                    LoggerFactory.ROOT_LOGGER_NAME,
-                    rootLoglevel,
-                    [new ConsoleAppender()]
-                ));
-        }
+    ): void {
+        // Add Root Logger
+        LoggerFactory.addLogger({
+            name: LoggerFactory.ROOT_LOGGER_NAME,
+            level: rootLoglevel,
+            appenders: [new ConsoleAppender()]
+        });
     }
 
     /**
-     * Add Logger. When Logger service has the provided name, do nothing.
+     * Logger Factory is initialized.
+     */
+    public static get isInitialized(): boolean {
+        return LoggerFactory._loggers.has(LoggerFactory.ROOT_LOGGER_NAME);
+    }
+
+    /**
+     * Add Logger. When Logger Factory has the provided name, do nothing.
+     * If Logger Factory is not initialized, added as Root Logger.
      * @param {ILogger}  logger Logger info
      */
-    public addLogger(logger: ILogger): void {
-        if (!this.has(logger.name)) {
-            LoggerFactory.loggers.set(logger.name, new Logger(
-                logger.name,
+    public static addLogger(logger: ILogger): void {
+        const name: string = LoggerFactory.isInitialized? logger.name : LoggerFactory.ROOT_LOGGER_NAME;
+        if (!LoggerFactory.has(name)) {
+            LoggerFactory._loggers.set(name, new BaseLogger(
+                name,
                 logger.level,
                 logger.appenders
             ));
@@ -67,9 +73,9 @@ export class LoggerFactory {
      * Remove Logger. Root Logger is unremovable.
      * @param {string}  name Logger name.
      */
-    public removeLogger(name: string): void {
+    public static removeLogger(name: string): void {
         if (LoggerFactory.ROOT_LOGGER_NAME !== name) {
-            LoggerFactory.loggers.delete(name);
+            LoggerFactory._loggers.delete(name);
         }
     }
 
@@ -78,13 +84,13 @@ export class LoggerFactory {
      * @param {string}  name Logger name.
      * @return {Logger} When Logger service doesn't have the provided Logger name, return Root Logger.
      */
-    public getLogger(name?: string): Logger {
+    public static getLogger(name?: string): Logger {
         if (!name) {
-            return LoggerFactory.loggers.get(LoggerFactory.ROOT_LOGGER_NAME) as Logger;
-        } else if (LoggerFactory.loggers.has(name)) {
-            return LoggerFactory.loggers.get(name) as Logger;
+            return LoggerFactory._loggers.get(LoggerFactory.ROOT_LOGGER_NAME) as Logger;
+        } else if (LoggerFactory._loggers.has(name)) {
+            return LoggerFactory._loggers.get(name) as Logger;
         } else {
-            return LoggerFactory.loggers.get(LoggerFactory.ROOT_LOGGER_NAME) as Logger;
+            return LoggerFactory._loggers.get(LoggerFactory.ROOT_LOGGER_NAME) as Logger;
         }
     }
 
@@ -92,16 +98,16 @@ export class LoggerFactory {
      * Logger names.
      * @returns {string[]} Logger names.
      */
-    public get loggers(): string[] {
-        return Array.from(LoggerFactory.loggers.keys());
+    public static get loggers(): string[] {
+        return Array.from(LoggerFactory._loggers.keys());
     }
 
     /**
-     * Logger service has the Logger or not.
+     * Logger Factory has the Logger or not.
      * @param {string} name Logger name.
      * @return {boolean} When true, Logger service has the Logger.
      */
-    public has(name: string): boolean {
-        return LoggerFactory.loggers.has(name);
+    public static has(name: string): boolean {
+        return LoggerFactory._loggers.has(name);
     }
 }
