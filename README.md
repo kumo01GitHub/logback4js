@@ -34,6 +34,8 @@ List of Appenders library provides:
 - Google Analytics Appender
 - Google Analytics for Firebase Appender
     - dependencies: [firebase/analytics](https://www.npmjs.com/package/@firebase/analytics)
+- Slack Appender
+    - dependencies: [@slack/web-api](https://www.npmjs.com/package/@slack/web-api)
 
 ## Build
 

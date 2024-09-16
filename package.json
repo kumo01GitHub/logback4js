@@ -1,13 +1,14 @@
 {
   "name": "logback4js",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Logger for JavaScript inspired by Logback.",
   "keywords": [
     "log",
     "logger",
     "Google Analytics",
     "GA4",
-    "Firebase"
+    "Firebase",
+    "Slack"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -31,6 +32,7 @@
     "typescript": "^5.6.2"
   },
   "dependencies": {
+    "@slack/web-api": "^7.4.0",
     "axios": "^1.7.7",
     "firebase": "^10.13.1",
     "uuid": "^10.0.0"

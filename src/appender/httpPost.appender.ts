@@ -1,5 +1,4 @@
 import axios, { AxiosRequestConfig } from "axios";
-
 import { Appender, ILoggingEvent } from "./appender";
 
 /**
