@@ -33,17 +33,21 @@ export class LoggerFactory {
 
     /**
      * Initialize Logger Factory. When already initialized, do nothing.
-     * @param {LogLevel} rootLoglevel Root Logger's log level. Default value is Trace.
+     * @param {LogLevel} rootLoglevel Root Logger's log level. Default value is None.
      */
     public static initialize(
-        rootLoglevel: LogLevel = LogLevel.Trace
+        rootLoglevel: LogLevel = LogLevel.None
     ): void {
-        // Add Root Logger
-        LoggerFactory.addLogger({
-            name: LoggerFactory.ROOT_LOGGER_NAME,
-            level: rootLoglevel,
-            appenders: [new ConsoleAppender()]
-        });
+        if (!LoggerFactory.isInitialized) {
+            // Initialize Root Logger.
+            LoggerFactory._loggers.set(
+                LoggerFactory.ROOT_LOGGER_NAME,
+                new BaseLogger(
+                    LoggerFactory.ROOT_LOGGER_NAME,
+                    rootLoglevel,
+                    [new ConsoleAppender()]
+            ));
+        }
     }
 
     /**
@@ -55,14 +59,14 @@ export class LoggerFactory {
 
     /**
      * Add Logger. When Logger Factory has the provided name, do nothing.
-     * If Logger Factory is not initialized, added as Root Logger.
+     * Before add Logger, initialize Logger Factory with default value.
      * @param {ILogger}  logger Logger info
      */
     public static addLogger(logger: ILogger): void {
-        const name: string = LoggerFactory.isInitialized? logger.name : LoggerFactory.ROOT_LOGGER_NAME;
-        if (!LoggerFactory.has(name)) {
-            LoggerFactory._loggers.set(name, new BaseLogger(
-                name,
+        LoggerFactory.initialize();
+        if (!LoggerFactory.has(logger.name)) {
+            LoggerFactory._loggers.set(logger.name, new BaseLogger(
+                logger.name,
                 logger.level,
                 logger.appenders
             ));
@@ -80,11 +84,12 @@ export class LoggerFactory {
     }
 
     /**
-     * Get Logger.
+     * Get Logger. Before get Logger, initialize Logger Factory with default value.
      * @param {string}  name Logger name.
      * @return {Logger} When Logger service doesn't have the provided Logger name, return Root Logger.
      */
     public static getLogger(name?: string): Logger {
+        LoggerFactory.initialize();
         if (!name) {
             return LoggerFactory._loggers.get(LoggerFactory.ROOT_LOGGER_NAME) as Logger;
         } else if (LoggerFactory._loggers.has(name)) {

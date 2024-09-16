@@ -17,7 +17,7 @@ describe('Logger', () => {
   let errorLogger: Logger;
 
   beforeEach(() => {
-    LoggerFactory.initialize();
+    LoggerFactory.initialize(LogLevel.Trace);
     rootLogger = LoggerFactory.getLogger();
 
     LoggerFactory.addLogger({ name: 'NoneLogger', level: LogLevel.None });
