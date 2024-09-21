@@ -17,7 +17,7 @@ export abstract class TextAppender implements Appender {
     public getMessage(event: ILoggingEvent): string {
         return this.template
             .replace(/\$\{logger\}/g, event.logger)
-            .replace(/\$\{timestamp\}/g, event.timestamp.toLocaleString())
+            .replace(/\$\{timestamp\}/g, event.timestamp.toString())
             .replace(/\$\{level\}/g, event.level.label)
             .replace(/\$\{message\}/g, event.message)
     }
