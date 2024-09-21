@@ -14,6 +14,9 @@ export * from './appender/indexedDB.appender';
 export * from './appender/localStorage.appender';
 export * from './appender/googleAnalytics.appender';
 export * from './appender/firebaseAnalytics.appender';
+export * from './appender/slack.appender';
+export * from './appender/twitter.appender';
+export * from './appender/msTeams.appender';
 
 /** Logger (Do NOT export BaseLogger) */
 export * from './logger/loggerFactory';

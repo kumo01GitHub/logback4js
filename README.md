@@ -36,6 +36,14 @@ List of Appenders library provides:
     - dependencies: [firebase/analytics](https://www.npmjs.com/package/@firebase/analytics)
 - Slack Appender
     - dependencies: [@slack/web-api](https://www.npmjs.com/package/@slack/web-api)
+    - Not Tested.
+- Twitter Appender
+    - dependencies: [twitter-api-sdk](https://www.npmjs.com/package/twitter-api-sdk)
+    - Using this Appender in browser, proxy setting is required to bypass CORS.
+    - Not Tested.
+- Microsoft Teams Appender
+    - dependencies: [@microsoft/microsoft-graph-client](https://www.npmjs.com/package/@microsoft/microsoft-graph-client)
+    - Not Tested.
 
 ## Build
 
