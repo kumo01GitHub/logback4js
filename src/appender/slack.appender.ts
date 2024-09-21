@@ -1,17 +1,20 @@
 import { WebClient, WebClientOptions } from "@slack/web-api";
-import { Appender, ILoggingEvent } from "./appender";
+import { ILoggingEvent } from "./appender";
+import { TextAppender } from "./textAppender";
 
 /**
  * Slack Appender.
  */
-export class SlackAppender implements Appender {
+export class SlackAppender extends TextAppender {
     private client: WebClient;
 
     constructor(
         private channel: string,
         token: string,
-        options?: WebClientOptions
+        options?: WebClientOptions,
+        template?: string
     ) {
+        super(template);
         this.client = new WebClient(token, options);
     }
 
@@ -23,7 +26,7 @@ export class SlackAppender implements Appender {
         if (!!event.level.priority) {
             this.client.chat.postMessage({
                 channel: this.channel,
-                text: `[${event.logger}:${event.level.label}] ${event.timestamp} - ${event.message}`
+                text: this.getMessage(event)
             });
         }
     }

@@ -1,10 +1,17 @@
 import { LogLevel } from "../types/loglevel";
-import { Appender, ILoggingEvent } from "./appender";
+import { ILoggingEvent } from "./appender";
+import { TextAppender } from "./textAppender";
 
 /**
  * Console Appender.
  */
-export class ConsoleAppender implements Appender {
+export class ConsoleAppender extends TextAppender {
+    constructor(
+        template?: string
+    ) {
+        super(template);
+    }
+
     public get name(): string {
         return this.constructor.name;
     }
@@ -38,6 +45,6 @@ export class ConsoleAppender implements Appender {
                 break;
         }
 
-        log(`%c[${event.logger}:${event.level.label}] ${event.timestamp} - ${event.message}`, style);
+        log("%c" + this.getMessage(event), style);
     }
 }

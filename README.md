@@ -44,6 +44,14 @@ List of Appenders library provides:
 - Microsoft Teams Appender
     - dependencies: [@microsoft/microsoft-graph-client](https://www.npmjs.com/package/@microsoft/microsoft-graph-client)
     - Not Tested.
+    - Use workflow with custom HTTP POST Appender might be better.
+- Discord Appender
+    - dependencies: [discord.js](https://www.npmjs.com/package/discord.js)
+    - Not Tested.
+    - Use Discord Webhook Appender might be better.
+- Discord Webhook Appender
+    - dependencies: [axios](https://www.npmjs.com/package/axios)
+    - Not Tested.
 
 ## Build
 

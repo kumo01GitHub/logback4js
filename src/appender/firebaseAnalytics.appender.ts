@@ -1,15 +1,18 @@
 import { Analytics, logEvent } from "firebase/analytics";
-import { Appender, ILoggingEvent } from "./appender";
+import { ILoggingEvent } from "./appender";
+import { JsonAppender } from "./jsonAppender";
 
 /**
  * Google Analytics for Firebase Appender.
  */
-export class FirebaseAnalyticsAppender implements Appender {
+export class FirebaseAnalyticsAppender extends JsonAppender {
 
     constructor(
         private analytics: Analytics,
         private eventName: string
-    ) { }
+    ) {
+        super();
+    }
 
     public get name(): string {
         return this.analytics.app.name;
@@ -17,12 +20,7 @@ export class FirebaseAnalyticsAppender implements Appender {
 
     public doAppend(event: ILoggingEvent): void {
         if (!!event.level.priority) {
-            logEvent(this.analytics, this.eventName, {
-                logger: event.logger,
-                timestamp: event.timestamp,
-                level: event.level.label,
-                message: event.message
-            });
+            logEvent(this.analytics, this.eventName, this.getMessage(event));
         }
     }
 }

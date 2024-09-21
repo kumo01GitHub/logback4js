@@ -1,17 +1,20 @@
 import { Client, Options } from "@microsoft/microsoft-graph-client";
-import { Appender, ILoggingEvent } from "./appender";
+import { ILoggingEvent } from "./appender";
+import { TextAppender } from "./textAppender";
 
 /**
  * Microsoft Teams Appender.
  */
-export class MSTeamsAppender implements Appender {
+export class MSTeamsAppender extends TextAppender {
     private client: Client;
 
     constructor(
         private teamId: string,
         private channelId: string,
-        options: Options
+        options: Options,
+        template?: string
     ) {
+        super(template);
         this.client = Client.init(options);
     }
 
@@ -25,7 +28,7 @@ export class MSTeamsAppender implements Appender {
                 .post({
                     body: {
                         contentType: "html",
-                        content: `<h1>${event.logger}: ${event.level.label}</h1><p>${event.timestamp}: ${event.message}</p>`
+                        content: this.getMessage(event)
                       }
                 });
         }

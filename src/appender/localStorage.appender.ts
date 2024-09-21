@@ -1,21 +1,28 @@
 import { v4 as uuid } from 'uuid';
-import { Appender, ILoggingEvent } from "./appender";
+import { ILoggingEvent } from "./appender";
+import { TextAppender } from './textAppender';
 
 /**
  * LocalStorage Appender. The key is UUID.
  */
-export class LocalStorageAppender implements Appender {
+export class LocalStorageAppender extends TextAppender {
     constructor(
-        private keyPrefix: string = this.constructor.name
-    ) { }
+        private keyPrefix: string,
+        template?: string
+    ) {
+        super(template);
+    }
 
     public get name(): string {
-        return this.constructor.name;
+        return this.keyPrefix;
     }
 
     public doAppend(event: ILoggingEvent): void {
         if (!!event.level.priority) {
-            localStorage.setItem(this.generateKey(), `[${event.logger}:${event.level.label}] ${event.timestamp} - ${event.message}`);
+            localStorage.setItem(
+                this.generateKey(),
+                this.getMessage(event)
+            );
         }
     }
 

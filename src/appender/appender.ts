@@ -28,4 +28,11 @@ export interface Appender {
      * @param {ILoggingEvent} event Logging event.
      */
     doAppend(event: ILoggingEvent): void;
+
+    /**
+     * Get log message.
+     * @param {ILoggingEvent} event logging event
+     * @returns {any} message
+     */
+    getMessage(event: ILoggingEvent): any;
 }

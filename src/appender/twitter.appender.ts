@@ -1,19 +1,22 @@
 import { Client } from "twitter-api-sdk";
 import { AuthClient } from "twitter-api-sdk/dist/types";
 import { RequestOptions } from "twitter-api-sdk/dist/request";
-import { Appender, ILoggingEvent } from "./appender";
+import { ILoggingEvent } from "./appender";
+import { TextAppender } from "./textAppender";
 
 /**
  * Twitter Appender.
  * Using this Appender in browser, proxy setting is required to bypass CORS.
  */
-export class TwitterAppender implements Appender {
+export class TwitterAppender extends TextAppender {
     private client: Client;
 
     constructor(
         auth: string | AuthClient,
-        requestOptions?: Partial<RequestOptions>
+        requestOptions?: Partial<RequestOptions>,
+        template?: string
     ) {
+        super(template);
         this.client = new Client(auth, requestOptions);
     }
 
@@ -24,7 +27,7 @@ export class TwitterAppender implements Appender {
     public doAppend(event: ILoggingEvent): void {
         if (!!event.level.priority) {
             this.client.tweets.createTweet({
-                text: `[${event.logger}:${event.level.label}] ${event.timestamp} - ${event.message}`
+                text: this.getMessage(event)
             });
         }
     }

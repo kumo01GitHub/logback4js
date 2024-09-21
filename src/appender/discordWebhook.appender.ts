@@ -1,17 +1,18 @@
 import axios, { AxiosRequestConfig } from "axios";
 import { ILoggingEvent } from "./appender";
-import { JsonAppender } from "./jsonAppender";
+import { TextAppender } from "./textAppender";
 
 /**
- * HTTP POST Appender.
+ * Discord Webhook Appender.
  */
-export class HttpPostAppender extends JsonAppender {
+export class DiscordWebhookAppender extends TextAppender {
 
     constructor(
         private url: string,
-        private config?: AxiosRequestConfig<any>
+        private config?: AxiosRequestConfig<any>,
+        template?: string
     ) {
-        super();
+        super(template);
     }
 
     public get name(): string {
@@ -22,7 +23,9 @@ export class HttpPostAppender extends JsonAppender {
         if (!!event.level.priority) {
             axios.post(
                 this.url,
-                this.getMessage(event),
+                {
+                    content: this.getMessage(event)
+                },
                 this.config
             );
         }
