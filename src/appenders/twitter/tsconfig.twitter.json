@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig",
+  "compilerOptions": {
+    "outDir": "../../../dist/slack",
+    "rootDir": "./",
+  },
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}

@@ -1,6 +1,5 @@
 import { WebClient, WebClientOptions } from "@slack/web-api";
-import { ILoggingEvent } from "./appender";
-import { TextAppender } from "./textAppender";
+import { ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Slack Appender.

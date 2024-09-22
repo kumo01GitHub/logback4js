@@ -1,6 +1,5 @@
 import { Analytics, logEvent } from "firebase/analytics";
-import { ILoggingEvent } from "./appender";
-import { JsonAppender } from "./jsonAppender";
+import { ILoggingEvent, JsonAppender } from "@logback4js/core";
 
 /**
  * Google Analytics for Firebase Appender.

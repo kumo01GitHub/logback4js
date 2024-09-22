@@ -1,6 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { ILoggingEvent } from "./appender";
-import { TextAppender } from "./textAppender";
+import { ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Discord Webhook Appender.

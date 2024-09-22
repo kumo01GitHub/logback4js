@@ -1,0 +1,35 @@
+{
+  "name": "@logback4js/microsoft",
+  "version": "0.2.0",
+  "description": "Microsoft Appenders for Logback4js.",
+  "keywords": [
+    "log",
+    "logger"
+  ],
+  "main": "microsoft/index.js",
+  "types": "microsoft/index.d.ts",
+  "scripts": {
+    "build": "rimraf ../../../dist && tsc -p ./tsconfig.microsoft.json && cpx ./package.json ../../../dist",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumo01GitHub/logback4js.git"
+  },
+  "author": "kumo01",
+  "license": "MIT",
+  "devDependencies": {
+    "@microsoft/microsoft-graph-types": "^2.40.0",
+    "@types/jest": "^29.5.13",
+    "@types/uuid": "^10.0.0",
+    "cpx": "^1.5.0",
+    "jest": "^29.7.0",
+    "rimraf": "^6.0.1",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.2"
+  },
+  "dependencies": {
+    "@logback4js/core": "^0.2.0",
+    "@microsoft/microsoft-graph-client": "^3.0.7"
+  }
+}

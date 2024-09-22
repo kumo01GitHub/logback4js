@@ -1,5 +1,4 @@
-import { ILoggingEvent } from "./appender";
-import { JsonAppender } from "./jsonAppender";
+import { ILoggingEvent, JsonAppender } from "@logback4js/core";
 
 /**
  * Google Analytics Appender.

@@ -1,8 +1,7 @@
 import { Client } from "twitter-api-sdk";
 import { AuthClient } from "twitter-api-sdk/dist/types";
 import { RequestOptions } from "twitter-api-sdk/dist/request";
-import { ILoggingEvent } from "./appender";
-import { TextAppender } from "./textAppender";
+import { ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Twitter Appender.

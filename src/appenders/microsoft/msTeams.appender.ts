@@ -1,6 +1,5 @@
 import { Client, Options } from "@microsoft/microsoft-graph-client";
-import { ILoggingEvent } from "./appender";
-import { TextAppender } from "./textAppender";
+import { ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Microsoft Teams Appender.

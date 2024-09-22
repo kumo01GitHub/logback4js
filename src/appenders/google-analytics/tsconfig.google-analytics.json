@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig",
+  "compilerOptions": {
+    "outDir": "../../../dist/google-analytics",
+    "rootDir": "./",
+  },
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}

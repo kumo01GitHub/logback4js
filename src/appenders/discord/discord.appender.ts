@@ -1,6 +1,5 @@
 import { Client, ClientOptions, TextChannel } from "discord.js";
-import { TextAppender } from "./textAppender";
-import { ILoggingEvent } from "./appender";
+import { ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Discord Appender.
