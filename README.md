@@ -1,6 +1,6 @@
 # Logback4js
 
-[![NPM](https://nodei.co/npm/logback4js.png)](https://nodei.co/npm/logback4js/)
+[![NPM](https://nodei.co/npm/@logback4js/core.png)](https://nodei.co/npm/@logback4js/core)
 
 Logger for JavaScript inspired by Logback.
 
