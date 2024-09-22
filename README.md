@@ -26,31 +26,27 @@ erDiagram
 
 List of Appenders library provides:
 - Console Appender
+    - core module.
 - HTTP POST Appender
-    - dependencies: [axios](https://www.npmjs.com/package/axios)
+    - core module.
 - IndexedDB Appender
+    - core module.
 - LocalStorage Appender
-    - dependencies: [uuid](https://www.npmjs.com/package/uuid)
+    - core module.
 - Google Analytics Appender
 - Google Analytics for Firebase Appender
-    - dependencies: [firebase/analytics](https://www.npmjs.com/package/@firebase/analytics)
 - Slack Appender
-    - dependencies: [@slack/web-api](https://www.npmjs.com/package/@slack/web-api)
     - Not Tested.
 - Twitter Appender
-    - dependencies: [twitter-api-sdk](https://www.npmjs.com/package/twitter-api-sdk)
     - Using this Appender in browser, proxy setting is required to bypass CORS.
     - Not Tested.
 - Microsoft Teams Appender
-    - dependencies: [@microsoft/microsoft-graph-client](https://www.npmjs.com/package/@microsoft/microsoft-graph-client)
     - Not Tested.
     - Use workflow with custom HTTP POST Appender might be better.
 - Discord Appender
-    - dependencies: [discord.js](https://www.npmjs.com/package/discord.js)
     - Not Tested.
     - Use Discord Webhook Appender might be better.
 - Discord Webhook Appender
-    - dependencies: [axios](https://www.npmjs.com/package/axios)
     - Not Tested.
 
 ## Build
