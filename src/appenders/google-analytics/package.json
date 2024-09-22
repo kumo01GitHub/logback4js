@@ -4,7 +4,10 @@
   "description": "Google Analytics Appenders for Logback4js.",
   "keywords": [
     "log",
-    "logger"
+    "logger",
+    "Google Analytics",
+    "GA4",
+    "Firebase"
   ],
   "main": "google-analytics/index.js",
   "types": "google-analytics/index.d.ts",

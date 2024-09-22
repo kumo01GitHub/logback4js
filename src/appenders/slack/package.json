@@ -4,7 +4,8 @@
   "description": "Slack Appenders for Logback4js.",
   "keywords": [
     "log",
-    "logger"
+    "logger",
+    "Slack"
   ],
   "main": "slack/index.js",
   "types": "slack/index.d.ts",

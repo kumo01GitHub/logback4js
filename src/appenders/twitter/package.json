@@ -4,7 +4,11 @@
   "description": "Twitter Appenders for Logback4js.",
   "keywords": [
     "log",
-    "logger"
+    "logger",
+    "Twitter",
+    "X",
+    "Twitter API v2",
+    "X API"
   ],
   "main": "twitter/index.js",
   "types": "twitter/index.d.ts",

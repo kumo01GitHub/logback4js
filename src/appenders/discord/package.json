@@ -4,7 +4,8 @@
   "description": "Discord Appenders for Logback4js.",
   "keywords": [
     "log",
-    "logger"
+    "logger",
+    "Discord"
   ],
   "main": "discord/index.js",
   "types": "discord/index.d.ts",
