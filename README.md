@@ -1,6 +1,6 @@
 # Logback4js
 
-[![NPM](https://nodei.co/npm/@logback4js/core.png)](https://nodei.co/npm/@logback4js/core)
+[![npmjs](https://badge.fury.io/js/%40logback4js%2Fcore.svg)](https://www.npmjs.com/package/@logback4js/core)
 
 Logger for JavaScript inspired by Logback.
 
@@ -47,6 +47,10 @@ List of Appenders library provides:
     - Not Tested.
     - Use Discord Webhook Appender might be better.
 - Discord Webhook Appender
+    - Not Tested.
+- LINE Messaging API Appender
+    - Not Tested.
+- LINE Notify Appender
     - Not Tested.
 
 ## Build

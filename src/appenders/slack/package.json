@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/slack",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Slack Appenders for Logback4js.",
   "keywords": [
     "log",

@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/discord",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Discord Appenders for Logback4js.",
   "keywords": [
     "log",

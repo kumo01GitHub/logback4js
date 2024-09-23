@@ -1,13 +1,13 @@
 {
-  "name": "@logback4js/google-analytics",
+  "name": "@logback4js/line",
   "version": "0.2.2",
-  "description": "Google Analytics Appenders for Logback4js.",
+  "description": "LINE Appenders for Logback4js.",
   "keywords": [
     "log",
     "logger",
-    "Google Analytics",
-    "GA4",
-    "Firebase"
+    "LINE",
+    "Messaging API",
+    "LINE Notify"
   ],
   "main": "index.js",
   "types": "index.d.ts",
@@ -18,11 +18,11 @@
   "author": "kumo01",
   "license": "MIT",
   "devDependencies": {
-    "@types/gtag.js": "^0.0.20",
     "typescript": "^5.6.2"
   },
   "dependencies": {
+    "@line/bot-sdk": "^9.4.0",
     "@logback4js/core": "^0.2.0",
-    "firebase": "^10.13.2"
+    "axios": "^1.7.7"
   }
 }

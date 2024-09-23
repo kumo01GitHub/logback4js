@@ -1,6 +1,6 @@
 {
   "name": "logback4js",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Logger for JavaScript inspired by Logback.",
   "keywords": [
     "log",
@@ -13,9 +13,18 @@
     "build:core": "rimraf dist/core && tsc -p src/core/tsconfig.core.json && cpx src/core/package.json dist/core && cpx src/core/README.md dist/core",
     "build:discord": "rimraf dist/appenders/discord && tsc -p src/appenders/discord/tsconfig.discord.json && cpx src/appenders/discord/package.json dist/appenders/discord",
     "build:google-analytics": "rimraf dist/appenders/google-analytics && tsc -p src/appenders/google-analytics/tsconfig.google-analytics.json && cpx src/appenders/google-analytics/package.json dist/appenders/google-analytics",
+    "build:line": "rimraf dist/appenders/line && tsc -p src/appenders/line/tsconfig.line.json && cpx src/appenders/line/package.json dist/appenders/line",
     "build:microsoft": "rimraf dist/appenders/microsoft && tsc -p src/appenders/microsoft/tsconfig.microsoft.json && cpx src/appenders/microsoft/package.json dist/appenders/microsoft",
     "build:slack": "rimraf dist/appenders/slack && tsc -p src/appenders/slack/tsconfig.slack.json && cpx src/appenders/slack/package.json dist/appenders/slack",
     "build:twitter": "rimraf dist/appenders/twitter && tsc -p src/appenders/twitter/tsconfig.twitter.json && cpx src/appenders/twitter/package.json dist/appenders/twitter",
+    "publish:core": "npm run build:core && cd dist/core && npm publish",
+    "publish:appenders:discord": "npm run build:discord && cd dist/appenders/discord && npm publish",
+    "publish:appenders:google-analytics": "npm run build:google-analytics && cd dist/appenders/google-analytics && npm publish",
+    "publish:appenders:line": "npm run build:line && cd dist/appenders/line && npm publish",
+    "publish:appenders:microsoft": "npm run build:microsoft && cd dist/appenders/microsoft && npm publish",
+    "publish:appenders:slack": "npm run build:slack && cd dist/appenders/slack && npm publish",
+    "publish:appenders:twitter": "npm run build:twitter && cd dist/appenders/twitter && npm publish",
+    "publish:appenders": "run-p publish:appenders:*",
     "test": "jest"
   },
   "repository": {
@@ -28,6 +37,7 @@
     "@logback4js/core": "file:src/core",
     "@logback4js/discord": "file:src/appenders/discord",
     "@logback4js/google-analytics": "file:src/appenders/google-analytics",
+    "@logback4js/line": "file:src/appenders/line",
     "@logback4js/microsoft": "file:src/appenders/microsoft",
     "@logback4js/slack": "file:src/appenders/slack",
     "@logback4js/twitter": "file:src/appenders/twitter",
