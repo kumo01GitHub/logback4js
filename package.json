@@ -10,7 +10,7 @@
   "types": "index.d.ts",
   "scripts": {
     "build": "run-p build:*",
-    "build:core": "rimraf dist/core && tsc -p src/core/tsconfig.core.json && cpx src/core/package.json dist/core && cpx src/core/README.md dist/core",
+    "build:core": "rimraf dist/core && tsc -p src/core/tsconfig.core.json && cpx src/core/package.json dist/core && cpx README.md dist/core",
     "build:discord": "rimraf dist/appenders/discord && tsc -p src/appenders/discord/tsconfig.discord.json && cpx src/appenders/discord/package.json dist/appenders/discord",
     "build:google-analytics": "rimraf dist/appenders/google-analytics && tsc -p src/appenders/google-analytics/tsconfig.google-analytics.json && cpx src/appenders/google-analytics/package.json dist/appenders/google-analytics",
     "build:line": "rimraf dist/appenders/line && tsc -p src/appenders/line/tsconfig.line.json && cpx src/appenders/line/package.json dist/appenders/line",
