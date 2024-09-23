@@ -6,12 +6,8 @@
     "log",
     "logger"
   ],
-  "main": "core/index.js",
-  "types": "core/index.d.ts",
-  "scripts": {
-    "build": "rimraf ../../dist && tsc -p ./tsconfig.core.json && cpx ./package.json ../../dist && cpx ./README.md ../../dist",
-    "test": "jest"
-  },
+  "main": "index.js",
+  "types": "index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kumo01GitHub/logback4js.git"
@@ -19,12 +15,7 @@
   "author": "kumo01",
   "license": "MIT",
   "devDependencies": {
-    "@types/jest": "^29.5.13",
     "@types/uuid": "^10.0.0",
-    "cpx": "^1.5.0",
-    "jest": "^29.7.0",
-    "rimraf": "^6.0.1",
-    "ts-jest": "^29.2.5",
     "typescript": "^5.6.2"
   },
   "dependencies": {

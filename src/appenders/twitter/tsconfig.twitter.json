@@ -1,7 +1,7 @@
 {
   "extends": "../../../tsconfig",
   "compilerOptions": {
-    "outDir": "../../../dist/slack",
+    "outDir": "../../../dist/appenders/twitter",
     "rootDir": "./",
   },
   "exclude": [

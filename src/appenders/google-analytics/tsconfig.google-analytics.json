@@ -1,7 +1,7 @@
 {
   "extends": "../../../tsconfig",
   "compilerOptions": {
-    "outDir": "../../../dist/google-analytics",
+    "outDir": "../../../dist/appenders/google-analytics",
     "rootDir": "./",
   },
   "exclude": [

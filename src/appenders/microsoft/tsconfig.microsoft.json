@@ -1,7 +1,7 @@
 {
   "extends": "../../../tsconfig",
   "compilerOptions": {
-    "outDir": "../../../dist/microsoft",
+    "outDir": "../../../dist/appenders/microsoft",
     "rootDir": "./",
   },
   "exclude": [
