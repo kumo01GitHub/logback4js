@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/google-analytics",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Google Analytics Appenders for Logback4js.",
   "keywords": [
     "log",

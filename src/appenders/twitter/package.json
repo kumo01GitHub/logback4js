@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/twitter",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Twitter Appenders for Logback4js.",
   "keywords": [
     "log",
