@@ -53,6 +53,10 @@ List of Appenders library provides:
 - LINE Notify Appender
     - Not Tested.
 
+## Versioning
+
+After release version 1.0.0, follow the rules of [SemVer](https://semver.org/spec/v2.0.0.html).
+
 ## Build
 
 Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
