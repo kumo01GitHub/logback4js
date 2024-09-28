@@ -1,5 +1,6 @@
 # Logback4js
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npmjs](https://badge.fury.io/js/%40logback4js%2Fcore.svg)](https://www.npmjs.com/package/@logback4js/core)
 [![codecov](https://codecov.io/github/kumo01GitHub/logback4js/graph/badge.svg?token=A604UT0OJX)](https://codecov.io/github/kumo01GitHub/logback4js)
 
