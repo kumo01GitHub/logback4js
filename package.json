@@ -25,7 +25,8 @@
     "publish:appenders:slack": "npm run build:slack && cd dist/appenders/slack && npm publish",
     "publish:appenders:twitter": "npm run build:twitter && cd dist/appenders/twitter && npm publish",
     "publish:appenders": "run-p publish:appenders:*",
-    "test": "jest"
+    "test": "jest",
+    "coverage": "jest --coverage"
   },
   "repository": {
     "type": "git",
