@@ -2,7 +2,7 @@
 
 [![npmjs](https://badge.fury.io/js/%40logback4js%2Fcore.svg)](https://www.npmjs.com/package/@logback4js/core)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![build status](https://github.com/kumo01GitHub/logback4js/actions/workflows/build/badge.svg?branch=master)
+![build status](https://github.com/kumo01GitHub/logback4js/actions/workflows/build.yml/badge.svg?branch=master)
 [![codecov](https://codecov.io/github/kumo01GitHub/logback4js/graph/badge.svg?token=A604UT0OJX)](https://codecov.io/github/kumo01GitHub/logback4js)
 
 Logger for JavaScript inspired by Logback.
