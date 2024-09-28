@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/core",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Logger for JavaScript inspired by Logback.",
   "keywords": [
     "log",
