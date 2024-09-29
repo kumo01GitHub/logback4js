@@ -2,7 +2,7 @@
  * Public API
  */
 
-/** model */
+/** Model */
 export * from './types/loglevel';
 export * from './logger/logger';
 export * from './appender/appender';
@@ -17,3 +17,6 @@ export * from './appender/localStorage.appender';
 
 /** Logger (Do NOT export BaseLogger) */
 export * from './logger/loggerFactory';
+
+/** Decorator */
+export * from './decorators/logDecorator';
