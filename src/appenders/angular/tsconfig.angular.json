@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig",
+  "compilerOptions": {
+    "outDir": "../../../dist/appenders/angular",
+    "rootDir": "./",
+  },
+  "exclude": [
+    "**/*.spec.ts"
+  ]
+}

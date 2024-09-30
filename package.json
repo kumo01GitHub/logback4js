@@ -1,6 +1,6 @@
 {
   "name": "logback4js",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Logger for JavaScript inspired by Logback.",
   "keywords": [
     "log",
@@ -11,6 +11,7 @@
   "scripts": {
     "build": "run-p build:*",
     "build:core": "rimraf dist/core && tsc -p src/core/tsconfig.core.json && cpx src/core/package.json dist/core && cpx README.md dist/core && cpx LICENSE dist/core",
+    "build:angular": "rimraf dist/appenders/angular && tsc -p src/appenders/angular/tsconfig.angular.json && cpx src/appenders/angular/package.json dist/appenders/angular",
     "build:discord": "rimraf dist/appenders/discord && tsc -p src/appenders/discord/tsconfig.discord.json && cpx src/appenders/discord/package.json dist/appenders/discord",
     "build:google-analytics": "rimraf dist/appenders/google-analytics && tsc -p src/appenders/google-analytics/tsconfig.google-analytics.json && cpx src/appenders/google-analytics/package.json dist/appenders/google-analytics",
     "build:line": "rimraf dist/appenders/line && tsc -p src/appenders/line/tsconfig.line.json && cpx src/appenders/line/package.json dist/appenders/line",
@@ -18,6 +19,7 @@
     "build:slack": "rimraf dist/appenders/slack && tsc -p src/appenders/slack/tsconfig.slack.json && cpx src/appenders/slack/package.json dist/appenders/slack",
     "build:twitter": "rimraf dist/appenders/twitter && tsc -p src/appenders/twitter/tsconfig.twitter.json && cpx src/appenders/twitter/package.json dist/appenders/twitter",
     "publish:core": "npm run build:core && cd dist/core && npm publish",
+    "publish:appenders:angular": "cd src/appenders/angular && ncu -u && cd ../../.. && npm run build:angular && cd dist/appenders/angular && npm publish",
     "publish:appenders:discord": "cd src/appenders/discord && ncu -u && cd ../../.. && npm run build:discord && cd dist/appenders/discord && npm publish",
     "publish:appenders:google-analytics": "cd src/appenders/google-analytics && ncu -u && cd ../../.. && npm run build:google-analytics && cd dist/appenders/google-analytics && npm publish",
     "publish:appenders:line": "cd src/appenders/line && ncu -u && cd ../../.. && npm run build:line && cd dist/appenders/line && npm publish",
@@ -36,6 +38,7 @@
   "license": "MIT",
   "devDependencies": {
     "@logback4js/core": "file:src/core",
+    "@logback4js/angular": "file:src/appenders/angular",
     "@logback4js/discord": "file:src/appenders/discord",
     "@logback4js/google-analytics": "file:src/appenders/google-analytics",
     "@logback4js/line": "file:src/appenders/line",
