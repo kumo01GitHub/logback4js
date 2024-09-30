@@ -55,6 +55,7 @@ List of Appenders library provides:
     - Not Tested.
 - LINE Notify Appender
     - Not Tested.
+- HTTP POST Appender for Angular
 
 ## Versioning
 
