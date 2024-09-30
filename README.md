@@ -1,6 +1,6 @@
 # Logback4js
 
-[![npm version](https://badge.fury.io/js/@logback4js%2Fcore.svg)](https://badge.fury.io/js/@logback4js%2Fcore)
+[![npm version](https://badge.fury.io/js/@logback4js%2Fcore.png)](https://badge.fury.io/js/@logback4js%2Fcore)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![build status](https://github.com/kumo01GitHub/logback4js/actions/workflows/build.yml/badge.svg?branch=master)
 [![codecov](https://codecov.io/github/kumo01GitHub/logback4js/graph/badge.svg?token=A604UT0OJX)](https://codecov.io/github/kumo01GitHub/logback4js)
