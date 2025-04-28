@@ -1,9 +1,9 @@
 # Logback4js
 
-[![npm version](https://img.shields.io/npm/v/@logback4js/core.svg)](https://www.npmjs.com/package/@logback4js/core)
-[![npm](https://img.shields.io/npm/dt/%40logback4js%2Fcore.svg)](https://www.npmjs.com/package/@logback4js/core)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![build status](https://github.com/kumo01GitHub/logback4js/actions/workflows/build.yml/badge.svg?branch=master)
+[![npm](https://img.shields.io/npm/v/@logback4js/core.svg)](https://www.npmjs.com/package/@logback4js/core)
+[![downloads](https://img.shields.io/npm/dt/%40logback4js%2Fcore.svg)](https://www.npmjs.com/package/@logback4js/core)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Build](https://github.com/kumo01GitHub/logback4js/actions/workflows/build.yml/badge.svg)](https://github.com/kumo01GitHub/logback4js/actions/workflows/build.yml)
 [![codecov](https://codecov.io/github/kumo01GitHub/logback4js/graph/badge.svg?token=A604UT0OJX)](https://codecov.io/github/kumo01GitHub/logback4js)
 
 Logger for JavaScript inspired by Logback.
