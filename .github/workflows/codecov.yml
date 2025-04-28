@@ -1,20 +1,27 @@
 name: Run tests and upload coverage
 
-on: 
-  push
+on:
+  push:
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
+
+  pull_request:
+    paths-ignore:
+      - '**.md'
+      - 'LICENSE'
 
 jobs:
   test:
     name: Run tests and collect coverage
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+      - uses: actions/checkout@v4
 
-      - name: Set up Node
+      - name: Use Node.js
         uses: actions/setup-node@v4
+        with:
+          node-version: 'latest'
 
       - name: Install dependencies
         run: npm ci
