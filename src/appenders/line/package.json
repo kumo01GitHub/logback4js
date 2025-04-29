@@ -18,7 +18,7 @@
   "author": "kumo01",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.6.2"
+    "typescript": "^5.8.3"
   },
   "dependencies": {
     "@line/bot-sdk": "^9.4.0",
