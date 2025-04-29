@@ -29,34 +29,22 @@ erDiagram
 ## Appenders
 
 List of Appenders library provides:
-- Console Appender
-    - core module.
-- HTTP POST Appender
-    - core module.
-- IndexedDB Appender
-    - core module.
-- LocalStorage Appender
-    - core module.
-- Google Analytics Appender
-- Google Analytics for Firebase Appender
-- Slack Appender
-    - Not Tested.
-- Twitter Appender
-    - Using this Appender in browser, proxy setting is required to bypass CORS.
-    - Not Tested.
-- Microsoft Teams Appender
-    - Not Tested.
-    - Use workflow with custom HTTP POST Appender might be better.
-- Discord Appender
-    - Not Tested.
-    - Use Discord Webhook Appender might be better.
-- Discord Webhook Appender
-    - Not Tested.
-- LINE Messaging API Appender
-    - Not Tested.
-- LINE Notify Appender
-    - Not Tested.
-- HTTP POST Appender for Angular
+
+| Appender | Module | Description |
+| ---- | ---- | ---- |
+| Console Appender | `@logback4js/core` | Output to console. Core module. |
+| HTTP POST Appender | `@logback4js/core` | Post logging API. Core module. |
+| IndexedDB Appender | `@logback4js/core` | Output to IndexedDB. Core module. |
+| LocalStorage Appender | `@logback4js/core` | Output to LocalStorage. Core module. |
+| Google Analytics Appender | `@logback4js/google-analytics` | Send event using [Google Analytics](https://developers.google.com/analytics). |
+| Google Analytics for Firebase Appender | `@logback4js/google-analytics` | Send event using [Google Analytics for Firebase](https://firebase.google.com/docs/analytics). |
+| Slack Appender | `@logback4js/slack` | Send message using [Slack Web API](https://api.slack.com/web). Not tested yet. |
+| Twitter Appender | `@logback4js/twitter` | Send message using [SDKs wrap the X API](https://developer.x.com/en/docs/x-api/tools-and-libraries/sdks/overview#item1). Using this Appender in browser, proxy setting is required to bypass CORS. Not tested yet. |
+| Microsoft Teams Appender | `@logback4js/microsoft` | Send message to Teams using [Microsoft Graph](https://learn.microsoft.com/graph/sdks/create-client?tabs=typescript). Use workflow with custom HTTP POST Appender might be better. Not tested yet. |
+| Discord Appender | `@logback4js/discord` | Send message using [discord.js](https://discord.js.org). Use Discord Webhook Appender might be better. Not tested yet. |
+| Discord Webhook Appender | `@logback4js/discord` | Send message using [Discord Webhook](https://discord.com/developers/docs/resources/webhook). Not tested yet. |
+| LINE Messaging API Appender | `@logback4js/line` | Send message using [LINE Messaging API](https://developers.line.biz/en/services/messaging-api/). Not tested yet. |
+| HTTP POST Appender for Angular | `@logback4js/angular` | Send message using [Angular HttpClient](https://angular.dev/guide/http). |
 
 ## Versioning
 
