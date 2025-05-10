@@ -8,7 +8,7 @@ export class DiscordWebhookAppender extends TextAppender {
 
     constructor(
         private url: string,
-        /* eslint-disable-next-line "@typescript-eslint/no-explicit-any" */
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         private config?: AxiosRequestConfig<any>,
         template?: string
     ) {

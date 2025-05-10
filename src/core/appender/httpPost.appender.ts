@@ -9,7 +9,7 @@ export class HttpPostAppender extends JsonAppender {
 
     constructor(
         private url: string,
-        /* eslint-disable-next-line "@typescript-eslint/no-explicit-any" */
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         private config?: AxiosRequestConfig<any>
     ) {
         super();

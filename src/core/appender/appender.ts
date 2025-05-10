@@ -34,6 +34,6 @@ export interface Appender {
      * @param {ILoggingEvent} event logging event
      * @returns {any} message
      */
-    /* eslint-disable-next-line "@typescript-eslint/no-explicit-any" */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     getMessage(event: ILoggingEvent): any;
 }
