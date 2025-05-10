@@ -17,7 +17,7 @@ export class ConsoleAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        /* eslint-disable @typescript-eslint/no-explicit-any */
+        /* eslint-disable  @typescript-eslint/no-explicit-any */
         let log: (message?: any, ...optionalParams: any[]) => void = console.log;
         let style: string = "color:black;"
 
