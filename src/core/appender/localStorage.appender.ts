@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid';
-import { ILoggingEvent } from "./appender";
+import { type ILoggingEvent } from "./appender";
 import { TextAppender } from './textAppender';
 
 /**
@@ -18,7 +18,7 @@ export class LocalStorageAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             localStorage.setItem(
                 this.generateKey(),
                 this.getMessage(event)

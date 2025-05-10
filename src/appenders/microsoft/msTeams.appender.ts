@@ -1,5 +1,5 @@
-import { Client, Options } from "@microsoft/microsoft-graph-client";
-import { ILoggingEvent, TextAppender } from "@logback4js/core";
+import { Client, type Options } from "@microsoft/microsoft-graph-client";
+import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Microsoft Teams Appender.
@@ -22,7 +22,7 @@ export class MSTeamsAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             this.client.api(`/teams/${this.teamId}/channels/${this.channelId}/messages`)
                 .post({
                     body: {

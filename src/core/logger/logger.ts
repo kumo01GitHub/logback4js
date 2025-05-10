@@ -1,4 +1,4 @@
-import { Appender } from '../appender/appender';
+import { type Appender } from '../appender/appender';
 
 /**
  * Manage and log Appenders.

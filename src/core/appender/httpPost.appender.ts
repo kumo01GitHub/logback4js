@@ -1,5 +1,5 @@
-import axios, { AxiosRequestConfig } from "axios";
-import { ILoggingEvent } from "./appender";
+import axios, { type AxiosRequestConfig } from "axios";
+import { type ILoggingEvent } from "./appender";
 import { JsonAppender } from "./jsonAppender";
 
 /**
@@ -19,7 +19,7 @@ export class HttpPostAppender extends JsonAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             axios.post(
                 this.url,
                 this.getMessage(event),

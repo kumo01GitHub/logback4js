@@ -1,5 +1,5 @@
-import axios, { AxiosRequestConfig } from "axios";
-import { ILoggingEvent, TextAppender } from "@logback4js/core";
+import axios, { type AxiosRequestConfig } from "axios";
+import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Discord Webhook Appender.
@@ -19,7 +19,7 @@ export class DiscordWebhookAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             axios.post(
                 this.url,
                 {

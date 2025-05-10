@@ -1,4 +1,4 @@
-import { ILoggingEvent, JsonAppender } from "@logback4js/core";
+import { type ILoggingEvent, JsonAppender } from "@logback4js/core";
 
 /**
  * Google Analytics Appender.
@@ -16,7 +16,7 @@ export class GoogleAnalyticsAppender extends JsonAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             gtag('event', this.eventName, this.getMessage(event));
         }
     }

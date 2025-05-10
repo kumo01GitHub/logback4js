@@ -1,7 +1,7 @@
 import { Client } from "twitter-api-sdk";
 import { AuthClient } from "twitter-api-sdk/dist/types";
-import { RequestOptions } from "twitter-api-sdk/dist/request";
-import { ILoggingEvent, TextAppender } from "@logback4js/core";
+import { type RequestOptions } from "twitter-api-sdk/dist/request";
+import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Twitter Appender.
@@ -24,7 +24,7 @@ export class TwitterAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             this.client.tweets.createTweet({
                 text: this.getMessage(event)
             });

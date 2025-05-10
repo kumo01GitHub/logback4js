@@ -1,4 +1,4 @@
-import { Appender, ILoggingEvent } from './appender';
+import { type Appender, type ILoggingEvent } from './appender';
 
 /**
  * Appender whose log message type is text.

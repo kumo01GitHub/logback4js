@@ -1,5 +1,5 @@
-import { Analytics, logEvent } from "firebase/analytics";
-import { ILoggingEvent, JsonAppender } from "@logback4js/core";
+import { type Analytics, logEvent } from "firebase/analytics";
+import { type ILoggingEvent, JsonAppender } from "@logback4js/core";
 
 /**
  * Google Analytics for Firebase Appender.
@@ -18,7 +18,7 @@ export class FirebaseAnalyticsAppender extends JsonAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             logEvent(this.analytics, this.eventName, this.getMessage(event));
         }
     }

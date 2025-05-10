@@ -28,7 +28,8 @@
     "publish:appenders:twitter": "cd src/appenders/twitter && ncu -u && cd ../../.. && npm run build:twitter && cd dist/appenders/twitter && npm publish",
     "publish:appenders": "run-p publish:appenders:*",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",

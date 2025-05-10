@@ -1,4 +1,4 @@
-import { Appender, ILoggingEvent } from './appender';
+import { type Appender, type ILoggingEvent } from './appender';
 
 /**
  * Appender whose log message type is JSON.
@@ -8,9 +8,9 @@ export abstract class JsonAppender implements Appender {
     /**
      * Get log message.
      * @param {ILoggingEvent} event logging event
-     * @returns {Object} JSON
+     * @returns {object} JSON
      */
-    public getMessage(event: ILoggingEvent): Object {
+    public getMessage(event: ILoggingEvent): object {
         return {
             logger: event.logger,
             timestamp: event.timestamp,
