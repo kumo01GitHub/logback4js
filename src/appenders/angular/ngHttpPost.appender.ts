@@ -9,8 +9,7 @@ export class NgHttpPostAppender extends JsonAppender {
     constructor(
         private httpClient: HttpClient,
         private url: string,
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        private options?: any
+        private options?: any // eslint-disable-line
     ) {
         super();
     }

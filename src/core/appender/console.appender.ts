@@ -17,8 +17,7 @@ export class ConsoleAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        let log: (message?: any, ...optionalParams: any[]) => void = console.log;
+        let log: (message?: any, ...optionalParams: any[]) => void = console.log;  // eslint-disable-line
         let style: string = "color:black;"
 
         switch(event.level) {
