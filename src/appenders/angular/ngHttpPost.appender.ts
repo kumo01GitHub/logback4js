@@ -1,4 +1,4 @@
-import { HttpClient, HttpContext, HttpHeaders, HttpParams } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { type ILoggingEvent, JsonAppender } from "@logback4js/core";
 
 /**
@@ -9,18 +9,8 @@ export class NgHttpPostAppender extends JsonAppender {
     constructor(
         private httpClient: HttpClient,
         private url: string,
-        private options?: {
-            headers?: HttpHeaders | Record<string, string | string[]>;
-            context?: HttpContext;
-            observe?: 'body';
-            params?: HttpParams | Record<string, string | number | boolean | ReadonlyArray<string | number | boolean>>;
-            reportProgress?: boolean;
-            responseType: 'arraybuffer';
-            withCredentials?: boolean;
-            transferCache?: {
-                includeHeaders?: string[];
-            } | boolean;
-        }
+        /* eslint-disable @typescript-eslint/no-explicit-any */
+        private options?: any
     ) {
         super();
     }
