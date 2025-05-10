@@ -1,4 +1,4 @@
-import { ILoggingEvent } from "./appender";
+import { type ILoggingEvent } from "./appender";
 import { JsonAppender } from "./jsonAppender";
 
 /**
@@ -28,7 +28,7 @@ export class IndexedDBAppender extends JsonAppender {
         return this.storeName;
     }
 
-    public getMessage(event: ILoggingEvent): Object {
+    public getMessage(event: ILoggingEvent): object {
         return {
             timestamp: event.timestamp.toString(),
             logger: event.logger,
@@ -38,7 +38,7 @@ export class IndexedDBAppender extends JsonAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             const openRequest: IDBOpenDBRequest = indexedDB.open(this.constructor.name);
             openRequest.onsuccess = (e: Event): void => {
                 const db: IDBDatabase = (e.target as IDBOpenDBRequest).result;

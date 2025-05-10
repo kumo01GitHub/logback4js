@@ -1,5 +1,5 @@
 import { LogLevel } from "../types/loglevel";
-import { ILoggingEvent } from "./appender";
+import { type ILoggingEvent } from "./appender";
 import { TextAppender } from "./textAppender";
 
 /**
@@ -17,8 +17,8 @@ export class ConsoleAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        let log: (message?: any, ...optionalParams: any[]) => void = console.log;
-        let style: String = "color:black;"
+        let log: (message?: any, ...optionalParams: any[]) => void = console.log;  // eslint-disable-line
+        let style: string = "color:black;"
 
         switch(event.level) {
             case LogLevel.None:

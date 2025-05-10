@@ -1,5 +1,5 @@
 import * as line from "@line/bot-sdk";
-import { ILoggingEvent, TextAppender } from "@logback4js/core";
+import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * LINE Messaging API Appender.
@@ -23,7 +23,7 @@ export class LineMessagingApiAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             if (typeof this.to === "string") {
                 this.client.pushMessage({
                     messages: [

@@ -22,7 +22,7 @@ export interface ILogDecorator {
  * @returns Method Decorator
  */
 export const Log = (param?: ILogDecorator) => {
-    return function (target: Object, propertyKey: string, descriptor: PropertyDescriptor) {
+    return function (target: object, propertyKey: string, descriptor: PropertyDescriptor) {
         const original = descriptor.value;
 
         const logger: string = param?.logger ? param.logger : target.constructor.name;

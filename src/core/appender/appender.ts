@@ -34,5 +34,5 @@ export interface Appender {
      * @param {ILoggingEvent} event logging event
      * @returns {any} message
      */
-    getMessage(event: ILoggingEvent): any;
+    getMessage(event: ILoggingEvent): any;  // eslint-disable-line
 }

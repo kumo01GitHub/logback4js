@@ -1,6 +1,6 @@
-import { Appender } from '../appender/appender';
+import { type Appender } from '../appender/appender';
 import { LogLevel } from '../types/loglevel';
-import { Logger } from './logger';
+import { type Logger } from './logger';
 
 /**
  * Implementation of Logger.

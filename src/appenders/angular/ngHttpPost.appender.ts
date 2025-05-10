@@ -1,5 +1,5 @@
 import { HttpClient } from "@angular/common/http";
-import { ILoggingEvent, JsonAppender } from "@logback4js/core";
+import { type ILoggingEvent, JsonAppender } from "@logback4js/core";
 
 /**
  * HTTP POST Appender for Angular.
@@ -9,7 +9,7 @@ export class NgHttpPostAppender extends JsonAppender {
     constructor(
         private httpClient: HttpClient,
         private url: string,
-        private options?: any
+        private options?: any // eslint-disable-line
     ) {
         super();
     }
@@ -19,7 +19,7 @@ export class NgHttpPostAppender extends JsonAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             this.httpClient.post(
                 this.url,
                 this.getMessage(event),

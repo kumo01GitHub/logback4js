@@ -1,5 +1,5 @@
-import { Client, ClientOptions, TextChannel } from "discord.js";
-import { ILoggingEvent, TextAppender } from "@logback4js/core";
+import { Client, type ClientOptions, TextChannel } from "discord.js";
+import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Discord Appender.
@@ -26,7 +26,7 @@ export class DiscordAppender extends TextAppender {
     public doAppend(event: ILoggingEvent): void {
         if (!this.client) {
             console.warn("Client is not ready");
-        } else if (!!event.level.priority) {
+        } else if (event.level.priority) {
             (this.client.channels.cache.get(this.channelId) as TextChannel).send(
                 this.getMessage(event)
             );

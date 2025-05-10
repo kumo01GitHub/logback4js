@@ -1,5 +1,5 @@
 import { LogLevel } from "../types/loglevel";
-import { Logger } from "./logger";
+import { type Logger } from "./logger";
 import { LoggerFactory } from "./loggerFactory";
 import { ConsoleAppender } from "../appender/console.appender";
 import { HttpPostAppender } from "../appender/httpPost.appender";

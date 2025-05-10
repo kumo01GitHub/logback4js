@@ -1,5 +1,5 @@
-import { WebClient, WebClientOptions } from "@slack/web-api";
-import { ILoggingEvent, TextAppender } from "@logback4js/core";
+import { WebClient, type WebClientOptions } from "@slack/web-api";
+import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Slack Appender.
@@ -22,7 +22,7 @@ export class SlackAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
-        if (!!event.level.priority) {
+        if (event.level.priority) {
             this.client.chat.postMessage({
                 channel: this.channel,
                 text: this.getMessage(event)
