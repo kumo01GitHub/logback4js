@@ -1,10 +1,7 @@
 {
   "extends": "../../../tsconfig",
   "compilerOptions": {
-    "outDir": "../../../dist/appenders/twitter",
+    "outDir": "../../../dist/appenders/twitter/",
     "rootDir": "./",
-  },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  }
 }

@@ -6,18 +6,16 @@
     "log",
     "logger"
   ],
-  "main": "index.js",
-  "types": "index.d.ts",
   "scripts": {
-    "build": "gulp",
-    "build:core": "gulp core",
-    "build:angular": "gulp angular",
-    "build:discord": "gulp discord",
-    "build:google-analytics": "gulp googleAnalytics",
-    "build:line": "gulp line",
-    "build:microsoft": "gulp microsoft",
-    "build:slack": "gulp slack",
-    "build:twitter": "gulp twitter",
+    "build": "vite build --config  src/core/vite.config.js",
+    "build:core": "vite build --config  src/core/vite.config.js",
+    "build:angular": "vite build --config  src/appenders/angular/vite.config.js",
+    "build:discord": "vite build --config  src/appenders/discord/vite.config.js",
+    "build:google-analytics": "vite build --config  src/appenders/google-analytics/vite.config.js",
+    "build:line": "vite build --config  src/appenders/line/vite.config.js",
+    "build:microsoft": "vite build --config  src/appenders/microsoft/vite.config.js",
+    "build:slack": "vite build --config  src/appenders/slack/vite.config.js",
+    "build:twitter": "vite build --config  src/appenders/twitter/vite.config.js",
     "publish:core": "npm run build:core && cd dist/core && npm publish",
     "publish:appenders:angular": "cd src/appenders/angular && ncu -u && cd ../../.. && npm run build:angular && cd dist/appenders/angular && npm publish",
     "publish:appenders:discord": "cd src/appenders/discord && ncu -u && cd ../../.. && npm run build:discord && cd dist/appenders/discord && npm publish",
@@ -58,6 +56,9 @@
     "rimraf": "^6.0.1",
     "ts-jest": "^29.2.5",
     "typescript": "^5.8.3",
-    "typescript-eslint": "^8.31.0"
+    "typescript-eslint": "^8.31.0",
+    "vite": "^6.3.5",
+    "vite-plugin-dts": "^4.5.3",
+    "vite-plugin-static-copy": "^3.0.0"
   }
 }

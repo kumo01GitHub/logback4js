@@ -9,8 +9,7 @@
     "Messaging API",
     "LINE Notify"
   ],
-  "main": "index.js",
-  "types": "index.d.ts",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kumo01GitHub/logback4js.git"

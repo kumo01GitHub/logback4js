@@ -1,10 +1,7 @@
 {
   "extends": "../../../tsconfig",
   "compilerOptions": {
-    "outDir": "../../../dist/appenders/microsoft",
+    "outDir": "../../../dist/appenders/microsoft/",
     "rootDir": "./",
-  },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  }
 }
