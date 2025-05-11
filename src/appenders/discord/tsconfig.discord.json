@@ -1,10 +1,7 @@
 {
   "extends": "../../../tsconfig",
   "compilerOptions": {
-    "outDir": "../../../dist/appenders/discord",
+    "outDir": "../../../dist/appenders/discord/",
     "rootDir": "./",
-  },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  }
 }
