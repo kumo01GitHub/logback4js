@@ -1,0 +1,51 @@
+name: Publish Node.js Package
+on:
+  workflow_dispatch:
+    inputs:
+      ver:
+        description: 'Version up target'
+        required: true
+        type: choice
+        options:
+          - major
+          - minor
+          - patch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Publish core module
+        run: |
+          npm run updatever -- -t core -r ${{ github.event.inputs.ver }}
+          npm run pubmods -- -t core
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Publish appenders
+        run: |
+          npm run updatever -- -t appenders -r ${{ github.event.inputs.ver }}
+          npm run pubmods -- -t pubmods
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Tag
+        run: |
+          npm version ${{ github.event.inputs.ver }}
+          git push
+          git push origin --tags
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
