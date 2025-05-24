@@ -30,14 +30,14 @@ jobs:
 
       - name: Publish core module
         run: |
-          npm run updatever -- -t core -r ${{ github.event.inputs.ver }}
+          npm run updatevers -- -t core -r ${{ github.event.inputs.ver }}
           npm run pubmods -- -t core
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish appenders
         run: |
-          npm run updatever -- -t appenders -r ${{ github.event.inputs.ver }}
+          npm run updatevers -- -t appenders -r ${{ github.event.inputs.ver }}
           npm run pubmods -- -t pubmods
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
