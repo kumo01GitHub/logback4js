@@ -14,6 +14,8 @@ const ROOT_DIR = path.join(__dirname, "..");
 const CORE_DIR = path.join(ROOT_DIR, "dist/core");
 /** Appenders directory. */
 const APPENDERS_DIR = path.join(ROOT_DIR, "dist/appenders");
+/** Appenders directory. */
+const APPENDERS_DIR = path.join(ROOT_DIR, "dist/appenders");
 
 /**
  * Publish a module. When module name is empty, publish core module.
@@ -22,23 +24,12 @@ const APPENDERS_DIR = path.join(ROOT_DIR, "dist/appenders");
 async function publishModule(name) {
   const target =
     !name || name === TARGET_CORE_MODULE ? TARGET_CORE_MODULE : name;
-  const dist =
-    !name || name === TARGET_CORE_MODULE
-      ? CORE_DIR
-      : path.join(APPENDERS_DIR, name);
 
-  // Build.
-  console.info(`Build ${target}`);
+  // Publish.
+  console.info(`Publish ${target}`);
   runScript({
-    event: `build:${target}`,
-    path: ROOT_DIR,
-  }).then(() => {
-    // Publish.
-    console.info(`Publish ${target}`);
-    runScript({
-      event: "publish",
-      path: dist,
-    });
+  event: `publish:${target}`,
+  path: ROOT_DIR,
   });
 }
 
