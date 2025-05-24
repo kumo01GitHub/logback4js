@@ -10,12 +10,8 @@ const TARGET_CORE_MODULE = "core";
 const TARGET_APPENDERS = "appenders";
 /** Project root directory. */
 const ROOT_DIR = path.join(__dirname, "..");
-/** Core module directory. */
-const CORE_DIR = path.join(ROOT_DIR, "dist/core");
 /** Appenders directory. */
-const APPENDERS_DIR = path.join(ROOT_DIR, "dist/appenders");
-/** Appenders directory. */
-const APPENDERS_DIR = path.join(ROOT_DIR, "dist/appenders");
+const APPENDERS_DIR = path.join(ROOT_DIR, "src/appenders");
 
 /**
  * Publish a module. When module name is empty, publish core module.
