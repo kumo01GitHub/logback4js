@@ -44,6 +44,10 @@ jobs:
 
       - name: Tag
         run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .
+          git commit -m "publish"
           npm version ${{ github.event.inputs.ver }}
           git push
           git push origin --tags
