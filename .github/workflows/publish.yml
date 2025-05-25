@@ -17,7 +17,8 @@ jobs:
       contents: read
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -44,8 +45,8 @@ jobs:
 
       - name: Tag
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "github-actions[bot]"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add .
           git commit -m "publish"
           npm version ${{ github.event.inputs.ver }}
