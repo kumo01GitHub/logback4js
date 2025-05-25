@@ -48,7 +48,11 @@ List of Appenders library provides:
 
 ## Versioning
 
-After release version 1.0.0, follow the rules of [SemVer](https://semver.org/spec/v2.0.0.html).
+After release version 1.0.0, follow the rules of [Semantic Versioning 2.0.0](https://semver.org/spec/v2.0.0.html).
+
+1. **MAJOR**: Update core module including breaking change.
+2. **MINOR**: Update core module NOT including breaking change or update others such as adding new features.
+3. **PATCH**: Update NOT including behavior change such as update documents or dependencies.
 
 ## Build
 
