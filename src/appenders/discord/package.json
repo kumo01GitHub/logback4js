@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@logback4js/core": "^1.0.0",
-    "axios": "^1.7.7",
-    "discord.js": "^14.19.3"
+    "axios": "^1.9.0",
+    "discord.js": "^13.17.1"
   }
 }

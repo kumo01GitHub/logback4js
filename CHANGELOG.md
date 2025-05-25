@@ -2,10 +2,13 @@
 
 ### 1.0.1
 
--　ci: drop node@18 and support node@24
--　chore: remove unused deps
+- ci: drop node@18 and support node@24
+- ci: build all modules
+- chore: remove unused deps
     - npm-check-updates
     - npm-run-all
+- chore: update axios
+- fix(discord): fix build error (downgrade discord.js)
 
 ### 1.0.0
 
