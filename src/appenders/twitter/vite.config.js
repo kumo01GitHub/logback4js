@@ -12,6 +12,10 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
             src: path.resolve(__dirname, "package.json"),
             dest: path.resolve(__dirname, "../../../dist/appenders/twitter/"),
           },
+          {
+            src: path.resolve(__dirname, "../../../README.md"),
+            dest: path.resolve(__dirname, "../../../dist/appenders/twitter/"),
+          },
         ],
       }),
       dts({ tsconfigPath: path.resolve(__dirname, "tsconfig.twitter.json") }),
@@ -22,7 +26,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       lib: {
         name: "TwitterAppenders",
         entry: path.resolve(__dirname, "index.ts"),
-        formats: ['es', 'cjs', 'umd'],
+        formats: ["es", "cjs", "umd"],
         fileName: (format, entryName) => `${entryName}.${format}.js`,
       },
     },

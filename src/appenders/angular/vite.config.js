@@ -12,6 +12,10 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
             src: path.resolve(__dirname, "package.json"),
             dest: path.resolve(__dirname, "../../../dist/appenders/angular/"),
           },
+          {
+            src: path.resolve(__dirname, "../../../README.md"),
+            dest: path.resolve(__dirname, "../../../dist/appenders/angular/"),
+          },
         ],
       }),
       dts({ tsconfigPath: path.resolve(__dirname, "tsconfig.angular.json") }),

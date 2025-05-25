@@ -10,19 +10,34 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         targets: [
           {
             src: path.resolve(__dirname, "package.json"),
-            dest: path.resolve(__dirname, "../../../dist/appenders/google-analytics/"),
+            dest: path.resolve(
+              __dirname,
+              "../../../dist/appenders/google-analytics/"
+            ),
+          },
+          {
+            src: path.resolve(__dirname, "../../../README.md"),
+            dest: path.resolve(
+              __dirname,
+              "../../../dist/appenders/google-analytics/"
+            ),
           },
         ],
       }),
-      dts({ tsconfigPath: path.resolve(__dirname, "tsconfig.google-analytics.json") }),
+      dts({
+        tsconfigPath: path.resolve(__dirname, "tsconfig.google-analytics.json"),
+      }),
       ,
     ],
     build: {
-      outDir: path.resolve(__dirname, "../../../dist/appenders/google-analytics/"),
+      outDir: path.resolve(
+        __dirname,
+        "../../../dist/appenders/google-analytics/"
+      ),
       lib: {
         name: "GoogleAnalyticsAppenders",
         entry: path.resolve(__dirname, "index.ts"),
-        formats: ['es', 'cjs', 'umd'],
+        formats: ["es", "cjs", "umd"],
         fileName: (format, entryName) => `${entryName}.${format}.js`,
       },
     },
