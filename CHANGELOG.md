@@ -9,6 +9,7 @@
     - npm-run-all
 - chore: update axios
 - fix(discord): fix build error (downgrade discord.js)
+- chore: fix lint command
 
 ### 1.0.0
 
