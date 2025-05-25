@@ -13,17 +13,17 @@ const ROOT_DIR = path.join(__dirname, "..");
 const APPENDERS_DIR = path.join(ROOT_DIR, "src/appenders");
 
 /**
- * Publish a module. When module name is empty, publish core module.
+ * Build a module. When module name is empty, build core module.
  * @param name Module name
  */
-async function publishModule(name) {
+async function buildModule(name) {
   const target =
     !name || name === TARGET_CORE_MODULE ? TARGET_CORE_MODULE : name;
 
-  // Publish.
-  console.info(`Publish ${target}`);
+  // Build.
+  console.info(`Build ${target}`);
   runScript({
-    event: `publish:${target}`,
+    event: `build:${target}`,
     path: ROOT_DIR,
   });
 }
@@ -41,28 +41,28 @@ function main() {
     },
   });
 
-  // Publish modules.
+  // Build modules.
   if (!values.target) {
-    // Publish core module.
-    publishModule(TARGET_CORE_MODULE).then(() => {
-      // Publish appenders.
+    // Build core module.
+    buildModule(TARGET_CORE_MODULE).then(() => {
+      // Build appenders.
       const dirs = fs.readdirSync(APPENDERS_DIR).filter((file) => {
         return fs.statSync(path.join(APPENDERS_DIR, file)).isDirectory();
       });
       dirs.forEach((dir) => {
-        publishModule(dir);
+        buildModule(dir);
       });
     });
   } else if (values.target === TARGET_APPENDERS) {
-    // Publish appenders.
+    // Build appenders.
     const dirs = fs.readdirSync(APPENDERS_DIR).filter((file) => {
       return fs.statSync(path.join(APPENDERS_DIR, file)).isDirectory();
     });
     dirs.forEach((dir) => {
-      publishModule(dir);
+      buildModule(dir);
     });
   } else {
-    publishModule(values.target);
+    buildModule(values.target);
   }
 }
 
