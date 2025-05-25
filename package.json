@@ -7,7 +7,7 @@
     "logger"
   ],
   "scripts": {
-    "build": "vite build --config src/core/vite.config.js",
+    "build": "node tools/build-modules.js",
     "build:core": "vite build --config src/core/vite.config.js",
     "build:angular": "vite build --config src/appenders/angular/vite.config.js",
     "build:discord": "vite build --config src/appenders/discord/vite.config.js",
