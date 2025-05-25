@@ -28,7 +28,7 @@
     "publish:twitter": "npm run build:twitter && npm publish ./dist/appenders/twitter",
     "test": "jest",
     "coverage": "jest --coverage",
-    "lint": "eslint ."
+    "lint": "eslint src"
   },
   "repository": {
     "type": "git",
