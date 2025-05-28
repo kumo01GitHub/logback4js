@@ -10,6 +10,7 @@
 - chore: update axios
 - fix(discord): fix build error (downgrade discord.js)
 - chore: fix lint command
+- ci: fix publish workflow
 
 ### 1.0.0
 
