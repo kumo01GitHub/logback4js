@@ -41,7 +41,7 @@ jobs:
       - name: Publish appenders
         run: |
           npm run updatevers -- -t appenders -r ${{ github.event.inputs.ver }}
-          npm run pubmods -- -t pubmods
+          npm run pubmods -- -t appenders
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
