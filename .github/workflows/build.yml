@@ -29,7 +29,9 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm run test
+        run: |
+          docker-compose -f=mock/compose.yaml
+          npm run test
 
       - name: Build
         run: npm run build

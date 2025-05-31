@@ -28,7 +28,9 @@ jobs:
         run: npm ci
 
       - name: Run tests
-        run: npm run coverage
+        run: |
+          docker-compose -f=mock/compose.yaml
+          npm run coverage
 
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4
