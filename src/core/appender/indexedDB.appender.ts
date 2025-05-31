@@ -1,5 +1,5 @@
 import { type ILoggingEvent } from "./appender";
-import { JsonAppender } from "./jsonAppender";
+import { JsonAppender } from "./json.appender";
 
 /**
  * IndexedDB Appender.

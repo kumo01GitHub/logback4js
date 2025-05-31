@@ -1,6 +1,6 @@
 import { LogLevel } from "../types/loglevel";
 import { type ILoggingEvent } from "./appender";
-import { JsonAppender } from "./jsonAppender";
+import { JsonAppender } from "./json.appender";
 
 describe('JsonAppender', () => {
   class SpecAppender extends JsonAppender {

@@ -5,7 +5,7 @@ import { HttpPostAppender } from "./httpPost.appender";
 describe('HttpPostAppender', () => {
   let appender: HttpPostAppender;
   let appenderNoConfig: HttpPostAppender;
-  const url: string = "https://spec.com/log";
+  const url: string = "http://localhost:3000/log";
   const config: AxiosRequestConfig<any> = {
     headers: {
       'X-Forwarded-For': '127.0.0.1'
