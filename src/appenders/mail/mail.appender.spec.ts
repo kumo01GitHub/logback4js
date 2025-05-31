@@ -1,11 +1,11 @@
 import { LogLevel } from "@logback4js/core";
-import { MailAppender } from "./rich-mail.appender";
+import { RichMailAppender } from "./rich-mail.appender";
 
 describe('MailAppender', () => {
-  let appender: MailAppender;
+  let appender: RichMailAppender;
 
   beforeEach(() => {
-    appender = new MailAppender(
+    appender = new RichMailAppender(
       "from@example.com",
       "to@example.com",
       {
@@ -24,7 +24,7 @@ describe('MailAppender', () => {
 
   it('has name', () => {
     expect(appender.name).toBeTruthy();
-    expect(appender.name).toEqual(MailAppender.name);
+    expect(appender.name).toEqual(RichMailAppender.name);
   });
 
   it('has doAppend method', () => {
@@ -35,7 +35,7 @@ describe('MailAppender', () => {
     appender.doAppend({
       level: LogLevel.Debug,
       message: `${LogLevel.Debug.label} message`,
-      logger: "ConsoleAppender",
+      logger: "RichMailAppender",
       timestamp: new Date()
     });
     expect(true).toBeTruthy();
