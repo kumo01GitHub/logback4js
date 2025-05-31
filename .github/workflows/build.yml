@@ -30,7 +30,7 @@ jobs:
 
       - name: Run tests
         run: |
-          docker-compose -f=mock/compose.yaml
+          docker compose -f=mock/compose.yaml up -d
           npm run test
 
       - name: Build
