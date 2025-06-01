@@ -1,6 +1,6 @@
 import { v4 as uuid } from 'uuid';
 import { type ILoggingEvent } from "./appender";
-import { TextAppender } from './textAppender';
+import { TextAppender } from './text.appender';
 
 /**
  * LocalStorage Appender. The key is UUID.

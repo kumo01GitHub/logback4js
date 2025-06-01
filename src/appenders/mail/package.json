@@ -1,0 +1,26 @@
+{
+  "name": "@logback4js/mail",
+  "version": "1.0.1",
+  "description": "Mail Appenders for Logback4js.",
+  "keywords": [
+    "log",
+    "logger",
+    "mail",
+    "Nodemailer"
+  ],
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumo01GitHub/logback4js.git"
+  },
+  "author": "kumo01",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@logback4js/core": "^1.0.1",
+    "nodemailer": "^7.0.3"
+  }
+}

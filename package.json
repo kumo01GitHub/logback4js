@@ -43,6 +43,7 @@
     "@logback4js/discord": "file:src/appenders/discord",
     "@logback4js/google-analytics": "file:src/appenders/google-analytics",
     "@logback4js/line": "file:src/appenders/line",
+    "@logback4js/mail": "file:src/appenders/mail",
     "@logback4js/microsoft": "file:src/appenders/microsoft",
     "@logback4js/slack": "file:src/appenders/slack",
     "@logback4js/twitter": "file:src/appenders/twitter",

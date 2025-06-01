@@ -1,0 +1,14 @@
+{
+  "name": "mock",
+  "description": "Mock for logback4js.",
+  "main": "index.ts",
+  "scripts": {
+    "serve": "node --experimental-transform-types ./index.ts"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.2"
+  }
+}

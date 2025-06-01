@@ -6,8 +6,8 @@
 export * from './types/loglevel';
 export * from './logger/logger';
 export * from './appender/appender';
-export * from './appender/textAppender';
-export * from './appender/jsonAppender';
+export * from './appender/text.appender';
+export * from './appender/json.appender';
 
 /** Appenders */
 export * from './appender/console.appender';

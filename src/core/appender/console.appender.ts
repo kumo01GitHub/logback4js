@@ -1,6 +1,6 @@
 import { LogLevel } from "../types/loglevel";
 import { type ILoggingEvent } from "./appender";
-import { TextAppender } from "./textAppender";
+import { TextAppender } from "./text.appender";
 
 /**
  * Console Appender.

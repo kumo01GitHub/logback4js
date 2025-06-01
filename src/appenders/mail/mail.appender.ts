@@ -1,0 +1,101 @@
+import { createTransport, Transporter } from "nodemailer";
+import { Appender, type ILoggingEvent, LogLevel } from "@logback4js/core";
+
+
+/**
+ * Replica of nodemailer address definition.
+ */
+export interface Address {
+    name: string;
+    address: string;
+}
+
+/**
+ * Mail Appender.\
+ * @see {@link https://nodemailer.com|Nodemailer}
+ */
+export abstract class MailAppender implements Appender {
+    protected transporter: Transporter;
+
+    constructor(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        options: any,
+        protected from?: string | Address | undefined,
+        protected sender?: string | Address | undefined,
+        protected to?: string | Address | Array<string | Address> | undefined,
+        protected cc?: string | Address | Array<string | Address> | undefined,
+        protected bcc?: string | Address | Array<string | Address> | undefined,
+        private subjTemplate: string = "[${logger}] ${level} - ${name}",
+        private msgTemplate: string = "${message}"
+    ) {
+        this.transporter = createTransport(options);
+    }
+
+    /**
+     * Get subject/message using template.
+     * @param {ILoggingEvent} event logging event
+     * @returns {string} subject
+     * @returns {string} message
+     */
+    public getMessage(event: ILoggingEvent): {
+        subj: string
+        msg: string
+    } {
+        return {
+            subj: this.subjTemplate
+                .replace(/\$\{logger\}/g, event.logger)
+                .replace(/\$\{timestamp\}/g, event.timestamp.toString())
+                .replace(/\$\{level\}/g, event.level.label)
+                .replace(/\$\{message\}/g, event.message)
+                .replace(/\$\{name\}/g, this.name),
+            msg: this.msgTemplate
+                .replace(/\$\{logger\}/g, event.logger)
+                .replace(/\$\{timestamp\}/g, event.timestamp.toString())
+                .replace(/\$\{level\}/g, event.level.label)
+                .replace(/\$\{message\}/g, event.message)
+                .replace(/\$\{name\}/g, this.name)
+        }
+    }
+
+    /**
+     * Get priority.
+     * @param {ILoggingEvent} event logging event
+     * @returns {"high" | "normal" | "low" | undefined} priority
+     */
+    public getPriority(event: ILoggingEvent): "high" | "normal" | "low" | undefined {
+        let priority: "high" | "normal" | "low" | undefined;
+
+        switch(event.level) {
+            case LogLevel.None:
+                break;
+            case LogLevel.Trace:
+                priority = "low";
+                break;
+            case LogLevel.Debug:
+                priority = "low";
+                break;
+            case LogLevel.Info:
+                priority = "normal";
+                break;
+            case LogLevel.Warn:
+                priority = "normal";
+                break;
+            case LogLevel.Error:
+                priority = "high";
+                break;
+        }
+
+        return priority;
+    }
+
+    /**
+     * Appender name. Logger uses for key to manage Appenders.
+     */
+    abstract get name(): string;
+
+    /**
+     * Do append.
+     * @param {ILoggingEvent} event Logging event.
+     */
+    abstract doAppend(event: ILoggingEvent): void;
+}

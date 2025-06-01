@@ -1,6 +1,6 @@
 import axios, { type AxiosRequestConfig } from "axios";
 import { type ILoggingEvent } from "./appender";
-import { JsonAppender } from "./jsonAppender";
+import { JsonAppender } from "./json.appender";
 
 /**
  * HTTP POST Appender.

@@ -1,0 +1,16 @@
+services:
+  api:
+    container_name: api
+    image: node:latest
+    working_dir: /express
+    command: 'bash -c "npm ci && npm run serve"'
+    ports:
+      - "3000:3000"
+    volumes:
+      - "./express:/express"
+  mail:
+    container_name: mail
+    image: axllent/mailpit:latest
+    ports:
+      - "1025:1025"
+      - "8025:8025"
