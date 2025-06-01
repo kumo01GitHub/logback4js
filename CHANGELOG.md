@@ -4,7 +4,7 @@
 
 - ci: add mock
 - feat(mail): add mail appenders
-- chore(core): rename core module files.
+- chore(core): rename core module files
 
 ### 1.0.1
 
