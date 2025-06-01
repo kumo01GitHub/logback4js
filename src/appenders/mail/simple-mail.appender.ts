@@ -1,21 +1,22 @@
-import { createTransport, Transporter } from "nodemailer";
-import { type ILoggingEvent, TextAppender } from "@logback4js/core";
+import { type ILoggingEvent } from "@logback4js/core";
+import { Address, MailAppender } from "./mail.appender";
 
 /**
- * Simple Mail Appender.\
- * @see {@link https://nodemailer.com|Nodemailer}
+ * Simple Mail Appender.
  */
-export class SimpleMailAppender extends TextAppender {
-    private transporter: Transporter;
-
+export class SimpleMailAppender extends MailAppender {
     constructor(
-        private from: string,
-        private to: string,
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         options: any,
-        template?: string
+        protected from?: string | Address | undefined,
+        protected sender?: string | Address | undefined,
+        protected to?: string | Address | Array<string | Address> | undefined,
+        protected cc?: string | Address | Array<string | Address> | undefined,
+        protected bcc?: string | Address | Array<string | Address> | undefined,
+        subjTemplate?: string,
+        msgTemplate?: string,
     ) {
-        super(template);
-        this.transporter = createTransport(options);
+        super(options, from, sender, to, cc, bcc, subjTemplate, msgTemplate);
     }
 
     public get name(): string {
@@ -23,11 +24,17 @@ export class SimpleMailAppender extends TextAppender {
     }
 
     public doAppend(event: ILoggingEvent): void {
+        const message = this.getMessage(event);
         if (event.level.priority) {
             this.transporter.sendMail({
                 from: this.from,
+                sender: this.sender,
                 to: this.to,
-                text: event.message
+                cc: this.cc,
+                bcc: this.bcc,
+                subject: message.subj,
+                text: message.msg,
+                priority: this.getPriority(event),
             });
         }
     }

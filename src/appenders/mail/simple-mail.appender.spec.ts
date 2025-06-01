@@ -1,0 +1,88 @@
+import { LogLevel } from "@logback4js/core";
+import { SimpleMailAppender } from "./simple-mail.appender";
+
+
+describe('SimpleMailAppender', () => {
+  let appender: SimpleMailAppender;
+
+  beforeEach(() => {
+    appender = new SimpleMailAppender({
+        host: "localhost",
+        port: 1025,
+        secure: false,
+        requireTLS: false,
+        tls: { rejectUnauthorized: false },
+      },
+      "from@example.com",
+      "jest",
+      "to@example.com",
+    );
+  });
+
+  it('should be created', () => {
+    expect(appender).toBeTruthy();
+  });
+
+  it('has name', () => {
+    expect(appender.name).toBeTruthy();
+    expect(appender.name).toEqual(SimpleMailAppender.name);
+  });
+
+  it('has doAppend method', () => {
+    expect(appender.doAppend).toBeTruthy();
+  });
+
+  it(`append ${LogLevel.None.label} log`, () => {
+    appender.doAppend({
+      level: LogLevel.None,
+      message: `${LogLevel.None.label} - simple text message`,
+      logger: "SimpleMailAppender",
+      timestamp: new Date()
+    });
+  });
+
+  it(`append ${LogLevel.Trace.label} log`, () => {
+    appender.doAppend({
+      level: LogLevel.Trace,
+      message: `${LogLevel.Trace.label} - simple text message`,
+      logger: "SimpleMailAppender",
+      timestamp: new Date()
+    });
+  });
+
+  it(`append ${LogLevel.Debug.label} log`, () => {
+    appender.doAppend({
+      level: LogLevel.Debug,
+      message: `${LogLevel.Debug.label} - simple text message`,
+      logger: "SimpleMailAppender",
+      timestamp: new Date()
+    });
+  });
+
+  it(`append ${LogLevel.Info.label} log`, () => {
+    appender.doAppend({
+      level: LogLevel.Info,
+      message: `${LogLevel.Info.label} - simple text message`,
+      logger: "SimpleMailAppender",
+      timestamp: new Date()
+    });
+  });
+
+  it(`append ${LogLevel.Warn.label} log`, () => {
+    appender.doAppend({
+      level: LogLevel.Warn,
+      message: `${LogLevel.Warn.label} - simple text message`,
+      logger: "SimpleMailAppender",
+      timestamp: new Date()
+    });
+  });
+
+  it(`append ${LogLevel.Error.label} log`, () => {
+    appender.doAppend({
+      level: LogLevel.Error,
+      message: `${LogLevel.Error.label} - simple text message`,
+      logger: "SimpleMailAppender",
+      timestamp: new Date()
+    });
+  });
+});
