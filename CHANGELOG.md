@@ -1,5 +1,11 @@
 # Changelog
 
+### 1.1.0
+
+- ci: add mock
+- feat(mail): add mail appenders
+- chore(core): rename core module files.
+
 ### 1.0.1
 
 - ci: drop node@18 and support node@24

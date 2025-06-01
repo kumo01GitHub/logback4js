@@ -36,6 +36,8 @@ List of Appenders library provides:
 | HTTP POST Appender | `@logback4js/core` | Post logging API. Core module. |
 | IndexedDB Appender | `@logback4js/core` | Output to IndexedDB. Core module. |
 | LocalStorage Appender | `@logback4js/core` | Output to LocalStorage. Core module. |
+| Simple Mail Appender | `@logback4js/mail` | Send text mail using [Nodemailer](https://nodemailer.com). |
+| Rich Mail Appender | `@logback4js/mail` | Send html mail using [Nodemailer](https://nodemailer.com). |
 | Google Analytics Appender | `@logback4js/google-analytics` | Send event using [Google Analytics](https://developers.google.com/analytics). |
 | Google Analytics for Firebase Appender | `@logback4js/google-analytics` | Send event using [Google Analytics for Firebase](https://firebase.google.com/docs/analytics). |
 | Slack Appender | `@logback4js/slack` | Send message using [Slack Web API](https://api.slack.com/web). Not tested yet. |
@@ -61,3 +63,10 @@ Run `npm run build` to build the project. The build artifacts will be stored in 
 ## Running unit tests
 
 Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io/).
+
+```bash
+# Boot mock
+docker compose -f=mock/compose.yaml up -d
+# Run unit tests
+npm run test
+```
