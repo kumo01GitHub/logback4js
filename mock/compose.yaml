@@ -20,18 +20,25 @@ services:
     ports:
       - "3306:3306"
     environment:
+<<<<<<< HEAD
       MYSQL_ALLOW_EMPTY_PASSWORD: "true"
       MYSQL_USER: "mysql"
       MYSQL_PASSWORD: "password"
     volumes:
       - ./mysql:/docker-entrypoint-initdb.d
+=======
+      MYSQL_ROOT_PASSWORD: "mysql"
+>>>>>>> e4a4c29 (rebase)
   postgres:
     container_name: postgres
     image: postgres:latest
     ports:
       - "5432:5432"
+<<<<<<< HEAD
     volumes:
       - ./postgres:/docker-entrypoint-initdb.d
+=======
+>>>>>>> e4a4c29 (rebase)
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"

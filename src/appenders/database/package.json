@@ -21,14 +21,21 @@
   "author": "kumo01",
   "license": "MIT",
   "devDependencies": {
+<<<<<<< HEAD
     "@types/pg": "^8.15.4",
+=======
+>>>>>>> e4a4c29 (rebase)
     "typescript": "^5.8.3"
   },
   "dependencies": {
     "@logback4js/core": "^1.1.0",
     "mysql2": "^3.14.1",
     "pg": "^8.16.0",
+<<<<<<< HEAD
     "redis": "^5.1.1",
     "sqlite3": "^5.1.7"
+=======
+    "redis": "^5.1.1"
+>>>>>>> e4a4c29 (rebase)
   }
 }
