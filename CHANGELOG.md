@@ -4,6 +4,7 @@
 
 - feat(text): enhance bind parameter
 - feat(angular): bump Angular
+- feat(database): support PostgreSQL/MySQL/SQLite/Redis
 - chore: bump brace-expansion
 
 ### 1.1.0
