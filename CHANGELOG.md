@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.2.0
+
+- feat(angular): update Angular
+
 ### 1.1.0
 
 - ci: add mock

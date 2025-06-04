@@ -1,7 +1,7 @@
 {
   "name": "@logback4js/angular",
   "version": "1.1.0",
-  "description": "Appenders for Logback4js.",
+  "description": "Angular Appenders for Logback4js.",
   "keywords": [
     "log",
     "logger",
@@ -18,7 +18,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@angular/common": "^19.2.8",
+    "@angular/common": "^20.0.0",
     "@logback4js/core": "^1.1.0"
   }
 }
