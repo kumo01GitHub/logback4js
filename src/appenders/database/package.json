@@ -21,6 +21,7 @@
   "author": "kumo01",
   "license": "MIT",
   "devDependencies": {
+    "@types/pg": "^8.15.4",
     "typescript": "^5.8.3"
   },
   "dependencies": {
