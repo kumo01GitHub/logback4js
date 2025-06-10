@@ -16,6 +16,7 @@ export abstract class DatabaseAppender implements Appender {
      * @param {ILoggingEvent} event logging event
      * @returns {any} query
      */
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     abstract getMessage(event: ILoggingEvent): any;
 
     /**

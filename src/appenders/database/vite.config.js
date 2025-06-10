@@ -31,6 +31,10 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         formats: ["es", "cjs", "umd"],
         fileName: (format, entryName) => `${entryName}.${format}.js`,
       },
+      rollupOptions: {
+        // https://github.com/brianc/node-postgres/issues/2987
+        external: ["pg-cloudflare"],
+      },
     },
   };
 });

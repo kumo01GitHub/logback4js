@@ -2,11 +2,11 @@ import { ILoggingEvent } from "@logback4js/core";
 import { Pool, PoolConfig } from "pg";
 import { DatabaseAppender } from "./database.appender";
 
-export { PoolConfig } from "pg";
-
 
 /**
  * PostgreSQL Appender.
+ * 
+ * @see {@link https://node-postgres.com|node-postgres}
  */
 export class PostgresAppender extends DatabaseAppender {
     private pool: Pool;
@@ -34,26 +34,28 @@ export class PostgresAppender extends DatabaseAppender {
         this.pool = new Pool(config);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     public getMessage(event: ILoggingEvent): { query: string, values: any[] } {
         let q = this.query;
-        let values: any[] = [];
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const values: any[] = [];
 
         this.params.forEach((param, i) => {
             switch (param) {
                 case "logger":
-                    q = q.replace(/\$\{logger\}/g, `$${i + 1}`);
+                    q = q.replace(/\$\{\s*logger\s*\}/g, `$${i + 1}`);
                     values.push(event.logger);
                     break;
                 case "timestamp":
-                    q = q.replace(/\$\{timestamp\}/g, `$${i + 1}`);
+                    q = q.replace(/\$\{\s*timestamp\s*\}/g, `$${i + 1}`);
                     values.push(event.timestamp);
                     break;
                 case "level":
-                    q = q.replace(/\$\{level\}/g, `$${i + 1}`);
+                    q = q.replace(/\$\{\s*level\s*\}/g, `$${i + 1}`);
                     values.push(event.level.label);
                     break;
                 case "message":
-                    q = q.replace(/\$\{message\}/g, `$${i + 1}`);
+                    q = q.replace(/\$\{\s*message\s*\}/g, `$${i + 1}`);
                     values.push(event.message);
                     break;
             }
