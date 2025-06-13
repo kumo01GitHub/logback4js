@@ -11,11 +11,14 @@ export interface Address {
 }
 
 /**
- * Mail Appender.\
+ * Mail Appender.
+ * 
  * @see {@link https://nodemailer.com|Nodemailer}
  */
 export abstract class MailAppender implements Appender {
     protected transporter: Transporter;
+    private static readonly DEFAULT_SUBJ_TEMPLATE: string = "[${logger}] ${level} - ${name}";
+    private static readonly DEFAULT_MSG_TEMPLATE: string = "${message}";
 
     constructor(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -25,8 +28,8 @@ export abstract class MailAppender implements Appender {
         protected to?: string | Address | Array<string | Address> | undefined,
         protected cc?: string | Address | Array<string | Address> | undefined,
         protected bcc?: string | Address | Array<string | Address> | undefined,
-        private subjTemplate: string = "[${logger}] ${level} - ${name}",
-        private msgTemplate: string = "${message}"
+        private subjTemplate: string = MailAppender.DEFAULT_SUBJ_TEMPLATE,
+        private msgTemplate: string = MailAppender.DEFAULT_MSG_TEMPLATE
     ) {
         this.transporter = createTransport(options);
     }
@@ -43,17 +46,17 @@ export abstract class MailAppender implements Appender {
     } {
         return {
             subj: this.subjTemplate
-                .replace(/\$\{logger\}/g, event.logger)
-                .replace(/\$\{timestamp\}/g, event.timestamp.toString())
-                .replace(/\$\{level\}/g, event.level.label)
-                .replace(/\$\{message\}/g, event.message)
-                .replace(/\$\{name\}/g, this.name),
+                .replace(/\$\{\s*logger\s*\}/g, event.logger)
+                .replace(/\$\{\s*timestamp\s*\}/g, event.timestamp.toString())
+                .replace(/\$\{\s*level\s*\}/g, event.level.label)
+                .replace(/\$\{\s*message\s*\}/g, event.message)
+                .replace(/\$\{\s*name\s*\}/g, this.name),
             msg: this.msgTemplate
-                .replace(/\$\{logger\}/g, event.logger)
-                .replace(/\$\{timestamp\}/g, event.timestamp.toString())
-                .replace(/\$\{level\}/g, event.level.label)
-                .replace(/\$\{message\}/g, event.message)
-                .replace(/\$\{name\}/g, this.name)
+                .replace(/\$\{\s*logger\s*\}/g, event.logger)
+                .replace(/\$\{\s*timestamp\s*\}/g, event.timestamp.toString())
+                .replace(/\$\{\s*level\s*\}/g, event.level.label)
+                .replace(/\$\{\s*message\s*\}/g, event.message)
+                .replace(/\$\{\s*name\s*\}/g, this.name)
         }
     }
 

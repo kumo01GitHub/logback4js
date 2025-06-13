@@ -2,12 +2,10 @@ import { LogLevel } from "../types/loglevel";
 import { ConsoleAppender } from "./console.appender";
 
 describe('ConsoleAppender', () => {
-  let appender: ConsoleAppender;
+  const appender: ConsoleAppender = new ConsoleAppender();
   let spys: { [key: string]: any };
 
   beforeEach(() => {
-    appender = new ConsoleAppender();
-
     spys = {
       log: jest.spyOn(console, 'log'),
       trace: jest.spyOn(console, 'trace'),
