@@ -4,9 +4,10 @@ import { type Appender, type ILoggingEvent } from './appender';
  * Appender whose log message type is text.
  */
 export abstract class TextAppender implements Appender {
+    private static readonly DEFAULT_TEMPLATE: string = "[${logger}:${level}] ${timestamp} - ${message}";
 
     constructor(
-        private template: string = "[${logger}:${level}] ${timestamp} - ${message}"
+        private template: string = TextAppender.DEFAULT_TEMPLATE
     ) { }
 
     /**
@@ -16,10 +17,10 @@ export abstract class TextAppender implements Appender {
      */
     public getMessage(event: ILoggingEvent): string {
         return this.template
-            .replace(/\$\{logger\}/g, event.logger)
-            .replace(/\$\{timestamp\}/g, event.timestamp.toString())
-            .replace(/\$\{level\}/g, event.level.label)
-            .replace(/\$\{message\}/g, event.message)
+            .replace(/\$\{\s*logger\s*\}/g, event.logger)
+            .replace(/\$\{\s*timestamp\s*\}/g, event.timestamp.toString())
+            .replace(/\$\{\s*level\s*\}/g, event.level.label)
+            .replace(/\$\{\s*message\s*\}/g, event.message);
     }
 
     /**
