@@ -2,7 +2,8 @@
 
 ### 1.2.0
 
-- feat(angular): update Angular
+- feat(angular): bump Angular
+- chore: bump brace-expansion
 
 ### 1.1.0
 
