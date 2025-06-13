@@ -4,7 +4,7 @@ import { Database } from "sqlite3";
 
 
 describe('SqliteAppender', () => {
-  const filepath = './spec.sqlite';
+  const filepath = './mock/logback4js.sqlite';
   const appender: SqliteAppender = new SqliteAppender(filepath);
   const database: Database = new Database(filepath);
 
@@ -69,7 +69,7 @@ describe('SqliteAppender', () => {
         logger: "SqliteAppender",
         timestamp: new Date()
       });
-   }).not.toThrow();
+    }).not.toThrow();
   });
 
   it(`append ${LogLevel.Warn.label} log`, () => {

@@ -65,7 +65,7 @@ describe('PostgresAppender', () => {
         logger: "PostgresAppender",
         timestamp: new Date()
       });
-   }).not.toThrow();
+    }).not.toThrow();
   });
 
   it(`append ${LogLevel.Warn.label} log`, () => {
