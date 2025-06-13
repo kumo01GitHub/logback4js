@@ -2,6 +2,7 @@
 
 ### 1.2.0
 
+- feat(text): enhance bind parameter
 - feat(angular): bump Angular
 - chore: bump brace-expansion
 
