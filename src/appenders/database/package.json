@@ -1,0 +1,34 @@
+{
+  "name": "@logback4js/database",
+  "version": "1.1.0",
+  "description": "Database Appenders for Logback4js.",
+  "keywords": [
+    "log",
+    "logger",
+    "database",
+    "sqlite",
+    "sqlite3",
+    "postgres",
+    "MySQL",
+    "PostgreSQL",
+    "Redis"
+  ],
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kumo01GitHub/logback4js.git"
+  },
+  "author": "kumo01",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/pg": "^8.15.4",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@logback4js/core": "^1.1.0",
+    "mysql2": "^3.14.1",
+    "pg": "^8.16.0",
+    "redis": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  }
+}

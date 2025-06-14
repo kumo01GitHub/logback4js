@@ -14,3 +14,24 @@ services:
     ports:
       - "1025:1025"
       - "8025:8025"
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./postgres:/docker-entrypoint-initdb.d
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+  mysql:
+    container_name: mysql
+    image: mysql:latest
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+      MYSQL_USER: "mysql"
+      MYSQL_PASSWORD: "password"
+    volumes:
+      - ./mysql:/docker-entrypoint-initdb.d
