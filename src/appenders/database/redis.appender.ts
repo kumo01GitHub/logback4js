@@ -9,7 +9,6 @@ import { createClient } from "redis";
  * @see {@link https://redis.io/docs/latest/develop/clients/nodejs/|node-redis}
  */
 export class RedisAppender extends DatabaseAppender {
-    private client;
     private static readonly DEFAULT_TEMPLATE: string = "[${logger}:${level}] ${timestamp} - ${message}";
 
     constructor(
@@ -18,7 +17,6 @@ export class RedisAppender extends DatabaseAppender {
         template: string = RedisAppender.DEFAULT_TEMPLATE
     ) {
         super(url, template);
-        this.client = createClient({ url });
     }
 
     public getMessage(event: ILoggingEvent): string {
@@ -36,7 +34,13 @@ export class RedisAppender extends DatabaseAppender {
 
     public doAppend(event: ILoggingEvent): void {
         if (event.level.priority) {
-            this.client.rpush(this.key, this.getMessage(event));
+            const url: string = this.url;
+            const client = createClient({ url });
+            client.connect().then(() => {
+                client.rPush(this.key, this.getMessage(event)).finally(() => {
+                    client.close();
+                });
+            });
         }
     }
 }
