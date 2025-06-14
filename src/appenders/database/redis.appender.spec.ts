@@ -3,7 +3,8 @@ import { RedisAppender } from "./redis.appender";
 
 
 describe('RedisAppender', () => {
-  const appender: RedisAppender = new RedisAppender("redis://localhost:6379", "spec");
+  const name: string = "spec";
+  const appender: RedisAppender = new RedisAppender("redis://localhost:6379", name);
 
   it('should be created', () => {
     expect(appender).toBeTruthy();
@@ -11,7 +12,7 @@ describe('RedisAppender', () => {
 
   it('has name', () => {
     expect(appender.name).toBeTruthy();
-    expect(appender.name).toEqual("spec");
+    expect(appender.name).toEqual(name);
   });
 
   it('has doAppend method', () => {
