@@ -38,6 +38,10 @@ List of Appenders library provides:
 | LocalStorage Appender | `@logback4js/core` | Output to LocalStorage. Core module. |
 | Simple Mail Appender | `@logback4js/mail` | Send text mail using [Nodemailer](https://nodemailer.com). |
 | Rich Mail Appender | `@logback4js/mail` | Send html mail using [Nodemailer](https://nodemailer.com). |
+| SQLite Appender | `@logback4js/database` | Insert record into SQLite database using [node-sqlite3](https://github.com/TryGhost/node-sqlite3). When using this appender, install [sqlite3](https://www.npmjs.com/package/sqlite3). It is planed to be migrate [node:sqlite](https://nodejs.org/api/sqlite.html#sqlite) after Node.js v20 is going to be EOL. |
+| PostgreSQL Appender | `@logback4js/database` | Insert record into PostgreSQL database using [node-postgres](https://node-postgres.com). When using this appender, install [pg](https://www.npmjs.com/package/pg). |
+| MySQL Appender | `@logback4js/database` | Insert record into MySQL database using [MySQL2](https://sidorares.github.io/node-mysql2/docs). When using this appender, install [mysql2](https://www.npmjs.com/package/mysql2). Not tested yet. |
+| Redis Appender | `@logback4js/database` | Set key into Redis using [node-redis](https://redis.io/docs/latest/develop/clients/nodejs/). When using this appender, install [redis](https://www.npmjs.com/package/redis). |
 | Google Analytics Appender | `@logback4js/google-analytics` | Send event using [Google Analytics](https://developers.google.com/analytics). |
 | Google Analytics for Firebase Appender | `@logback4js/google-analytics` | Send event using [Google Analytics for Firebase](https://firebase.google.com/docs/analytics). |
 | Slack Appender | `@logback4js/slack` | Send message using [Slack Web API](https://api.slack.com/web). Not tested yet. |
