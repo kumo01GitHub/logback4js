@@ -21,6 +21,7 @@ export class MySQLAppender extends DatabaseAppender {
         this.connection.config.queryFormat = function (query, values) {
             if (!values) return query;
             return query.replace(/\$\{\s*(\w+)\s*\}/g, function (txt: string, key: string) {
+                // eslint-disable-next-line no-prototype-builtins
                 if (values.hasOwnProperty(key)) {
                     return escape(values[key]);
                 }
