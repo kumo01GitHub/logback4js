@@ -1,11 +1,11 @@
 import { LogLevel } from "@logback4js/core";
-import { SqliteAppender } from "./sqlite.appender";
+import { SQLiteAppender } from "./sqlite.appender";
 import { Database } from "sqlite3";
 
 
-describe('SqliteAppender', () => {
+describe('SQLiteAppender', () => {
   const filepath = './mock/logback4js.sqlite';
-  const appender: SqliteAppender = new SqliteAppender(filepath);
+  const appender: SQLiteAppender = new SQLiteAppender(filepath);
   const database: Database = new Database(filepath);
 
   beforeAll((done) => {
@@ -21,7 +21,7 @@ describe('SqliteAppender', () => {
 
   it('has name', () => {
     expect(appender.name).toBeTruthy();
-    expect(appender.name).toEqual(SqliteAppender.name);
+    expect(appender.name).toEqual(SQLiteAppender.name);
   });
 
   it('has doAppend method', () => {
@@ -33,7 +33,7 @@ describe('SqliteAppender', () => {
       appender.doAppend({
         level: LogLevel.None,
         message: `${LogLevel.None.label} message`,
-        logger: "SqliteAppender",
+        logger: "SQLiteAppender",
         timestamp: new Date()
       });
     }).not.toThrow();
@@ -44,7 +44,7 @@ describe('SqliteAppender', () => {
       appender.doAppend({
         level: LogLevel.Trace,
         message: `${LogLevel.Trace.label} message`,
-        logger: "SqliteAppender",
+        logger: "SQLiteAppender",
         timestamp: new Date()
       });
     }).not.toThrow();
@@ -55,7 +55,7 @@ describe('SqliteAppender', () => {
       appender.doAppend({
         level: LogLevel.Debug,
         message: `${LogLevel.Debug.label} message`,
-        logger: "SqliteAppender",
+        logger: "SQLiteAppender",
         timestamp: new Date()
       });
     }).not.toThrow();
@@ -66,7 +66,7 @@ describe('SqliteAppender', () => {
       appender.doAppend({
         level: LogLevel.Info,
         message: `${LogLevel.Info.label} message`,
-        logger: "SqliteAppender",
+        logger: "SQLiteAppender",
         timestamp: new Date()
       });
     }).not.toThrow();
@@ -77,7 +77,7 @@ describe('SqliteAppender', () => {
       appender.doAppend({
         level: LogLevel.Warn,
         message: `${LogLevel.Warn.label} message`,
-        logger: "SqliteAppender",
+        logger: "SQLiteAppender",
         timestamp: new Date()
       });
     }).not.toThrow();
@@ -88,7 +88,7 @@ describe('SqliteAppender', () => {
       appender.doAppend({
         level: LogLevel.Error,
         message: `${LogLevel.Error.label} message`,
-        logger: "SqliteAppender",
+        logger: "SQLiteAppender",
         timestamp: new Date()
       });
     }).not.toThrow();

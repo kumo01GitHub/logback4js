@@ -7,7 +7,7 @@ import { Database } from "sqlite3";
  * SQLite Appender.\
  * For now, using [node-sqlite3](https://github.com/TryGhost/node-sqlite3). It is planed to be migrate [node:sqlite](https://nodejs.org/api/sqlite.html#sqlite) after Node.js v20 is going to be EOL.
  */
-export class SqliteAppender extends DatabaseAppender {
+export class SQLiteAppender extends DatabaseAppender {
     private database: Database;
 
     constructor(
