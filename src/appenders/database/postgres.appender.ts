@@ -1,6 +1,6 @@
 import { ILoggingEvent } from "@logback4js/core";
-import { Pool, PoolConfig } from "pg";
 import { DatabaseAppender } from "./database.appender";
+import { Pool } from "pg";
 
 
 /**
@@ -13,10 +13,11 @@ export class PostgresAppender extends DatabaseAppender {
     private params: ("logger" | "timestamp" | "level" | "message")[] = [];
 
     constructor(
-        config: PoolConfig,
+        url: string,
         query?: string
     ) {
-        super(query);
+        super(url, query);
+        this.pool = new Pool({ connectionString: url });
 
         if (this.query.includes("logger")) {
             this.params.push("logger");
@@ -30,8 +31,6 @@ export class PostgresAppender extends DatabaseAppender {
         if (this.query.includes("message")) {
             this.params.push("message");
         }
-
-        this.pool = new Pool(config);
     }
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any

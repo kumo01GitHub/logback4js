@@ -3,13 +3,7 @@ import { PostgresAppender } from "./postgres.appender";
 
 
 describe('PostgresAppender', () => {
-  const appender: PostgresAppender = new PostgresAppender({
-      user: 'postgres',
-      host: 'localhost',
-      database: 'logback4js',
-      password: 'postgres',
-      port: 5432
-    });
+  const appender: PostgresAppender = new PostgresAppender("postgresql://postgres:postgres@localhost:5432/logback4js");
 
   it('should be created', () => {
     expect(appender).toBeTruthy();

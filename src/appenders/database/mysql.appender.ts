@@ -12,12 +12,12 @@ export class MySQLAppender extends DatabaseAppender {
     private connection: Connection;
 
     constructor(
-        connectionUri: string,
+        url: string,
         query?: string
     ) {
-        super(query);
+        super(url, query);
 
-        this.connection = createConnection(connectionUri);
+        this.connection = createConnection(url);
         this.connection.config.queryFormat = function (query, values) {
             if (!values) return query;
             return query.replace(/\$\{\s*(\w+)\s*\}/g, function (txt: string, key: string) {

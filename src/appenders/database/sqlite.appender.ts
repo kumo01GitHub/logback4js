@@ -14,7 +14,7 @@ export class SqliteAppender extends DatabaseAppender {
         filepath: string,
         query?: string,
     ) {
-        super(query);
+        super(filepath, query);
         this.database = new Database(filepath);
     }
 
