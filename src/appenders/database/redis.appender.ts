@@ -24,8 +24,7 @@ export class RedisAppender extends DatabaseAppender {
             .replace(/\$\{\s*logger\s*\}/g, event.logger)
             .replace(/\$\{\s*timestamp\s*\}/g, event.timestamp.toString())
             .replace(/\$\{\s*level\s*\}/g, event.level.label)
-            .replace(/\$\{\s*message\s*\}/g, event.message)
-            .replace(/\$\{\s*name\s*\}/g, this.name);
+            .replace(/\$\{\s*message\s*\}/g, event.message);
     }
 
     public get name(): string {

@@ -1,5 +1,5 @@
 import { ILoggingEvent } from "@logback4js/core";
-import { createConnection, Connection, escape } from "mysql2";
+import { createPool, Pool, escape } from "mysql2/promise";
 import { DatabaseAppender } from "./database.appender";
 
 
@@ -9,7 +9,7 @@ import { DatabaseAppender } from "./database.appender";
  * @see {@link https://sidorares.github.io/node-mysql2/docs|MySQL2}
  */
 export class MySQLAppender extends DatabaseAppender {
-    private connection: Connection;
+    private pool: Pool;
 
     constructor(
         url: string,
@@ -17,23 +17,25 @@ export class MySQLAppender extends DatabaseAppender {
     ) {
         super(url, query);
 
-        this.connection = createConnection(url);
-        this.connection.config.queryFormat = function (query, values) {
-            if (!values) return query;
-            return query.replace(/\$\{\s*(\w+)\s*\}/g, function (txt: string, key: string) {
-                // eslint-disable-next-line no-prototype-builtins
-                if (values.hasOwnProperty(key)) {
-                    return escape(values[key]);
-                }
-                return txt;
-            }.bind(this));
-        };
+        this.pool = createPool({
+            uri: url,
+            namedPlaceholders: true,
+            queryFormat: (query, values) => {
+                if (!values) return query;
+                return query.replace(/\$\{\s*(\w+)\s*\}/g, function (txt: string, key: string) {
+                    // eslint-disable-next-line no-prototype-builtins
+                    if (values.hasOwnProperty(key)) {
+                        return escape(values[key]);
+                    }
+                    return txt;
+                }.bind(this));
+            },
+        });
     }
 
-    // @ts-expect-error TS6133: 'event' is declared but its value is never read.
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    public getMessage(event: ILoggingEvent): string {
-        return this.query;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    public getMessage(event: ILoggingEvent): { query: string, values: any } {
+        return { query: this.query, values: event };
     }
 
     public get name(): string {
@@ -42,7 +44,8 @@ export class MySQLAppender extends DatabaseAppender {
 
     public doAppend(event: ILoggingEvent): void {
         if (event.level.priority) {
-            this.connection.query(this.getMessage(event), event);
+            const msg = this.getMessage(event);
+            this.pool.query(msg.query, msg.values);
         }
     }
 }
