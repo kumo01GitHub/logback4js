@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/twitter",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Twitter Appenders for Logback4js.",
   "keywords": [
     "log",
@@ -21,7 +21,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@logback4js/core": "^1.1.0",
+    "@logback4js/core": "^1.2.0",
     "twitter-api-sdk": "^1.2.1"
   }
 }
