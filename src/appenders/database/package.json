@@ -25,10 +25,6 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@logback4js/core": "^1.1.0",
-    "mysql2": "^3.14.1",
-    "pg": "^8.16.0",
-    "redis": "^5.1.1",
-    "sqlite3": "^5.1.7"
+    "@logback4js/core": "^1.1.0"
   }
 }
