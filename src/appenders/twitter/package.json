@@ -11,6 +11,7 @@
     "X API"
   ],
   "type": "module",
+  "exports": "./index.es.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kumo01GitHub/logback4js.git"
