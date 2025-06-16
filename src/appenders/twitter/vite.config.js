@@ -29,7 +29,6 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         name: "TwitterAppenders",
         entry: path.resolve(__dirname, "index.ts"),
         formats: ["es", "cjs", "umd"],
-        fileName: (format, entryName) => `${entryName}.${format}.js`,
       },
     },
   };
