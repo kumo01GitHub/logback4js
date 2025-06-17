@@ -9,6 +9,7 @@
   ],
   "exports": {
     ".": {
+      "types": "./index.d.ts",
       "browser": "./index.js",
       "umd": "./index.umd.js",
       "require": "./index.js",

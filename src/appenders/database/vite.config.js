@@ -29,6 +29,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         name: "DatabaseAppenders",
         entry: path.resolve(__dirname, "index.ts"),
         formats: ["es", "cjs", "umd"],
+        fileName: "index",
       },
       rollupOptions: {
         // https://github.com/brianc/node-postgres/issues/2987

@@ -40,6 +40,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         name: "GoogleAnalyticsAppenders",
         entry: path.resolve(__dirname, "index.ts"),
         formats: ["es", "cjs", "umd"],
+        fileName: "index",
       },
     },
   };
