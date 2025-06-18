@@ -40,7 +40,16 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         name: "GoogleAnalyticsAppenders",
         entry: path.resolve(__dirname, "index.ts"),
         formats: ["es", "cjs", "umd"],
-        fileName: (format, entryName) => `${entryName}.${format}.js`,
+        fileName: "index",
+      },
+      rollupOptions: {
+        external: [ "@logback4js/core", "firebase" ],
+        output: {
+          globals: {
+            "@logback4js/core": "core",
+            firebase: "firebase",
+          }
+        }
       },
     },
   };

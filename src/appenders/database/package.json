@@ -13,7 +13,16 @@
     "PostgreSQL",
     "Redis"
   ],
-  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "browser": "./index.js",
+      "umd": "./index.umd.js",
+      "require": "./index.js",
+      "import": "./index.mjs"
+    }
+  },
+  "types": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kumo01GitHub/logback4js.git"
@@ -25,6 +34,10 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@logback4js/core": "^1.2.0"
+    "@logback4js/core": "^1.2.0",
+    "mysql2": "^3.14.1",
+    "pg": "^8.16.0",
+    "redis": "^5.5.6",
+    "sqlite3": "^5.1.7"
   }
 }

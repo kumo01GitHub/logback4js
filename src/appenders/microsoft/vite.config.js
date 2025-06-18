@@ -29,7 +29,16 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         name: "MicrosoftAppenders",
         entry: path.resolve(__dirname, "index.ts"),
         formats: ["es", "cjs", "umd"],
-        fileName: (format, entryName) => `${entryName}.${format}.js`,
+        fileName: "index",
+      },
+      rollupOptions: {
+        external: [ "@logback4js/core", "@microsoft/microsoft-graph-client" ],
+        output: {
+          globals: {
+            "@logback4js/core": "core",
+            "@microsoft/microsoft-graph-client": "microsoft-graph-client",
+          }
+        }
       },
     },
   };

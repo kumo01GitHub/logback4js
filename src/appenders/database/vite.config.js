@@ -29,11 +29,20 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         name: "DatabaseAppenders",
         entry: path.resolve(__dirname, "index.ts"),
         formats: ["es", "cjs", "umd"],
-        fileName: (format, entryName) => `${entryName}.${format}.js`,
+        fileName: "index",
       },
       rollupOptions: {
         // https://github.com/brianc/node-postgres/issues/2987
-        external: ["pg-cloudflare"],
+        external: [ "@logback4js/core", "mysql2", "pg-cloudflare", "pg", "sqlite3", "redis" ],
+        output: {
+          globals: {
+            "@logback4js/core": "core",
+            mysql2: "mysql2",
+            pg: "pg",
+            sqlite3: "sqlite3",
+            redis: "redis",
+          }
+        }
       },
     },
   };

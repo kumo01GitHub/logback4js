@@ -7,7 +7,16 @@
     "logger",
     "Discord"
   ],
-  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "browser": "./index.js",
+      "umd": "./index.umd.js",
+      "require": "./index.js",
+      "import": "./index.mjs"
+    }
+  },
+  "types": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kumo01GitHub/logback4js.git"

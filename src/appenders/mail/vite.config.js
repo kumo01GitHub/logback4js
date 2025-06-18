@@ -29,7 +29,16 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         name: "MailAppenders",
         entry: path.resolve(__dirname, "index.ts"),
         formats: ["es", "cjs", "umd"],
-        fileName: (format, entryName) => `${entryName}.${format}.js`,
+        fileName: "index",
+      },
+      rollupOptions: {
+        external: [ "@logback4js/core", "nodemailer" ],
+        output: {
+          globals: {
+            "@logback4js/core": "core",
+            nodemailer: "nodemailer",
+          }
+        }
       },
     },
   };

@@ -29,7 +29,17 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         name: "DiscordAppenders",
         entry: path.resolve(__dirname, "index.ts"),
         formats: ["es", "cjs", "umd"],
-        fileName: (format, entryName) => `${entryName}.${format}.js`,
+        fileName: "index",
+      },
+      rollupOptions: {
+        external: [ "@logback4js/core", "axios", "discord.js" ],
+        output: {
+          globals: {
+            "@logback4js/core": "core",
+            axios: "axios",
+            "discord.js": "discord",
+          }
+        }
       },
     },
   };

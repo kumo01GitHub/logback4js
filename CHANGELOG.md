@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.0.0
+
+- fix: invalid package.json
+
 ### 1.2.0
 
 - feat(database): support PostgreSQL/MySQL/SQLite/Redis
