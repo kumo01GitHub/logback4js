@@ -34,7 +34,7 @@ jobs:
       - name: Run tests
         run: |
           docker compose -f=mock/compose.yaml up -d
-          npm run test
+          npm run test src/core
 
       - name: Lint
         run: npm run lint

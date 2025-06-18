@@ -32,7 +32,13 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         fileName: "index",
       },
       rollupOptions: {
-        external: [ "@logback4js/core" ],
+        external: [ "@logback4js/core", "@angular/common" ],
+        output: {
+          globals: {
+            "@logback4js/core": "core",
+            "@angular/common": "angular",
+          }
+        }
       },
     },
   };

@@ -32,7 +32,13 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         fileName: "index",
       },
       rollupOptions: {
-        external: [ "@logback4js/core" ],
+        external: [ "@logback4js/core", "@slack/web-api" ],
+        output: {
+          globals: {
+            "@logback4js/core": "core",
+            "@slack/web-api": "slack_web-api",
+          }
+        }
       },
     },
   };

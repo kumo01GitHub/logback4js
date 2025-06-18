@@ -32,7 +32,13 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         fileName: "index",
       },
       rollupOptions: {
-        external: [ "@logback4js/core" ],
+        external: [ "@logback4js/core", "@line/bot-sdk" ],
+        output: {
+          globals: {
+            "@logback4js/core": "core",
+            "@line/bot-sdk": "line_bot-sdk",
+          }
+        }
       },
     },
   };

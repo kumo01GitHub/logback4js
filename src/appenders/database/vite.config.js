@@ -33,7 +33,16 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       },
       rollupOptions: {
         // https://github.com/brianc/node-postgres/issues/2987
-        external: [ "@logback4js/core", "pg-cloudflare" ],
+        external: [ "@logback4js/core", "mysql2", "pg-cloudflare", "pg", "sqlite3", "redis" ],
+        output: {
+          globals: {
+            "@logback4js/core": "core",
+            mysql2: "mysql2",
+            pg: "pg",
+            sqlite3: "sqlite3",
+            redis: "redis",
+          }
+        }
       },
     },
   };
