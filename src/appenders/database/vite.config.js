@@ -33,7 +33,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       },
       rollupOptions: {
         // https://github.com/brianc/node-postgres/issues/2987
-        external: ["pg-cloudflare"],
+        external: [ "@logback4js/core", "pg-cloudflare" ],
       },
     },
   };

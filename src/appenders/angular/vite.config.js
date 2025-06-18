@@ -31,6 +31,9 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         formats: ['es', 'cjs', 'umd'],
         fileName: "index",
       },
+      rollupOptions: {
+        external: [ "@logback4js/core" ],
+      },
     },
   };
 });
