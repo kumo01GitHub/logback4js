@@ -94,7 +94,9 @@ export abstract class MailAppender implements Appender {
     /**
      * Appender name. Logger uses for key to manage Appenders.
      */
-    abstract get name(): string;
+    public get name(): string {
+        return "Mail";
+    }
 
     /**
      * Do append.

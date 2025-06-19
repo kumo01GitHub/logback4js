@@ -15,7 +15,7 @@ export class HttpPostAppender extends JsonAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return "HttpPost";
     }
 
     public doAppend(event: ILoggingEvent): void {

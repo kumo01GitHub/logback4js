@@ -20,7 +20,7 @@ export class DiscordAppender extends TextAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return "Discord";
     }
 
     public doAppend(event: ILoggingEvent): void {

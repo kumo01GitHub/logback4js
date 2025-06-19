@@ -19,7 +19,7 @@ export class LineMessagingApiAppender extends TextAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return "Line";
     }
 
     public doAppend(event: ILoggingEvent): void {

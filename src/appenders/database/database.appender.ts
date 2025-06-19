@@ -6,11 +6,14 @@ import { Appender, type ILoggingEvent } from "@logback4js/core";
  */
 export abstract class DatabaseAppender implements Appender {
     private static readonly DEFAULT_QUERY: string = "INSERT INTO log (logger, \"timestamp\", \"level\", \"message\") VALUES (${logger}, ${timestamp}, ${level}, ${message});";
+    private readonly _name: string;
 
     constructor(
         protected readonly url: string,
         protected readonly query: string = DatabaseAppender.DEFAULT_QUERY
-    ) { }
+    ) {
+        this._name = new URL(url).hostname;
+    }
 
     /**
      * Get query using template.
@@ -23,7 +26,9 @@ export abstract class DatabaseAppender implements Appender {
     /**
      * Appender name. Logger uses for key to manage Appenders.
      */
-    abstract get name(): string;
+    public get name(): string {
+        return this._name;
+    }
 
     /**
      * Do append.

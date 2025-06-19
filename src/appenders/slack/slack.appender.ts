@@ -18,7 +18,7 @@ export class SlackAppender extends TextAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return this.channel;
     }
 
     public doAppend(event: ILoggingEvent): void {

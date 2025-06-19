@@ -13,7 +13,7 @@ export class ConsoleAppender extends TextAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return "Console";
     }
 
     public doAppend(event: ILoggingEvent): void {

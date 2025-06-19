@@ -12,7 +12,7 @@ export class GoogleAnalyticsAppender extends JsonAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return this.eventName;
     }
 
     public doAppend(event: ILoggingEvent): void {

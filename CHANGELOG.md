@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.0.1
+
+- fix: optimized logger name
+
 ### 2.0.0
 
 - fix: invalid package.json
