@@ -2,7 +2,7 @@
 
 ### 2.0.1
 
-- fix: optimized logger name
+- fix: optimized appender name
 
 ### 2.0.0
 
