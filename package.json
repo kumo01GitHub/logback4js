@@ -2,10 +2,8 @@
   "name": "logback4js",
   "version": "2.0.0",
   "description": "Logger for JavaScript inspired by Logback.",
-  "keywords": [
-    "log",
-    "logger"
-  ],
+  "keywords": [ "log", "logger" ],
+  "workspaces": [ "src/core", "src/appenders/*" ],
   "scripts": {
     "build": "node tools/build-modules.js",
     "build:core": "vite build --config src/core/vite.config.js",
@@ -42,16 +40,6 @@
   "license": "MIT",
   "devDependencies": {
     "@eslint/js": "^9.25.1",
-    "@logback4js/angular": "file:src/appenders/angular",
-    "@logback4js/core": "file:src/core",
-    "@logback4js/database": "file:src/appenders/database",
-    "@logback4js/discord": "file:src/appenders/discord",
-    "@logback4js/google-analytics": "file:src/appenders/google-analytics",
-    "@logback4js/line": "file:src/appenders/line",
-    "@logback4js/mail": "file:src/appenders/mail",
-    "@logback4js/microsoft": "file:src/appenders/microsoft",
-    "@logback4js/slack": "file:src/appenders/slack",
-    "@logback4js/twitter": "file:src/appenders/twitter",
     "@npmcli/package-json": "^6.1.1",
     "@npmcli/run-script": "^9.1.0",
     "@types/jest": "^29.5.13",

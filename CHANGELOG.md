@@ -3,6 +3,7 @@
 ### 2.0.1
 
 - fix: optimized appender name
+- chore: define monorepo workspaces
 
 ### 2.0.0
 
