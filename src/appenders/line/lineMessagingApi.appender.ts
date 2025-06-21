@@ -38,7 +38,6 @@ export class LineMessagingApiAppender extends TextAppender {
                     ],
                     to: this.to as string
                 });
-
             } else {
                 this.client.multicast({
                     messages: [
