@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/microsoft",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Microsoft Appenders for Logback4js.",
   "keywords": [
     "log",
@@ -29,7 +29,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@logback4js/core": "^2.0.0",
+    "@logback4js/core": "^2.1.0",
     "@microsoft/microsoft-graph-client": "^3.0.7"
   }
 }

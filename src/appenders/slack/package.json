@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/slack",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Slack Appenders for Logback4js.",
   "keywords": [
     "log",
@@ -27,7 +27,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@logback4js/core": "^2.0.0",
+    "@logback4js/core": "^2.1.0",
     "@slack/web-api": "^7.5.0"
   }
 }
