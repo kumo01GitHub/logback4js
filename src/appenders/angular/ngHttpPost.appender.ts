@@ -15,7 +15,7 @@ export class NgHttpPostAppender extends JsonAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return "NgHttpPost";
     }
 
     public doAppend(event: ILoggingEvent): void {

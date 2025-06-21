@@ -18,7 +18,7 @@ export class MSTeamsAppender extends TextAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return this.teamId;
     }
 
     public doAppend(event: ILoggingEvent): void {

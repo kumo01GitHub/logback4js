@@ -20,10 +20,6 @@ export class RichMailAppender extends MailAppender {
         super(options, from, sender, to, cc, bcc, subjTemplate, msgTemplate);
     }
 
-    public get name(): string {
-        return this.constructor.name;
-    }
-
     public doAppend(event: ILoggingEvent): void {
         const message = this.getMessage(event);
         if (event.level.priority) {

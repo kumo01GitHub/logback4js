@@ -30,7 +30,7 @@ describe('HttpPostAppender', () => {
 
   it('has name', () => {
     expect(appender.name).toBeTruthy();
-    expect(appender.name).toEqual(HttpPostAppender.name);
+    expect(appender.name).toEqual(new URL(url).hostname);
   });
 
   it('has doAppend method', () => {

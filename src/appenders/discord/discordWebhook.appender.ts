@@ -15,7 +15,7 @@ export class DiscordWebhookAppender extends TextAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return "DiscordWebhook";
     }
 
     public doAppend(event: ILoggingEvent): void {

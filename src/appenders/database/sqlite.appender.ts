@@ -1,6 +1,7 @@
 import { ILoggingEvent } from "@logback4js/core";
 import { DatabaseAppender } from "./database.appender";
 import { Database } from "sqlite3";
+import { basename } from "node:path";
 
 
 /**
@@ -9,6 +10,7 @@ import { Database } from "sqlite3";
  */
 export class SQLiteAppender extends DatabaseAppender {
     private database: Database;
+    private readonly _dbname: string;
 
     constructor(
         filepath: string,
@@ -16,6 +18,7 @@ export class SQLiteAppender extends DatabaseAppender {
     ) {
         super(filepath, query);
         this.database = new Database(filepath);
+        this._dbname = basename(filepath);
     }
 
     public getMessage(
@@ -31,7 +34,7 @@ export class SQLiteAppender extends DatabaseAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return this._dbname;
     }
 
     public doAppend(event: ILoggingEvent): void {

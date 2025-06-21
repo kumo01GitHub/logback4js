@@ -20,7 +20,7 @@ export class TwitterAppender extends TextAppender {
     }
 
     public get name(): string {
-        return this.constructor.name;
+        return "Twitter";
     }
 
     public doAppend(event: ILoggingEvent): void {

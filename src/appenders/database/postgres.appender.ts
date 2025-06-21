@@ -62,10 +62,6 @@ export class PostgresAppender extends DatabaseAppender {
         return { query: q, values: values };
     }
 
-    public get name(): string {
-        return this.constructor.name;
-    }
-
     public doAppend(event: ILoggingEvent): void {
         if (event.level.priority) {
             this.pool.connect((err, client) => {

@@ -17,7 +17,7 @@ export interface Address {
  */
 export abstract class MailAppender implements Appender {
     protected transporter: Transporter;
-    private static readonly DEFAULT_SUBJ_TEMPLATE: string = "[${logger}] ${level} - ${name}";
+    private static readonly DEFAULT_SUBJ_TEMPLATE: string = "[${logger}] ${level} - ${appender}";
     private static readonly DEFAULT_MSG_TEMPLATE: string = "${message}";
 
     constructor(
@@ -50,13 +50,13 @@ export abstract class MailAppender implements Appender {
                 .replace(/\$\{\s*timestamp\s*\}/g, event.timestamp.toString())
                 .replace(/\$\{\s*level\s*\}/g, event.level.label)
                 .replace(/\$\{\s*message\s*\}/g, event.message)
-                .replace(/\$\{\s*name\s*\}/g, this.name),
+                .replace(/\$\{\s*appender\s*\}/g, this.name),
             msg: this.msgTemplate
                 .replace(/\$\{\s*logger\s*\}/g, event.logger)
                 .replace(/\$\{\s*timestamp\s*\}/g, event.timestamp.toString())
                 .replace(/\$\{\s*level\s*\}/g, event.level.label)
                 .replace(/\$\{\s*message\s*\}/g, event.message)
-                .replace(/\$\{\s*name\s*\}/g, this.name)
+                .replace(/\$\{\s*appender\s*\}/g, this.name)
         }
     }
 
@@ -94,7 +94,9 @@ export abstract class MailAppender implements Appender {
     /**
      * Appender name. Logger uses for key to manage Appenders.
      */
-    abstract get name(): string;
+    public get name(): string {
+        return "Mail";
+    }
 
     /**
      * Do append.

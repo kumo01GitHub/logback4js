@@ -29,7 +29,7 @@ describe('ConsoleAppender', () => {
 
   it('has name', () => {
     expect(appender.name).toBeTruthy();
-    expect(appender.name).toEqual(ConsoleAppender.name);
+    expect(appender.name).toEqual("console");
   });
 
   it('has doAppend method', () => {
