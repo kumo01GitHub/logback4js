@@ -1,6 +1,5 @@
 import { type Appender, type ILoggingEvent } from './appender';
 
-
 /**
  * Appender whose log message type is text.
  */

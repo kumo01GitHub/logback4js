@@ -1,7 +1,6 @@
 import { type ILoggingEvent } from "./appender";
 import { JsonAppender } from "./json.appender";
 
-
 /**
  * IndexedDB Appender.
  * @extends JsonAppender
