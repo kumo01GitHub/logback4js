@@ -9,6 +9,11 @@ export abstract class DatabaseAppender implements Appender {
     private static readonly DEFAULT_QUERY: string = "INSERT INTO log (logger, \"timestamp\", \"level\", \"message\") VALUES (${logger}, ${timestamp}, ${level}, ${message});";
     private readonly _name: string;
 
+    /**
+     * Database Appender.
+     * @param {string} url Database URL.
+     * @param {string} query Query template.
+     */
     constructor(
         protected readonly url: string,
         protected readonly query: string = DatabaseAppender.DEFAULT_QUERY

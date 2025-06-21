@@ -5,13 +5,17 @@ import { Pool } from "pg";
 
 /**
  * PostgreSQL Appender.
- * 
+ * @extends DatabaseAppender
  * @see {@link https://node-postgres.com|node-postgres}
  */
 export class PostgresAppender extends DatabaseAppender {
     private pool: Pool;
     private params: ("logger" | "timestamp" | "level" | "message")[] = [];
 
+    /**
+     * PostgreSQL Appender.
+     * @see {@link DatabaseAppender}
+     */
     constructor(
         url: string,
         query?: string

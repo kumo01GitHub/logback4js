@@ -1,11 +1,16 @@
 import { type Appender, type ILoggingEvent } from './appender';
 
+
 /**
  * Appender whose log message type is text.
  */
 export abstract class TextAppender implements Appender {
     private static readonly DEFAULT_TEMPLATE: string = "[${logger}:${level}] ${timestamp} - ${message}";
 
+    /**
+     * Text appender.
+     * @param {string} template Log message template.
+     */
     constructor(
         private template: string = TextAppender.DEFAULT_TEMPLATE
     ) { }
@@ -20,7 +25,8 @@ export abstract class TextAppender implements Appender {
             .replace(/\$\{\s*logger\s*\}/g, event.logger)
             .replace(/\$\{\s*timestamp\s*\}/g, event.timestamp.toString())
             .replace(/\$\{\s*level\s*\}/g, event.level.label)
-            .replace(/\$\{\s*message\s*\}/g, event.message);
+            .replace(/\$\{\s*message\s*\}/g, event.message)
+            .replace(/\$\{\s*appender\s*\}/g, this.name);
     }
 
     /**

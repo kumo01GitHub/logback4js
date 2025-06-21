@@ -5,12 +5,16 @@ import { createClient } from "redis";
 
 /**
  * Redis Appender.
- * 
+ * @extends DatabaseAppender
  * @see {@link https://redis.io/docs/latest/develop/clients/nodejs/|node-redis}
  */
 export class RedisAppender extends DatabaseAppender {
     private static readonly DEFAULT_TEMPLATE: string = "[${logger}:${level}] ${timestamp} - ${message}";
 
+    /**
+     * Redis Appender.
+     * @see {@link DatabaseAppender}
+     */
     constructor(
         url: string,
         private key: string,

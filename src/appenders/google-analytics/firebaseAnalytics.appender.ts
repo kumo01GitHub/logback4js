@@ -3,9 +3,15 @@ import { type ILoggingEvent, JsonAppender } from "@logback4js/core";
 
 /**
  * Google Analytics for Firebase Appender.
+ * @extends JsonAppender
  */
 export class FirebaseAnalyticsAppender extends JsonAppender {
 
+    /**
+     * Google Analytics for Firebase Appender.
+     * @param {Analytics} analytics An instance of Firebase Analytics.
+     * @param {string} eventName Event name.
+     */
     constructor(
         private analytics: Analytics,
         private eventName: string
@@ -14,7 +20,7 @@ export class FirebaseAnalyticsAppender extends JsonAppender {
     }
 
     public get name(): string {
-        return this.analytics.app.name;
+        return `firebase@${this.eventName}`;
     }
 
     public doAppend(event: ILoggingEvent): void {

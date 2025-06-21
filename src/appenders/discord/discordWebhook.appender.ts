@@ -3,6 +3,7 @@ import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Discord Webhook Appender.
+ * @extends TextAppender
  */
 export class DiscordWebhookAppender extends TextAppender {
 
@@ -14,6 +15,9 @@ export class DiscordWebhookAppender extends TextAppender {
         super(template);
     }
 
+    /**
+     * String `"DiscordWebhook"`
+     */
     public get name(): string {
         return "DiscordWebhook";
     }

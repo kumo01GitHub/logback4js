@@ -2,10 +2,18 @@ import { v4 as uuid } from 'uuid';
 import { type ILoggingEvent } from "./appender";
 import { TextAppender } from './text.appender';
 
+
 /**
  * LocalStorage Appender. The key is UUID.
+ * @extends TextAppender
  */
 export class LocalStorageAppender extends TextAppender {
+
+    /**
+     * LocalStorage Appender.
+     * @param {sting} keyPrefix Local storage key prefix.
+     * @param {string} template Log message template.
+     */
     constructor(
         private keyPrefix: string,
         template?: string
@@ -13,6 +21,9 @@ export class LocalStorageAppender extends TextAppender {
         super(template);
     }
 
+    /**
+     * Key prefix.
+     */
     public get name(): string {
         return this.keyPrefix;
     }
@@ -27,6 +38,6 @@ export class LocalStorageAppender extends TextAppender {
     }
 
     private generateKey(): string {
-        return this.keyPrefix + "." + uuid();
+        return this.keyPrefix + "@" + uuid();
     }
 }

@@ -2,6 +2,7 @@ import { type ILoggingEvent, JsonAppender } from "@logback4js/core";
 
 /**
  * Google Analytics Appender.
+ * @extends JsonAppender
  */
 export class GoogleAnalyticsAppender extends JsonAppender {
 
@@ -12,7 +13,7 @@ export class GoogleAnalyticsAppender extends JsonAppender {
     }
 
     public get name(): string {
-        return this.eventName;
+        return `ga@${this.eventName}`;
     }
 
     public doAppend(event: ILoggingEvent): void {

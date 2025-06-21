@@ -5,12 +5,16 @@ import { DatabaseAppender } from "./database.appender";
 
 /**
  * MySQL Appender.
- * 
+ * @extends DatabaseAppender
  * @see {@link https://sidorares.github.io/node-mysql2/docs|MySQL2}
  */
 export class MySQLAppender extends DatabaseAppender {
     private pool: Pool;
 
+    /**
+     * MySQL Appender.
+     * @see {@link DatabaseAppender}
+     */
     constructor(
         url: string,
         query?: string
@@ -36,10 +40,6 @@ export class MySQLAppender extends DatabaseAppender {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     public getMessage(event: ILoggingEvent): { query: string, values: any } {
         return { query: this.query, values: event };
-    }
-
-    public get name(): string {
-        return this.constructor.name;
     }
 
     public doAppend(event: ILoggingEvent): void {

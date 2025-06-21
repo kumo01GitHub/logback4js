@@ -4,14 +4,23 @@ import { TextAppender } from "./text.appender";
 
 /**
  * Console Appender.
+ * @extends TextAppender
  */
 export class ConsoleAppender extends TextAppender {
+
+    /**
+     * Console Appender.
+     * @param {string} template Log message template.
+     */
     constructor(
         template?: string
     ) {
         super(template);
     }
 
+    /**
+     * String `"console"`.
+     */
     public get name(): string {
         return "console";
     }

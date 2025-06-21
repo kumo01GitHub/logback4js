@@ -3,8 +3,14 @@ import { Address, MailAppender } from "./mail.appender";
 
 /**
  * Simple Mail Appender.
+ * @extends MailAppender
  */
 export class SimpleMailAppender extends MailAppender {
+
+    /**
+     * Simple Mail Appender.
+     * @see {@link MailAppender}
+     */
     constructor(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         options: any,
@@ -19,6 +25,9 @@ export class SimpleMailAppender extends MailAppender {
         super(options, from, sender, to, cc, bcc, subjTemplate, msgTemplate);
     }
 
+    /**
+     * Return string `"SimpleMail"`.
+     */
     public get name(): string {
         return "SimpleMail";
     }

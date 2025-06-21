@@ -5,6 +5,7 @@
 - fix: optimized appender name
 - chore: define monorepo workspaces
 - ci: fix jest error
+- doc: Update documents
 
 ### 2.0.0
 

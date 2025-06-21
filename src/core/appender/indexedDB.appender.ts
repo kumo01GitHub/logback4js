@@ -1,10 +1,18 @@
 import { type ILoggingEvent } from "./appender";
 import { JsonAppender } from "./json.appender";
 
+
 /**
  * IndexedDB Appender.
+ * @extends JsonAppender
  */
 export class IndexedDBAppender extends JsonAppender {
+
+    /**
+     * IndexedDB Appender.
+     * @param {string} dbName database name.
+     * @param {string} storeName store name.
+     */
     constructor(
         private dbName: string,
         private storeName: string
@@ -24,6 +32,9 @@ export class IndexedDBAppender extends JsonAppender {
         }
     }
 
+    /**
+     * Store name.
+     */
     public get name(): string {
         return this.storeName;
     }

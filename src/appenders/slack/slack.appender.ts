@@ -3,6 +3,7 @@ import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Slack Appender.
+ * @extends TextAppender
  */
 export class SlackAppender extends TextAppender {
     private client: WebClient;
@@ -18,7 +19,7 @@ export class SlackAppender extends TextAppender {
     }
 
     public get name(): string {
-        return this.channel;
+        return `slack@${this.channel}`;
     }
 
     public doAppend(event: ILoggingEvent): void {

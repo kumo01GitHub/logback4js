@@ -4,8 +4,14 @@ import { Address, MailAppender } from "./mail.appender";
 
 /**
  * Rich Mail Appender.
+ * @extends MailAppender
  */
 export class RichMailAppender extends MailAppender {
+
+    /**
+     * Rich Mail Appender.
+     * @see {@link MailAppender}
+     */
     constructor(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         options: any,
@@ -20,6 +26,9 @@ export class RichMailAppender extends MailAppender {
         super(options, from, sender, to, cc, bcc, subjTemplate, msgTemplate);
     }
 
+    /**
+     * Return string `"RichMail"`.
+     */
     public get name(): string {
         return "RichMail";
     }

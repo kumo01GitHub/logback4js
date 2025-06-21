@@ -3,6 +3,7 @@ import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * LINE Messaging API Appender.
+ * @extends TextAppender
  */
 export class LineMessagingApiAppender extends TextAppender {
     private client: line.messagingApi.MessagingApiClient;
@@ -18,8 +19,11 @@ export class LineMessagingApiAppender extends TextAppender {
           });
     }
 
+    /**
+     * String `"LINE"`
+     */
     public get name(): string {
-        return "Line";
+        return "LINE";
     }
 
     public doAppend(event: ILoggingEvent): void {

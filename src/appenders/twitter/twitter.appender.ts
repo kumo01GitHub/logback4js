@@ -6,6 +6,7 @@ import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 /**
  * Twitter Appender.
  * Using this Appender in browser, proxy setting is required to bypass CORS.
+ * @extends TextAppender
  */
 export class TwitterAppender extends TextAppender {
     private client: Client;
@@ -19,6 +20,9 @@ export class TwitterAppender extends TextAppender {
         this.client = new Client(auth, requestOptions);
     }
 
+    /**
+     * String `"Twitter"`
+     */
     public get name(): string {
         return "Twitter";
     }

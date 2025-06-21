@@ -12,7 +12,6 @@ export interface Address {
 
 /**
  * Mail Appender.
- * 
  * @see {@link https://nodemailer.com|Nodemailer}
  */
 export abstract class MailAppender implements Appender {
@@ -20,6 +19,17 @@ export abstract class MailAppender implements Appender {
     private static readonly DEFAULT_SUBJ_TEMPLATE: string = "[${logger}] ${level} - ${appender}";
     private static readonly DEFAULT_MSG_TEMPLATE: string = "${message}";
 
+    /**
+     * Mail Appender.
+     * @param {any} options {@link createTransport} options.
+     * @param {string | Address | undefined} from From.
+     * @param {string | Address | undefined} sender Sender.
+     * @param {string | Address | Array<string | Address> | undefined} to To.
+     * @param {string | Address | Array<string | Address> | undefined} cc CC.
+     * @param {string | Address | Array<string | Address> | undefined} bcc BCC.
+     * @param {string} subjTemplate Subject template.
+     * @param {string} msgTemplate Message template.
+     */
     constructor(
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         options: any,

@@ -3,6 +3,7 @@ import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Discord Appender.
+ * @extends TextAppender
  */
 export class DiscordAppender extends TextAppender {
     private client: Client | undefined;
@@ -20,7 +21,7 @@ export class DiscordAppender extends TextAppender {
     }
 
     public get name(): string {
-        return "Discord";
+        return `discord@${this.channelId}`;
     }
 
     public doAppend(event: ILoggingEvent): void {

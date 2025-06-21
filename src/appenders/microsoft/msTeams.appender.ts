@@ -3,6 +3,7 @@ import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * Microsoft Teams Appender.
+ * @extends TextAppender
  */
 export class MSTeamsAppender extends TextAppender {
     private client: Client;
@@ -18,7 +19,7 @@ export class MSTeamsAppender extends TextAppender {
     }
 
     public get name(): string {
-        return this.teamId;
+        return `msteams@${this.teamId}`;
     }
 
     public doAppend(event: ILoggingEvent): void {
