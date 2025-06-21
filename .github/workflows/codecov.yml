@@ -27,10 +27,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Build
+        run: npm run build
+
       - name: Run tests
         run: |
           docker compose -f=mock/compose.yaml up -d
-          npm run coverage src/core
+          npm run coverage
 
       - name: Upload results to Codecov
         uses: codecov/codecov-action@v4

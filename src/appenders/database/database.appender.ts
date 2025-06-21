@@ -1,4 +1,5 @@
 import { Appender, type ILoggingEvent } from "@logback4js/core";
+import { basename } from "node:path";
 
 
 /**
@@ -12,7 +13,7 @@ export abstract class DatabaseAppender implements Appender {
         protected readonly url: string,
         protected readonly query: string = DatabaseAppender.DEFAULT_QUERY
     ) {
-        this._name = new URL(url).hostname;
+        this._name = basename(url);
     }
 
     /**

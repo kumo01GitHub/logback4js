@@ -1,9 +1,11 @@
 import { LogLevel } from "@logback4js/core";
 import { PostgresAppender } from "./postgres.appender";
+import { basename } from "node:path";
 
 
 describe('PostgresAppender', () => {
-  const appender: PostgresAppender = new PostgresAppender("postgresql://postgres:postgres@localhost:5432/logback4js");
+  const url: string = "postgresql://postgres:postgres@localhost:5432/logback4js";
+  const appender: PostgresAppender = new PostgresAppender(url);
 
   it('should be created', () => {
     expect(appender).toBeTruthy();
@@ -11,7 +13,7 @@ describe('PostgresAppender', () => {
 
   it('has name', () => {
     expect(appender.name).toBeTruthy();
-    expect(appender.name).toEqual(PostgresAppender.name);
+    expect(appender.name).toEqual(basename(url));
   });
 
   it('has doAppend method', () => {

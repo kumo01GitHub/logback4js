@@ -22,7 +22,7 @@ describe('RichMailAppender', () => {
 
   it('has name', () => {
     expect(appender.name).toBeTruthy();
-    expect(appender.name).toEqual(RichMailAppender.name);
+    expect(appender.name).toEqual("RichMail");
   });
 
   it('has doAppend method', () => {
