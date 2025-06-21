@@ -1,9 +1,15 @@
 {
   "name": "logback4js",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Logger for JavaScript inspired by Logback.",
-  "keywords": [ "log", "logger" ],
-  "workspaces": [ "src/core", "src/appenders/*" ],
+  "keywords": [
+    "log",
+    "logger"
+  ],
+  "workspaces": [
+    "src/core",
+    "src/appenders/*"
+  ],
   "scripts": {
     "build": "node tools/build-modules.js",
     "build:core": "vite build --config src/core/vite.config.js",
