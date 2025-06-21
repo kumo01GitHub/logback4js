@@ -1,9 +1,10 @@
 # Changelog
 
-### 2.0.1
+### 2.1.0
 
 - fix: optimized appender name
 - chore: define monorepo workspaces
+- ci: fix jest error
 
 ### 2.0.0
 

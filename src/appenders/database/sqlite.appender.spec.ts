@@ -1,6 +1,7 @@
 import { LogLevel } from "@logback4js/core";
 import { SQLiteAppender } from "./sqlite.appender";
 import { Database } from "sqlite3";
+import { basename } from "node:path";
 
 
 describe('SQLiteAppender', () => {
@@ -21,7 +22,7 @@ describe('SQLiteAppender', () => {
 
   it('has name', () => {
     expect(appender.name).toBeTruthy();
-    expect(appender.name).toEqual(SQLiteAppender.name);
+    expect(appender.name).toEqual(basename(filepath));
   });
 
   it('has doAppend method', () => {
