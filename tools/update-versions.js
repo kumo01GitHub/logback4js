@@ -1,7 +1,6 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const { parseArgs } = require("node:util");
-
 const packageJson = require("@npmcli/package-json");
 const semver = require("semver");
 
