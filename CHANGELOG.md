@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.2.1
+
+- fix: remove mysql2
+- doc(database): database appender marked as experimental
+
 ### 2.2.0
 
 - fix: declaration file
