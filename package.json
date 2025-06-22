@@ -13,7 +13,6 @@
   "scripts": {
     "build": "node tools/build-modules.js",
     "build:core": "vite build --config src/core/vite.config.js",
-    "build:angular": "vite build --config src/appenders/angular/vite.config.js",
     "build:database": "vite build --config src/appenders/database/vite.config.js",
     "build:discord": "vite build --config src/appenders/discord/vite.config.js",
     "build:google-analytics": "vite build --config src/appenders/google-analytics/vite.config.js",
@@ -25,7 +24,6 @@
     "updatevers": "node tools/update-versions.js",
     "pubmods": "node tools/publish-modules.js",
     "publish:core": "npm run build:core && npm publish ./dist/core --access=public",
-    "publish:angular": "npm run build:angular && npm publish ./dist/appenders/angular --access=public",
     "publish:database": "npm run build:database && npm publish ./dist/appenders/database --access=public",
     "publish:discord": "npm run build:discord && npm publish ./dist/appenders/discord --access=public",
     "publish:google-analytics": "npm run build:google-analytics && npm publish ./dist/appenders/google-analytics --access=public",

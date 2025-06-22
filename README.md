@@ -50,7 +50,6 @@ List of Appenders library provides:
 | Discord Appender | `@logback4js/discord` | Send message using [discord.js](https://discord.js.org). Use Discord Webhook Appender might be better. Not tested yet. |
 | Discord Webhook Appender | `@logback4js/discord` | Send message using [Discord Webhook](https://discord.com/developers/docs/resources/webhook). Not tested yet. |
 | LINE Messaging API Appender | `@logback4js/line` | Send message using [LINE Messaging API](https://developers.line.biz/en/services/messaging-api/). Not tested yet. |
-| HTTP POST Appender for Angular | `@logback4js/angular` | Send message using [Angular HttpClient](https://angular.dev/guide/http). |
 
 ## Versioning
 
