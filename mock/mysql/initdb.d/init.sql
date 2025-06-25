@@ -1,5 +1,6 @@
 CREATE DATABASE logback4js;
-GRANT ALL PRIVILEGES ON logback4js.* TO mysql@'%';
+CREATE USER 'mysql'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+GRANT ALL PRIVILEGES ON logback4js.* TO 'mysql'@'localhost';
 USE logback4js;
 CREATE TABLE log (
     logger text,
