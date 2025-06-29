@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/database",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "Database Appenders for Logback4js.",
   "keywords": [
     "log",
@@ -33,7 +33,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@logback4js/core": "^2.2.1",
+    "@logback4js/core": "^2.3.0",
     "mongodb": "^6.17.0",
     "pg": "^8.16.0",
     "redis": "^5.5.6",
