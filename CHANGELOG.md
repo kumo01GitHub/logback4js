@@ -1,6 +1,6 @@
 # Changelog
 
-### 2.2.2
+### 2.3.0
 
 - feat(database): support mogodb
 - refactor: change directory name
