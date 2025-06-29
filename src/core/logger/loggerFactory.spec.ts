@@ -1,6 +1,6 @@
 import { ConsoleAppender } from "../appender/console.appender";
 import { HttpPostAppender } from "../appender/httpPost.appender";
-import { LogLevel } from "../types/loglevel";
+import { LogLevel } from "../consts/loglevel";
 import { LoggerFactory } from "./loggerFactory";
 
 jest.mock("../appender/httpPost.appender");

@@ -3,7 +3,7 @@
  */
 
 /** Model */
-export * from "./types/loglevel";
+export * from "./consts/loglevel";
 export * from "./logger/logger";
 export * from "./appender/appender";
 export * from "./appender/text.appender";

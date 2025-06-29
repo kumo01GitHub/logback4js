@@ -1,4 +1,4 @@
-import { LogLevel } from "../types/loglevel";
+import { LogLevel } from "../consts/loglevel";
 import { type Logger } from "./logger";
 import { LoggerFactory } from "./loggerFactory";
 import { ConsoleAppender } from "../appender/console.appender";

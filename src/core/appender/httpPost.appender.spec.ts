@@ -1,5 +1,5 @@
 import axios, { AxiosRequestConfig } from "axios";
-import { LogLevel } from "../types/loglevel";
+import { LogLevel } from "../consts/loglevel";
 import { HttpPostAppender } from "./httpPost.appender";
 
 describe("HttpPostAppender", () => {

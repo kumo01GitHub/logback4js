@@ -1,4 +1,4 @@
-import { LogLevel } from "../types/loglevel";
+import { LogLevel } from "../consts/loglevel";
 import { type ILoggingEvent } from "./appender";
 import { TextAppender } from "./text.appender";
 

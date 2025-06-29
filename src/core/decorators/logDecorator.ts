@@ -1,5 +1,5 @@
 import { LoggerFactory } from "../logger/loggerFactory";
-import { LogLevel } from "../types/loglevel";
+import { LogLevel } from "../consts/loglevel";
 
 /**
  * Interface for Log Method Decorator Factory.

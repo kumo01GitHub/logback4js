@@ -1,4 +1,4 @@
-import { LogLevel } from "../types/loglevel";
+import { LogLevel } from "../consts/loglevel";
 import { ConsoleAppender } from "./console.appender";
 
 describe("ConsoleAppender", () => {

@@ -1,5 +1,5 @@
 import { type Appender } from "../appender/appender";
-import { LogLevel } from "../types/loglevel";
+import { LogLevel } from "../consts/loglevel";
 import { type Logger } from "./logger";
 
 /**
