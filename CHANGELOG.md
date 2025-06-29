@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.2.2
+
+- ci(database): drop mysql from compose.yaml
+
 ### 2.2.1
 
 - fix: remove mysql2
