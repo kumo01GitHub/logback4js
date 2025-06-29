@@ -1,6 +1,7 @@
 services:
   api:
     container_name: api
+    restart: always
     image: node:latest
     working_dir: /express
     command: 'bash -c "npm ci && npm run serve"'
@@ -10,22 +11,36 @@ services:
       - "./express:/express"
   mail:
     container_name: mail
+    restart: always
     image: axllent/mailpit:latest
     ports:
       - "1025:1025"
       - "8025:8025"
   postgres:
     container_name: postgres
+    restart: always
     image: postgres:latest
     ports:
       - "5432:5432"
-    volumes:
-      - ./postgres:/docker-entrypoint-initdb.d
     environment:
       POSTGRES_USER: "postgres"
       POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - ./postgres:/docker-entrypoint-initdb.d
   redis:
     container_name: redis
+    restart: always
     image: redis:latest
     ports:
       - "6379:6379"
+  mongo:
+    container_name: mongo
+    restart: always
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "mongoadmin"
+      MONGO_INITDB_ROOT_PASSWORD: "secret"
+    volumes:
+      - ./mongo:/docker-entrypoint-initdb.d

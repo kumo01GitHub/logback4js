@@ -2,6 +2,7 @@
 
 ### 2.2.2
 
+- feat(database): support mogodb
 - refactor: change directory name
 - fix(twitter): define rootDir
 - ci(database): drop mysql from compose.yaml

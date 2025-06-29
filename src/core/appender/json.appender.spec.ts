@@ -5,7 +5,7 @@ import { JsonAppender } from "./json.appender";
 describe("JsonAppender", () => {
   class SpecAppender extends JsonAppender {
     get name(): string {
-      return this.constructor.name;
+      return "spec";
     }
     doAppend(event: ILoggingEvent): void {
       console.log(this.getMessage(event));
