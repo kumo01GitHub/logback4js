@@ -38,6 +38,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
           "pg",
           "sqlite3",
           "redis",
+          "mongodb",
         ],
         output: {
           globals: {
@@ -45,6 +46,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
             pg: "pg",
             sqlite3: "sqlite3",
             redis: "redis",
+            mongodb: "mongodb",
           },
         },
       },
