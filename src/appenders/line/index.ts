@@ -1,6 +1,6 @@
-/*
+/**
  * Public API
  */
 
 /** Appenders */
-export * from './lineMessagingApi.appender';
+export * from "./lineMessagingApi.appender";

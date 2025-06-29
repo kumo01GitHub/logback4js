@@ -2,18 +2,18 @@ import axios, { AxiosRequestConfig } from "axios";
 import { LogLevel } from "../types/loglevel";
 import { HttpPostAppender } from "./httpPost.appender";
 
-describe('HttpPostAppender', () => {
+describe("HttpPostAppender", () => {
   let appender: HttpPostAppender;
   let appenderNoConfig: HttpPostAppender;
   const url: string = "http://localhost:3000/log";
   const config: AxiosRequestConfig<any> = {
     headers: {
-      'X-Forwarded-For': '127.0.0.1'
-    }
+      "X-Forwarded-For": "127.0.0.1",
+    },
   };
 
-  const spy = jest.spyOn(axios, 'post');
-  
+  const spy = jest.spyOn(axios, "post");
+
   beforeEach(() => {
     appender = new HttpPostAppender(url, config);
     appenderNoConfig = new HttpPostAppender(url);
@@ -23,28 +23,28 @@ describe('HttpPostAppender', () => {
     spy.mockClear();
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(appender).toBeTruthy();
     expect(appenderNoConfig).toBeTruthy();
   });
 
-  it('has name', () => {
+  it("has name", () => {
     expect(appender.name).toBeTruthy();
     expect(appender.name).toEqual(new URL(url).hostname);
   });
 
-  it('has doAppend method', () => {
+  it("has doAppend method", () => {
     expect(appender.doAppend).toBeTruthy();
   });
 
   it(`append ${LogLevel.None.label} log`, () => {
-    const spyGetMessage = jest.spyOn(appender, 'getMessage');
+    const spyGetMessage = jest.spyOn(appender, "getMessage");
 
     appender.doAppend({
       level: LogLevel.None,
       message: `${LogLevel.None.label} message`,
       logger: "HttpPostAppender",
-      timestamp: new Date()
+      timestamp: new Date(),
     });
 
     expect(spy).toHaveBeenCalledTimes(0);
@@ -56,7 +56,7 @@ describe('HttpPostAppender', () => {
       level: LogLevel.Trace,
       message: `${LogLevel.Trace.label} message`,
       logger: "HttpPostAppender",
-      timestamp: new Date()
+      timestamp: new Date(),
     });
 
     expect(spy).toHaveBeenCalledTimes(1);
@@ -67,7 +67,7 @@ describe('HttpPostAppender', () => {
       level: LogLevel.Debug,
       message: `${LogLevel.Debug.label} message`,
       logger: "HttpPostAppender",
-      timestamp: new Date()
+      timestamp: new Date(),
     });
 
     expect(spy).toHaveBeenCalledTimes(1);
@@ -78,7 +78,7 @@ describe('HttpPostAppender', () => {
       level: LogLevel.Info,
       message: `${LogLevel.Info.label} message`,
       logger: "HttpPostAppender",
-      timestamp: new Date()
+      timestamp: new Date(),
     });
 
     expect(spy).toHaveBeenCalledTimes(1);
@@ -89,7 +89,7 @@ describe('HttpPostAppender', () => {
       level: LogLevel.Warn,
       message: `${LogLevel.Warn.label} message`,
       logger: "HttpPostAppender",
-      timestamp: new Date()
+      timestamp: new Date(),
     });
 
     expect(spy).toHaveBeenCalledTimes(1);
@@ -100,7 +100,7 @@ describe('HttpPostAppender', () => {
       level: LogLevel.Error,
       message: `${LogLevel.Error.label} message`,
       logger: "HttpPostAppender",
-      timestamp: new Date()
+      timestamp: new Date(),
     });
 
     expect(spy).toHaveBeenCalledTimes(1);

@@ -7,53 +7,50 @@ import { TextAppender } from "./text.appender";
  * @extends TextAppender
  */
 export class ConsoleAppender extends TextAppender {
+  /**
+   * Console Appender.
+   * @param {string} template Log message template.
+   */
+  constructor(template?: string) {
+    super(template);
+  }
 
-    /**
-     * Console Appender.
-     * @param {string} template Log message template.
-     */
-    constructor(
-        template?: string
-    ) {
-        super(template);
+  /**
+   * String `"console"`.
+   */
+  public get name(): string {
+    return "console";
+  }
+
+  public doAppend(event: ILoggingEvent): void {
+    let log: (message?: any, ...optionalParams: any[]) => void = console.log; // eslint-disable-line
+    let style: string = "color:black;";
+
+    switch (event.level) {
+      case LogLevel.None:
+        return;
+      case LogLevel.Trace:
+        log = console.trace;
+        style = "color:navy;";
+        break;
+      case LogLevel.Debug:
+        log = console.debug;
+        style = "color:gray;";
+        break;
+      case LogLevel.Info:
+        log = console.info;
+        style = "color:green;";
+        break;
+      case LogLevel.Warn:
+        log = console.warn;
+        style = "color:orange;";
+        break;
+      case LogLevel.Error:
+        log = console.error;
+        style = "color:red;";
+        break;
     }
 
-    /**
-     * String `"console"`.
-     */
-    public get name(): string {
-        return "console";
-    }
-
-    public doAppend(event: ILoggingEvent): void {
-        let log: (message?: any, ...optionalParams: any[]) => void = console.log;  // eslint-disable-line
-        let style: string = "color:black;"
-
-        switch(event.level) {
-            case LogLevel.None:
-                return;
-            case LogLevel.Trace:
-                log = console.trace;
-                style = "color:navy;"
-                break;
-            case LogLevel.Debug:
-                log = console.debug;
-                style = "color:gray;"
-                break;
-            case LogLevel.Info:
-                log = console.info;
-                style = "color:green;"
-                break;
-            case LogLevel.Warn:
-                log = console.warn;
-                style = "color:orange;"
-                break;
-            case LogLevel.Error:
-                log = console.error;
-                style = "color:red;"
-                break;
-        }
-
-        log("%c" + this.getMessage(event), style);
-    }
+    log("%c" + this.getMessage(event), style);
+  }
 }

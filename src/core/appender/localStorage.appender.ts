@@ -1,42 +1,35 @@
-import { v4 as uuid } from 'uuid';
+import { v4 as uuid } from "uuid";
 import { type ILoggingEvent } from "./appender";
-import { TextAppender } from './text.appender';
+import { TextAppender } from "./text.appender";
 
 /**
  * LocalStorage Appender. The key is UUID.
  * @extends TextAppender
  */
 export class LocalStorageAppender extends TextAppender {
+  /**
+   * LocalStorage Appender.
+   * @param {sting} keyPrefix Local storage key prefix.
+   * @param {string} template Log message template.
+   */
+  constructor(private keyPrefix: string, template?: string) {
+    super(template);
+  }
 
-    /**
-     * LocalStorage Appender.
-     * @param {sting} keyPrefix Local storage key prefix.
-     * @param {string} template Log message template.
-     */
-    constructor(
-        private keyPrefix: string,
-        template?: string
-    ) {
-        super(template);
-    }
+  /**
+   * Key prefix.
+   */
+  public get name(): string {
+    return this.keyPrefix;
+  }
 
-    /**
-     * Key prefix.
-     */
-    public get name(): string {
-        return this.keyPrefix;
+  public doAppend(event: ILoggingEvent): void {
+    if (event.level.priority) {
+      localStorage.setItem(this.generateKey(), this.getMessage(event));
     }
+  }
 
-    public doAppend(event: ILoggingEvent): void {
-        if (event.level.priority) {
-            localStorage.setItem(
-                this.generateKey(),
-                this.getMessage(event)
-            );
-        }
-    }
-
-    private generateKey(): string {
-        return this.keyPrefix + "@" + uuid();
-    }
+  private generateKey(): string {
+    return this.keyPrefix + "@" + uuid();
+  }
 }

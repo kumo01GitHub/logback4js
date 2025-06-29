@@ -5,12 +5,12 @@ import { LogLevel } from "../types/loglevel";
  * Interface for Log Method Decorator Factory.
  */
 export interface ILogDecorator {
-    /** Logger Name */
-    logger?: string;
-    /** Log Message */
-    msg?: string;
-    /** Log Level */
-    level: LogLevel;
+  /** Logger Name */
+  logger?: string;
+  /** Log Message */
+  msg?: string;
+  /** Log Level */
+  level: LogLevel;
 }
 
 /**
@@ -22,33 +22,41 @@ export interface ILogDecorator {
  * @returns Method Decorator
  */
 export const Log = (param?: ILogDecorator) => {
-    return function (target: object, propertyKey: string, descriptor: PropertyDescriptor) {
-        const original = descriptor.value;
+  return function (
+    target: object,
+    propertyKey: string,
+    descriptor: PropertyDescriptor
+  ) {
+    const original = descriptor.value;
 
-        const logger: string = param?.logger ? param.logger : target.constructor.name;
-        const msg: string = param?.msg ? param.msg : `${target.constructor.name}.${propertyKey} start.`;
-        const level = param?.level ? param.level : LogLevel.Info
+    const logger: string = param?.logger
+      ? param.logger
+      : target.constructor.name;
+    const msg: string = param?.msg
+      ? param.msg
+      : `${target.constructor.name}.${propertyKey} start.`;
+    const level = param?.level ? param.level : LogLevel.Info;
 
-        descriptor.value = function (...args: unknown[]) {
-            switch (level) {
-                case LogLevel.Trace:
-                    LoggerFactory.getLogger(logger).trace(msg);
-                    break;
-                case LogLevel.Debug:
-                    LoggerFactory.getLogger(logger).debug(msg);
-                    break;
-                case LogLevel.Info:
-                    LoggerFactory.getLogger(logger).info(msg);
-                    break;
-                case LogLevel.Warn:
-                    LoggerFactory.getLogger(logger).warn(msg);
-                    break;
-                case LogLevel.Error:
-                    LoggerFactory.getLogger(logger).error(msg);
-                    break;
-            }
+    descriptor.value = function (...args: unknown[]) {
+      switch (level) {
+        case LogLevel.Trace:
+          LoggerFactory.getLogger(logger).trace(msg);
+          break;
+        case LogLevel.Debug:
+          LoggerFactory.getLogger(logger).debug(msg);
+          break;
+        case LogLevel.Info:
+          LoggerFactory.getLogger(logger).info(msg);
+          break;
+        case LogLevel.Warn:
+          LoggerFactory.getLogger(logger).warn(msg);
+          break;
+        case LogLevel.Error:
+          LoggerFactory.getLogger(logger).error(msg);
+          break;
+      }
 
-            return original.apply(this, args);
-        }
+      return original.apply(this, args);
     };
+  };
 };

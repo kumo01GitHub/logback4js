@@ -9,29 +9,29 @@ import { type ILoggingEvent, TextAppender } from "@logback4js/core";
  * @extends TextAppender
  */
 export class TwitterAppender extends TextAppender {
-    private client: Client;
+  private client: Client;
 
-    constructor(
-        auth: string | AuthClient,
-        requestOptions?: Partial<RequestOptions>,
-        template?: string
-    ) {
-        super(template);
-        this.client = new Client(auth, requestOptions);
-    }
+  constructor(
+    auth: string | AuthClient,
+    requestOptions?: Partial<RequestOptions>,
+    template?: string
+  ) {
+    super(template);
+    this.client = new Client(auth, requestOptions);
+  }
 
-    /**
-     * String `"Twitter"`
-     */
-    public get name(): string {
-        return "Twitter";
-    }
+  /**
+   * String `"Twitter"`
+   */
+  public get name(): string {
+    return "Twitter";
+  }
 
-    public doAppend(event: ILoggingEvent): void {
-        if (event.level.priority) {
-            this.client.tweets.createTweet({
-                text: this.getMessage(event)
-            });
-        }
+  public doAppend(event: ILoggingEvent): void {
+    if (event.level.priority) {
+      this.client.tweets.createTweet({
+        text: this.getMessage(event),
+      });
     }
+  }
 }

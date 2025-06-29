@@ -3,29 +3,28 @@ import { SQLiteAppender } from "./sqlite.appender";
 import { Database } from "sqlite3";
 import { basename } from "node:path";
 
-
-describe('SQLiteAppender', () => {
-  const filepath = './mock/logback4js.sqlite';
+describe("SQLiteAppender", () => {
+  const filepath = "./mock/logback4js.sqlite";
   const appender: SQLiteAppender = new SQLiteAppender(filepath);
   const database: Database = new Database(filepath);
 
   beforeAll((done) => {
     database.run(
-      'CREATE TABLE IF NOT EXISTS log (logger, timestamp, level, message);',
+      "CREATE TABLE IF NOT EXISTS log (logger, timestamp, level, message);",
       done
     );
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(appender).toBeTruthy();
   });
 
-  it('has name', () => {
+  it("has name", () => {
     expect(appender.name).toBeTruthy();
     expect(appender.name).toEqual(basename(filepath));
   });
 
-  it('has doAppend method', () => {
+  it("has doAppend method", () => {
     expect(appender.doAppend).toBeTruthy();
   });
 
@@ -35,7 +34,7 @@ describe('SQLiteAppender', () => {
         level: LogLevel.None,
         message: `${LogLevel.None.label} message`,
         logger: "SQLiteAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -46,7 +45,7 @@ describe('SQLiteAppender', () => {
         level: LogLevel.Trace,
         message: `${LogLevel.Trace.label} message`,
         logger: "SQLiteAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -57,7 +56,7 @@ describe('SQLiteAppender', () => {
         level: LogLevel.Debug,
         message: `${LogLevel.Debug.label} message`,
         logger: "SQLiteAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -68,7 +67,7 @@ describe('SQLiteAppender', () => {
         level: LogLevel.Info,
         message: `${LogLevel.Info.label} message`,
         logger: "SQLiteAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -79,7 +78,7 @@ describe('SQLiteAppender', () => {
         level: LogLevel.Warn,
         message: `${LogLevel.Warn.label} message`,
         logger: "SQLiteAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -90,7 +89,7 @@ describe('SQLiteAppender', () => {
         level: LogLevel.Error,
         message: `${LogLevel.Error.label} message`,
         logger: "SQLiteAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });

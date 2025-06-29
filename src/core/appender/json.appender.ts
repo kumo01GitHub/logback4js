@@ -1,34 +1,31 @@
-import { type Appender, type ILoggingEvent } from './appender';
-
+import { type Appender, type ILoggingEvent } from "./appender";
 
 /**
  * Appender whose log message type is JSON.
  */
 export abstract class JsonAppender implements Appender {
+  /**
+   * Get log message.
+   * @param {ILoggingEvent} event logging event
+   * @returns {object} JSON
+   */
+  public getMessage(event: ILoggingEvent): object {
+    return {
+      logger: event.logger,
+      timestamp: event.timestamp,
+      level: event.level.label,
+      message: event.message,
+    };
+  }
 
-    /**
-     * Get log message.
-     * @param {ILoggingEvent} event logging event
-     * @returns {object} JSON
-     */
-    public getMessage(event: ILoggingEvent): object {
-        return {
-            logger: event.logger,
-            timestamp: event.timestamp,
-            level: event.level.label,
-            message: event.message
-        }
-    }
+  /**
+   * Appender name. Logger uses for key to manage Appenders.
+   */
+  abstract get name(): string;
 
-    /**
-     * Appender name. Logger uses for key to manage Appenders.
-     */
-    abstract get name(): string;
-
-    /**
-     * Do append.
-     * @param {ILoggingEvent} event Logging event.
-     */
-    abstract doAppend(event: ILoggingEvent): void;
-
+  /**
+   * Do append.
+   * @param {ILoggingEvent} event Logging event.
+   */
+  abstract doAppend(event: ILoggingEvent): void;
 }

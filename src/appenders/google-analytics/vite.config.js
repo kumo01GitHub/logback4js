@@ -4,7 +4,6 @@ import dts from "vite-plugin-dts";
 import { nodePolyfills } from "vite-plugin-node-polyfills";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
-
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   return {
     plugins: [
@@ -43,13 +42,13 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         fileName: "index",
       },
       rollupOptions: {
-        external: [ "@logback4js/core", "firebase" ],
+        external: ["@logback4js/core", "firebase"],
         output: {
           globals: {
             "@logback4js/core": "core",
             firebase: "firebase",
-          }
-        }
+          },
+        },
       },
     },
   };

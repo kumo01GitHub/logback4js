@@ -1,9 +1,8 @@
 import * as path from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 import { viteStaticCopy } from "vite-plugin-static-copy";
-
 
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   return {
@@ -32,13 +31,13 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         fileName: "index",
       },
       rollupOptions: {
-        external: [ "@logback4js/core", "@microsoft/microsoft-graph-client" ],
+        external: ["@logback4js/core", "@microsoft/microsoft-graph-client"],
         output: {
           globals: {
             "@logback4js/core": "core",
             "@microsoft/microsoft-graph-client": "microsoft-graph-client",
-          }
-        }
+          },
+        },
       },
     },
   };

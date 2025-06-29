@@ -6,31 +6,32 @@ import { type ILoggingEvent, TextAppender } from "@logback4js/core";
  * @extends TextAppender
  */
 export class MSTeamsAppender extends TextAppender {
-    private client: Client;
+  private client: Client;
 
-    constructor(
-        private teamId: string,
-        private channelId: string,
-        options: Options,
-        template?: string
-    ) {
-        super(template);
-        this.client = Client.init(options);
-    }
+  constructor(
+    private teamId: string,
+    private channelId: string,
+    options: Options,
+    template?: string
+  ) {
+    super(template);
+    this.client = Client.init(options);
+  }
 
-    public get name(): string {
-        return `msteams@${this.teamId}`;
-    }
+  public get name(): string {
+    return `msteams@${this.teamId}`;
+  }
 
-    public doAppend(event: ILoggingEvent): void {
-        if (event.level.priority) {
-            this.client.api(`/teams/${this.teamId}/channels/${this.channelId}/messages`)
-                .post({
-                    body: {
-                        contentType: "html",
-                        content: this.getMessage(event)
-                      }
-                });
-        }
+  public doAppend(event: ILoggingEvent): void {
+    if (event.level.priority) {
+      this.client
+        .api(`/teams/${this.teamId}/channels/${this.channelId}/messages`)
+        .post({
+          body: {
+            contentType: "html",
+            content: this.getMessage(event),
+          },
+        });
     }
+  }
 }

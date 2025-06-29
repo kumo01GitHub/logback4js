@@ -1,21 +1,23 @@
 import { LogLevel } from "@logback4js/core";
 import { RedisAppender } from "./redis.appender";
 
-
-describe('RedisAppender', () => {
+describe("RedisAppender", () => {
   const name: string = "spec";
-  const appender: RedisAppender = new RedisAppender("redis://localhost:6379", name);
+  const appender: RedisAppender = new RedisAppender(
+    "redis://localhost:6379",
+    name
+  );
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(appender).toBeTruthy();
   });
 
-  it('has name', () => {
+  it("has name", () => {
     expect(appender.name).toBeTruthy();
     expect(appender.name).toEqual(name);
   });
 
-  it('has doAppend method', () => {
+  it("has doAppend method", () => {
     expect(appender.doAppend).toBeTruthy();
   });
 
@@ -25,7 +27,7 @@ describe('RedisAppender', () => {
         level: LogLevel.None,
         message: `${LogLevel.None.label} message`,
         logger: "RedisAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -36,7 +38,7 @@ describe('RedisAppender', () => {
         level: LogLevel.Trace,
         message: `${LogLevel.Trace.label} message`,
         logger: "RedisAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -47,7 +49,7 @@ describe('RedisAppender', () => {
         level: LogLevel.Debug,
         message: `${LogLevel.Debug.label} message`,
         logger: "RedisAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -58,7 +60,7 @@ describe('RedisAppender', () => {
         level: LogLevel.Info,
         message: `${LogLevel.Info.label} message`,
         logger: "RedisAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -69,7 +71,7 @@ describe('RedisAppender', () => {
         level: LogLevel.Warn,
         message: `${LogLevel.Warn.label} message`,
         logger: "RedisAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -80,7 +82,7 @@ describe('RedisAppender', () => {
         level: LogLevel.Error,
         message: `${LogLevel.Error.label} message`,
         logger: "RedisAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });

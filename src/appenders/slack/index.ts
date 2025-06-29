@@ -1,6 +1,6 @@
-/*
+/**
  * Public API
  */
 
 /** Appenders */
-export * from './slack.appender';
+export * from "./slack.appender";

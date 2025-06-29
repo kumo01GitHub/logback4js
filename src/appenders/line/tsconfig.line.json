@@ -2,6 +2,6 @@
   "extends": "../../../tsconfig",
   "compilerOptions": {
     "outDir": "../../../dist/appenders/line/",
-    "rootDir": "./",
+    "rootDir": "./"
   }
 }

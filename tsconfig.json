@@ -7,7 +7,7 @@
     "skipLibCheck": true,
     "esModuleInterop": true,
     "paths": {
-      "@logback4js/core": [ "./src/core/" ]
+      "@logback4js/core": ["./src/core/"]
     },
 
     /* Bundler mode */
@@ -25,7 +25,5 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "exclude": [
-    "**/*.spec.ts"
-  ]
+  "exclude": ["**/*.spec.ts"]
 }

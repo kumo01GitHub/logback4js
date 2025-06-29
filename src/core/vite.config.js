@@ -1,9 +1,8 @@
 import * as path from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 import { viteStaticCopy } from "vite-plugin-static-copy";
-
 
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   return {
@@ -28,7 +27,7 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       lib: {
         name: "core",
         entry: path.resolve(__dirname, "index.ts"),
-        formats: ['es', 'cjs', 'umd'],
+        formats: ["es", "cjs", "umd"],
         fileName: "index",
       },
     },

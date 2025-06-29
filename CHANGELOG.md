@@ -2,7 +2,9 @@
 
 ### 2.2.2
 
+- fix(twitter): define rootDir
 - ci(database): drop mysql from compose.yaml
+- ci: add editorconfig
 
 ### 2.2.1
 

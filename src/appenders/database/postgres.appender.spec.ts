@@ -2,21 +2,21 @@ import { LogLevel } from "@logback4js/core";
 import { PostgresAppender } from "./postgres.appender";
 import { basename } from "node:path";
 
-
-describe('PostgresAppender', () => {
-  const url: string = "postgresql://postgres:postgres@localhost:5432/logback4js";
+describe("PostgresAppender", () => {
+  const url: string =
+    "postgresql://postgres:postgres@localhost:5432/logback4js";
   const appender: PostgresAppender = new PostgresAppender(url);
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(appender).toBeTruthy();
   });
 
-  it('has name', () => {
+  it("has name", () => {
     expect(appender.name).toBeTruthy();
     expect(appender.name).toEqual(basename(url));
   });
 
-  it('has doAppend method', () => {
+  it("has doAppend method", () => {
     expect(appender.doAppend).toBeTruthy();
   });
 
@@ -26,7 +26,7 @@ describe('PostgresAppender', () => {
         level: LogLevel.None,
         message: `${LogLevel.None.label} message`,
         logger: "PostgresAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -37,7 +37,7 @@ describe('PostgresAppender', () => {
         level: LogLevel.Trace,
         message: `${LogLevel.Trace.label} message`,
         logger: "PostgresAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -48,7 +48,7 @@ describe('PostgresAppender', () => {
         level: LogLevel.Debug,
         message: `${LogLevel.Debug.label} message`,
         logger: "PostgresAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -59,7 +59,7 @@ describe('PostgresAppender', () => {
         level: LogLevel.Info,
         message: `${LogLevel.Info.label} message`,
         logger: "PostgresAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -70,7 +70,7 @@ describe('PostgresAppender', () => {
         level: LogLevel.Warn,
         message: `${LogLevel.Warn.label} message`,
         logger: "PostgresAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -81,7 +81,7 @@ describe('PostgresAppender', () => {
         level: LogLevel.Error,
         message: `${LogLevel.Error.label} message`,
         logger: "PostgresAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });

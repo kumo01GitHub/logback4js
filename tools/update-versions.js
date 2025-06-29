@@ -4,7 +4,6 @@ const { parseArgs } = require("node:util");
 const packageJson = require("@npmcli/package-json");
 const semver = require("semver");
 
-
 /** Core module. */
 const TARGET_CORE_MODULE = "core";
 /** Appenders. */
@@ -43,13 +42,15 @@ async function updateVersion(name, release) {
   // Update package.json.
   console.info(`Update ${pkgJson.content.name}: ${current} -> ${updated}`);
   if (!name || name === TARGET_CORE_MODULE) {
-    pkgJson.update({ version: updated });  
+    pkgJson.update({ version: updated });
   } else {
     pkgJson.update({ version: updated });
-    pkgJson.update({ dependencies: {
-      ...pkgJson.content.dependencies,
-      "@logback4js/core": `^${updated}`
-    } });
+    pkgJson.update({
+      dependencies: {
+        ...pkgJson.content.dependencies,
+        "@logback4js/core": `^${updated}`,
+      },
+    });
   }
   await pkgJson.save();
 }
@@ -77,7 +78,7 @@ function main() {
         return fs.statSync(path.join(APPENDERS_DIR, file)).isDirectory();
       });
       dirs.forEach((dir) => {
-          updateVersion(dir, values.release);
+        updateVersion(dir, values.release);
       });
     });
   } else if (values.target === TARGET_APPENDERS) {
@@ -86,7 +87,7 @@ function main() {
       return fs.statSync(path.join(APPENDERS_DIR, file)).isDirectory();
     });
     dirs.forEach((dir) => {
-        updateVersion(dir, values.release);
+      updateVersion(dir, values.release);
     });
   } else {
     updateVersion(values.target, values.release);

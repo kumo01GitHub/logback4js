@@ -1,8 +1,7 @@
 import { LogLevel } from "@logback4js/core";
 import { RichMailAppender } from "./rich-mail.appender";
 
-
-describe('RichMailAppender', () => {
+describe("RichMailAppender", () => {
   const appender: RichMailAppender = new RichMailAppender(
     {
       host: "localhost",
@@ -13,19 +12,19 @@ describe('RichMailAppender', () => {
     },
     "from@example.com",
     "jest",
-    "to@example.com",
+    "to@example.com"
   );
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(appender).toBeTruthy();
   });
 
-  it('has name', () => {
+  it("has name", () => {
     expect(appender.name).toBeTruthy();
     expect(appender.name).toEqual("RichMail");
   });
 
-  it('has doAppend method', () => {
+  it("has doAppend method", () => {
     expect(appender.doAppend).toBeTruthy();
   });
 
@@ -35,7 +34,7 @@ describe('RichMailAppender', () => {
         level: LogLevel.None,
         message: `<p><ul><li><b>${LogLevel.None.label}</b></li><li>rich text message</li></ul></p>`,
         logger: "RichMailAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -46,7 +45,7 @@ describe('RichMailAppender', () => {
         level: LogLevel.Trace,
         message: `<p><ul><li><b>${LogLevel.Trace.label}</b></li><li>rich text message</li></ul></p>`,
         logger: "RichMailAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -57,7 +56,7 @@ describe('RichMailAppender', () => {
         level: LogLevel.Debug,
         message: `<p><ul><li><b>${LogLevel.Debug.label}</b></li><li>rich text message</li></ul></p>`,
         logger: "RichMailAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -68,7 +67,7 @@ describe('RichMailAppender', () => {
         level: LogLevel.Info,
         message: `<p><ul><li><b>${LogLevel.Info.label}</b></li><li>rich text message</li></ul></p>`,
         logger: "RichMailAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -79,7 +78,7 @@ describe('RichMailAppender', () => {
         level: LogLevel.Warn,
         message: `<p><ul><li><b>${LogLevel.Warn.label}</b></li><li>rich text message</li></ul></p>`,
         logger: "RichMailAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });
@@ -90,7 +89,7 @@ describe('RichMailAppender', () => {
         level: LogLevel.Error,
         message: `<p><ul><li><b>${LogLevel.Error.label}</b></li><li>rich text message</li></ul></p>`,
         logger: "RichMailAppender",
-        timestamp: new Date()
+        timestamp: new Date(),
       });
     }).not.toThrow();
   });

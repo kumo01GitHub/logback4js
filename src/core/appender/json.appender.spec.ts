@@ -2,7 +2,7 @@ import { LogLevel } from "../types/loglevel";
 import { type ILoggingEvent } from "./appender";
 import { JsonAppender } from "./json.appender";
 
-describe('JsonAppender', () => {
+describe("JsonAppender", () => {
   class SpecAppender extends JsonAppender {
     get name(): string {
       return this.constructor.name;
@@ -17,19 +17,19 @@ describe('JsonAppender', () => {
     appender = new SpecAppender();
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(appender).toBeTruthy();
   });
 
-  it('has name', () => {
+  it("has name", () => {
     expect(appender.name).toBeTruthy();
   });
 
-  it('has doAppend method', () => {
+  it("has doAppend method", () => {
     expect(appender.doAppend).toBeTruthy();
   });
 
-  it('getMessage returns Object', () => {
+  it("getMessage returns Object", () => {
     const event = {
       logger: "SpecLogger",
       timestamp: new Date(),
@@ -40,7 +40,7 @@ describe('JsonAppender', () => {
       logger: event.logger,
       timestamp: event.timestamp,
       level: event.level.label,
-      message: event.message
+      message: event.message,
     });
   });
 });

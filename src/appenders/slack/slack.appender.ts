@@ -6,28 +6,28 @@ import { type ILoggingEvent, TextAppender } from "@logback4js/core";
  * @extends TextAppender
  */
 export class SlackAppender extends TextAppender {
-    private client: WebClient;
+  private client: WebClient;
 
-    constructor(
-        private channel: string,
-        token: string,
-        options?: WebClientOptions,
-        template?: string
-    ) {
-        super(template);
-        this.client = new WebClient(token, options);
-    }
+  constructor(
+    private channel: string,
+    token: string,
+    options?: WebClientOptions,
+    template?: string
+  ) {
+    super(template);
+    this.client = new WebClient(token, options);
+  }
 
-    public get name(): string {
-        return `slack@${this.channel}`;
-    }
+  public get name(): string {
+    return `slack@${this.channel}`;
+  }
 
-    public doAppend(event: ILoggingEvent): void {
-        if (event.level.priority) {
-            this.client.chat.postMessage({
-                channel: this.channel,
-                text: this.getMessage(event)
-            });
-        }
+  public doAppend(event: ILoggingEvent): void {
+    if (event.level.priority) {
+      this.client.chat.postMessage({
+        channel: this.channel,
+        text: this.getMessage(event),
+      });
     }
+  }
 }

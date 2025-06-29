@@ -4,9 +4,9 @@ import { LoggerFactory } from "./loggerFactory";
 import { ConsoleAppender } from "../appender/console.appender";
 import { HttpPostAppender } from "../appender/httpPost.appender";
 
-jest.mock('../appender/httpPost.appender');
+jest.mock("../appender/httpPost.appender");
 
-describe('Logger', () => {
+describe("Logger", () => {
   let rootLogger: Logger;
 
   let noneLogger: Logger;
@@ -20,61 +20,64 @@ describe('Logger', () => {
     LoggerFactory.initialize(LogLevel.Trace);
     rootLogger = LoggerFactory.getLogger();
 
-    LoggerFactory.addLogger({ name: 'NoneLogger', level: LogLevel.None });
-    LoggerFactory.addLogger({ name: 'TraceLogger', level: LogLevel.Trace });
-    LoggerFactory.addLogger({ name: 'DebugLogger', level: LogLevel.Debug });
-    LoggerFactory.addLogger({ name: 'InfoLogger', level: LogLevel.Info });
-    LoggerFactory.addLogger({ name: 'WarnLogger', level: LogLevel.Warn });
-    LoggerFactory.addLogger({ name: 'ErrorLogger', level: LogLevel.Error });
+    LoggerFactory.addLogger({ name: "NoneLogger", level: LogLevel.None });
+    LoggerFactory.addLogger({ name: "TraceLogger", level: LogLevel.Trace });
+    LoggerFactory.addLogger({ name: "DebugLogger", level: LogLevel.Debug });
+    LoggerFactory.addLogger({ name: "InfoLogger", level: LogLevel.Info });
+    LoggerFactory.addLogger({ name: "WarnLogger", level: LogLevel.Warn });
+    LoggerFactory.addLogger({ name: "ErrorLogger", level: LogLevel.Error });
 
-    noneLogger = LoggerFactory.getLogger('NoneLogger');
-    traceLogger = LoggerFactory.getLogger('TraceLogger');
-    debugLogger = LoggerFactory.getLogger('DebugLogger');
-    infoLogger = LoggerFactory.getLogger('InfoLogger');
-    warnLogger = LoggerFactory.getLogger('WarnLogger');
-    errorLogger = LoggerFactory.getLogger('ErrorLogger');
+    noneLogger = LoggerFactory.getLogger("NoneLogger");
+    traceLogger = LoggerFactory.getLogger("TraceLogger");
+    debugLogger = LoggerFactory.getLogger("DebugLogger");
+    infoLogger = LoggerFactory.getLogger("InfoLogger");
+    warnLogger = LoggerFactory.getLogger("WarnLogger");
+    errorLogger = LoggerFactory.getLogger("ErrorLogger");
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(rootLogger).toBeTruthy();
   });
 
-  it('has name', () => {
+  it("has name", () => {
     expect(rootLogger.name).toBeTruthy();
     expect(rootLogger.name).toEqual(LoggerFactory.ROOT_LOGGER_NAME);
   });
 
-  it('can add appender', () => {
-    const addedAppender = new HttpPostAppender('http://localhost/mock/log');
-    jest.spyOn(addedAppender, 'doAppend');
+  it("can add appender", () => {
+    const addedAppender = new HttpPostAppender("http://localhost/mock/log");
+    jest.spyOn(addedAppender, "doAppend");
     const beforeAppenders = rootLogger.appenders;
 
     rootLogger.addAppender(addedAppender);
-    rootLogger.error('Logger Specific Test');
+    rootLogger.error("Logger Specific Test");
 
     expect(addedAppender.doAppend).toHaveBeenCalledTimes(1);
-    expect(rootLogger.appenders).toEqual(beforeAppenders.concat(addedAppender.name));
+    expect(rootLogger.appenders).toEqual(
+      beforeAppenders.concat(addedAppender.name)
+    );
   });
 
-  it('can remove appender', () => {
-    const removedAppender = new HttpPostAppender('http://localhost/mock/log');
-    jest.spyOn(removedAppender, 'doAppend');
+  it("can remove appender", () => {
+    const removedAppender = new HttpPostAppender("http://localhost/mock/log");
+    jest.spyOn(removedAppender, "doAppend");
 
     rootLogger.addAppender(removedAppender);
-    rootLogger.error('Logger Specific Test before remove');
+    rootLogger.error("Logger Specific Test before remove");
     const beforeAppenders = rootLogger.appenders;
 
     rootLogger.removeAppender(removedAppender.name);
-    rootLogger.error('Logger Specific Test after remove');
+    rootLogger.error("Logger Specific Test after remove");
 
     expect(removedAppender.doAppend).toHaveBeenCalledTimes(1);
-    expect(rootLogger.appenders).toEqual(beforeAppenders.filter(
-      (item: string) => item !== removedAppender.name));
+    expect(rootLogger.appenders).toEqual(
+      beforeAppenders.filter((item: string) => item !== removedAppender.name)
+    );
   });
 
-  it('which Log Level is None', () => {
+  it("which Log Level is None", () => {
     const spyAppender = new ConsoleAppender();
-    jest.spyOn(spyAppender, 'doAppend');
+    jest.spyOn(spyAppender, "doAppend");
 
     noneLogger.addAppender(spyAppender);
     let calledTimes = 0;
@@ -95,9 +98,9 @@ describe('Logger', () => {
     expect(spyAppender.doAppend).toHaveBeenCalledTimes(calledTimes);
   });
 
-  it('which Log Level is Trace', () => {
+  it("which Log Level is Trace", () => {
     const spyAppender = new ConsoleAppender();
-    jest.spyOn(spyAppender, 'doAppend');
+    jest.spyOn(spyAppender, "doAppend");
 
     traceLogger.addAppender(spyAppender);
     let calledTimes = 0;
@@ -118,9 +121,9 @@ describe('Logger', () => {
     expect(spyAppender.doAppend).toHaveBeenCalledTimes(++calledTimes);
   });
 
-  it('which Log Level is Debug', () => {
+  it("which Log Level is Debug", () => {
     const spyAppender = new ConsoleAppender();
-    jest.spyOn(spyAppender, 'doAppend');
+    jest.spyOn(spyAppender, "doAppend");
 
     debugLogger.addAppender(spyAppender);
     let calledTimes = 0;
@@ -141,9 +144,9 @@ describe('Logger', () => {
     expect(spyAppender.doAppend).toHaveBeenCalledTimes(++calledTimes);
   });
 
-  it('which Log Level is Info', () => {
+  it("which Log Level is Info", () => {
     const spyAppender = new ConsoleAppender();
-    jest.spyOn(spyAppender, 'doAppend');
+    jest.spyOn(spyAppender, "doAppend");
 
     infoLogger.addAppender(spyAppender);
     let calledTimes = 0;
@@ -164,9 +167,9 @@ describe('Logger', () => {
     expect(spyAppender.doAppend).toHaveBeenCalledTimes(++calledTimes);
   });
 
-  it('which Log Level is Warn', () => {
+  it("which Log Level is Warn", () => {
     const spyAppender = new ConsoleAppender();
-    jest.spyOn(spyAppender, 'doAppend');
+    jest.spyOn(spyAppender, "doAppend");
 
     warnLogger.addAppender(spyAppender);
     let calledTimes = 0;
@@ -187,9 +190,9 @@ describe('Logger', () => {
     expect(spyAppender.doAppend).toHaveBeenCalledTimes(++calledTimes);
   });
 
-  it('which Log Level is Error', () => {
+  it("which Log Level is Error", () => {
     const spyAppender = new ConsoleAppender();
-    jest.spyOn(spyAppender, 'doAppend');
+    jest.spyOn(spyAppender, "doAppend");
 
     errorLogger.addAppender(spyAppender);
     let calledTimes = 0;

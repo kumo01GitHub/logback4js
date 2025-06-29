@@ -1,9 +1,8 @@
 import * as path from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
-import { nodePolyfills } from 'vite-plugin-node-polyfills';
+import { nodePolyfills } from "vite-plugin-node-polyfills";
 import { viteStaticCopy } from "vite-plugin-static-copy";
-
 
 export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
   return {
@@ -33,15 +32,21 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
       },
       rollupOptions: {
         // https://github.com/brianc/node-postgres/issues/2987
-        external: [ "@logback4js/core", "pg-cloudflare", "pg", "sqlite3", "redis" ],
+        external: [
+          "@logback4js/core",
+          "pg-cloudflare",
+          "pg",
+          "sqlite3",
+          "redis",
+        ],
         output: {
           globals: {
             "@logback4js/core": "core",
             pg: "pg",
             sqlite3: "sqlite3",
             redis: "redis",
-          }
-        }
+          },
+        },
       },
     },
   };
