@@ -1,5 +1,10 @@
 # Changelog
 
+### 2.3.1
+
+- ci: bump jest
+- fix: package.json of API mock
+
 ### 2.3.0
 
 - feat(database): support mogodb
