@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/line",
-  "version": "2.3.0",
+  "version": "2.3.1",
   "description": "LINE Appenders for Logback4js.",
   "keywords": [
     "log",
@@ -30,6 +30,6 @@
   },
   "dependencies": {
     "@line/bot-sdk": "^9.4.0",
-    "@logback4js/core": "^2.3.0"
+    "@logback4js/core": "^2.3.1"
   }
 }
