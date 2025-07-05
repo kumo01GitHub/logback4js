@@ -1,5 +1,9 @@
 # Changelog
 
+### 2.3.1
+
+- ci: bump jest
+
 ### 2.3.0
 
 - feat(database): support mogodb
