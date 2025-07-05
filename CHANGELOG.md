@@ -4,6 +4,7 @@
 
 - feat(google-analytics): bump firebase
 - ci: bump jest
+- ci: fix init.sql for PostgreSQL mock
 - fix: package.json of API mock
 
 ### 2.3.0
