@@ -1,7 +1,7 @@
 
-CREATE DATABASE IF NOT EXISTS logback4js;
+CREATE DATABASE logback4js;
 \c logback4js;
-CREATE TABLE IF NOT EXISTS log (
+CREATE TABLE log (
     logger text,
     "timestamp" timestamp,
     "level" varchar(8),
