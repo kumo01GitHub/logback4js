@@ -6,6 +6,7 @@
 - ci: bump jest
 - ci: fix init.sql for PostgreSQL mock
 - fix: package.json of API mock
+- doc: update test command
 
 ### 2.3.0
 

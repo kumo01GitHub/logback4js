@@ -68,6 +68,8 @@ Run `npm run build` to build the project. The build artifacts will be stored in 
 Run `npm run test` to execute the unit tests via [Jest](https://jestjs.io/).
 
 ```bash
+# Build packages before test
+npm ci && npm run build
 # Boot mock
 docker compose -f=mock/compose.yaml up -d
 # Run unit tests
