@@ -2,6 +2,7 @@
 
 ### 2.3.1
 
+- feat(google-analytics): bump firebase
 - ci: bump jest
 - fix: package.json of API mock
 
