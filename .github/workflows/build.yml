@@ -13,9 +13,14 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
     strategy:
       matrix:
         node-version: [ '20', '22', '24' ]
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
