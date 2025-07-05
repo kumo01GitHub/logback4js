@@ -12,9 +12,12 @@ on:
       - 'LICENSE'
 
 jobs:
-  test:
-    name: Run tests and collect coverage
+  coverage:
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4

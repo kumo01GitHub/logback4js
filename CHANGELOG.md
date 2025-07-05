@@ -5,6 +5,7 @@
 - feat(google-analytics): bump firebase
 - ci: bump jest
 - ci: fix init.sql for PostgreSQL mock
+- ci: configure permission for github actions
 - fix: package.json of API mock
 - doc: update test command
 
