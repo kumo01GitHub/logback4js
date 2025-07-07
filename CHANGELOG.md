@@ -3,6 +3,7 @@
 ### 2.3.2
 
 - fix: ignore coverage result
+- ci: update spec
 
 ### 2.3.1
 
