@@ -2,6 +2,10 @@
 
 ### 2.3.1
 
+- fix: ignore coverage result
+
+### 2.3.1
+
 - feat(google-analytics): bump firebase
 - ci: bump jest
 - ci: fix init.sql for PostgreSQL mock
