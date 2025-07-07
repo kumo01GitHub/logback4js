@@ -40,7 +40,7 @@ describe("ConsoleAppender", () => {
     appender.doAppend({
       level: LogLevel.None,
       message: `${LogLevel.None.label} message`,
-      logger: "ConsoleAppender",
+      logger: "ConsoleSpecLogger",
       timestamp: new Date(),
     });
 
@@ -57,7 +57,7 @@ describe("ConsoleAppender", () => {
     appender.doAppend({
       level: LogLevel.Trace,
       message: `${LogLevel.Trace.label} message`,
-      logger: "ConsoleAppender",
+      logger: "ConsoleSpecLogger",
       timestamp: new Date(),
     });
 
@@ -74,7 +74,7 @@ describe("ConsoleAppender", () => {
     appender.doAppend({
       level: LogLevel.Debug,
       message: `${LogLevel.Debug.label} message`,
-      logger: "ConsoleAppender",
+      logger: "ConsoleSpecLogger",
       timestamp: new Date(),
     });
 
@@ -91,7 +91,7 @@ describe("ConsoleAppender", () => {
     appender.doAppend({
       level: LogLevel.Info,
       message: `${LogLevel.Info.label} message`,
-      logger: "ConsoleAppender",
+      logger: "ConsoleSpecLogger",
       timestamp: new Date(),
     });
 
@@ -108,7 +108,7 @@ describe("ConsoleAppender", () => {
     appender.doAppend({
       level: LogLevel.Warn,
       message: `${LogLevel.Warn.label} message`,
-      logger: "ConsoleAppender",
+      logger: "ConsoleSpecLogger",
       timestamp: new Date(),
     });
 
@@ -125,7 +125,7 @@ describe("ConsoleAppender", () => {
     appender.doAppend({
       level: LogLevel.Error,
       message: `${LogLevel.Error.label} message`,
-      logger: "ConsoleAppender",
+      logger: "ConsoleSpecLogger",
       timestamp: new Date(),
     });
 

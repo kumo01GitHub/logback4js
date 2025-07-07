@@ -43,7 +43,7 @@ describe("HttpPostAppender", () => {
     appender.doAppend({
       level: LogLevel.None,
       message: `${LogLevel.None.label} message`,
-      logger: "HttpPostAppender",
+      logger: "HttpPostSpecLogger",
       timestamp: new Date(),
     });
 
@@ -55,7 +55,7 @@ describe("HttpPostAppender", () => {
     appender.doAppend({
       level: LogLevel.Trace,
       message: `${LogLevel.Trace.label} message`,
-      logger: "HttpPostAppender",
+      logger: "HttpPostSpecLogger",
       timestamp: new Date(),
     });
 
@@ -66,7 +66,7 @@ describe("HttpPostAppender", () => {
     appender.doAppend({
       level: LogLevel.Debug,
       message: `${LogLevel.Debug.label} message`,
-      logger: "HttpPostAppender",
+      logger: "HttpPostSpecLogger",
       timestamp: new Date(),
     });
 
@@ -77,7 +77,7 @@ describe("HttpPostAppender", () => {
     appender.doAppend({
       level: LogLevel.Info,
       message: `${LogLevel.Info.label} message`,
-      logger: "HttpPostAppender",
+      logger: "HttpPostSpecLogger",
       timestamp: new Date(),
     });
 
@@ -88,7 +88,7 @@ describe("HttpPostAppender", () => {
     appender.doAppend({
       level: LogLevel.Warn,
       message: `${LogLevel.Warn.label} message`,
-      logger: "HttpPostAppender",
+      logger: "HttpPostSpecLogger",
       timestamp: new Date(),
     });
 
@@ -99,7 +99,7 @@ describe("HttpPostAppender", () => {
     appender.doAppend({
       level: LogLevel.Error,
       message: `${LogLevel.Error.label} message`,
-      logger: "HttpPostAppender",
+      logger: "HttpPostSpecLogger",
       timestamp: new Date(),
     });
 
