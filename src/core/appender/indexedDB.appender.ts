@@ -34,15 +34,6 @@ export class IndexedDBAppender extends JsonAppender {
     return this.storeName;
   }
 
-  public getMessage(event: ILoggingEvent): object {
-    return {
-      timestamp: event.timestamp.toString(),
-      logger: event.logger,
-      level: event.level.label,
-      message: event.message,
-    };
-  }
-
   public doAppend(event: ILoggingEvent): void {
     if (event.level.priority) {
       const openRequest: IDBOpenDBRequest = indexedDB.open(

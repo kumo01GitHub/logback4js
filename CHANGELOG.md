@@ -1,7 +1,8 @@
 # Changelog
 
-### 2.3.2
+### 2.4.0
 
+- feat: template for JSON Appender
 - fix: ignore coverage result
 - ci: update spec
 

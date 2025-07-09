@@ -11,12 +11,16 @@ export class HttpPostAppender extends JsonAppender {
    * HTTP POST Appender.
    * @param {string} url API URL.
    * @param {AxiosRequestConfig<any>} config Axios request configuration.
+   * @param {{ [key: string]: any }} template Log message template.
    */
   constructor(
     private url: string,
-    private config?: AxiosRequestConfig<any> // eslint-disable-line
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    private config?: AxiosRequestConfig<any>,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    template?: { [key: string]: any }
   ) {
-    super();
+    super(template);
   }
 
   /**
