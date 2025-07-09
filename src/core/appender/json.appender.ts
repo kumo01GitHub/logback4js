@@ -6,9 +6,12 @@ import { type Appender, type ILoggingEvent } from "./appender";
 export abstract class JsonAppender implements Appender {
   /**
    * JSON appender.
-   * @param {{ [key: string]: string }} template Log message template.
+   * @param {{ [key: string]: any }} template Log message template.
    */
-  constructor(private template?: { [key: string]: string }) {}
+  constructor(
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    private template?: { [key: string]: any }
+  ) {}
 
   /**
    * Get log message.
@@ -20,12 +23,15 @@ export abstract class JsonAppender implements Appender {
       const msg = Object.create(this.template);
 
       Object.keys(this.template).forEach((key) => {
-        msg[key] = this.template![key]
-          .replace(/\$\{\s*logger\s*\}/g, event.logger)
-          .replace(/\$\{\s*timestamp\s*\}/g, event.timestamp.toISOString())
-          .replace(/\$\{\s*level\s*\}/g, event.level.label)
-          .replace(/\$\{\s*message\s*\}/g, event.message)
-          .replace(/\$\{\s*appender\s*\}/g, this.name);
+        msg[key] = this.template![key];
+        if (typeof msg[key] === "string") {
+          msg[key] = msg[key]
+            .replace(/\$\{\s*logger\s*\}/g, event.logger)
+            .replace(/\$\{\s*timestamp\s*\}/g, event.timestamp.toISOString())
+            .replace(/\$\{\s*level\s*\}/g, event.level.label)
+            .replace(/\$\{\s*message\s*\}/g, event.message)
+            .replace(/\$\{\s*appender\s*\}/g, this.name);
+        }
       });
 
       return msg;
