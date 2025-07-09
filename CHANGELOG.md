@@ -3,6 +3,7 @@
 ### 2.4.0
 
 - feat: template for JSON Appender
+- feat: Support sessionStorage
 - fix: ignore coverage result
 - ci: update spec
 

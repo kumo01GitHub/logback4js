@@ -3,13 +3,13 @@ import { type ILoggingEvent } from "./appender";
 import { TextAppender } from "./text.appender";
 
 /**
- * LocalStorage Appender. The key is UUID.
+ * SessionStorage Appender. The key is UUID.
  * @extends TextAppender
  */
-export class LocalStorageAppender extends TextAppender {
+export class SessionStorageAppender extends TextAppender {
   /**
-   * LocalStorage Appender.
-   * @param {sting} keyPrefix LocalStorage key prefix.
+   * SessionStorage Appender.
+   * @param {sting} keyPrefix SessionStorage key prefix.
    * @param {string} template Log message template.
    */
   constructor(private keyPrefix: string, template?: string) {
@@ -25,7 +25,7 @@ export class LocalStorageAppender extends TextAppender {
 
   public doAppend(event: ILoggingEvent): void {
     if (event.level.priority) {
-      localStorage.setItem(this.generateKey(), this.getMessage(event));
+      sessionStorage.setItem(this.generateKey(), this.getMessage(event));
     }
   }
 
