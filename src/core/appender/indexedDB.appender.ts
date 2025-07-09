@@ -10,14 +10,12 @@ export class IndexedDBAppender extends JsonAppender {
    * IndexedDB Appender.
    * @param {string} dbName database name.
    * @param {string} storeName store name.
-   * @param {{ [key: string]: string }} template Log message template.
    */
   constructor(
     private dbName: string,
     private storeName: string,
-    template?: { [key: string]: string }
   ) {
-    super(template);
+    super();
     const openRequest: IDBOpenDBRequest = indexedDB.open(this.dbName);
     openRequest.onupgradeneeded = (event: IDBVersionChangeEvent): void => {
       const db: IDBDatabase = (event.target as IDBOpenDBRequest).result;
