@@ -24,7 +24,7 @@ export abstract class JsonAppender implements Appender {
    * @param {ILoggingEvent} event logging event
    * @returns {object} JSON
    */
-  public getMessage(event: ILoggingEvent): object {
+  public getMessage(event: ILoggingEvent): { [key: string]: string } {
     const msg = Object.create(this.template);
     Object.keys(this.template).forEach((key) => {
       msg[key] = this.template[key]
