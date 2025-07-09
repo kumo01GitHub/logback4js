@@ -38,7 +38,7 @@ describe("JsonAppender", () => {
     };
     expect(appender.getMessage(event)).toEqual({
       logger: event.logger,
-      timestamp: event.timestamp.toISOString(),
+      timestamp: event.timestamp,
       level: event.level.label,
       message: event.message,
     });
