@@ -4,6 +4,7 @@
 
 - feat: template for JSON Appender
 - feat: Support sessionStorage
+- fix(mail): modify `getPriority` access level
 - fix: ignore coverage result
 - ci: update spec
 
