@@ -75,7 +75,7 @@ export abstract class MailAppender implements Appender {
    * @param {ILoggingEvent} event logging event
    * @returns {"high" | "normal" | "low" | undefined} priority
    */
-  public getPriority(
+  protected getPriority(
     event: ILoggingEvent
   ): "high" | "normal" | "low" | undefined {
     let priority: "high" | "normal" | "low" | undefined;
