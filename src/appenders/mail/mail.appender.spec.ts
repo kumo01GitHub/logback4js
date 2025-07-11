@@ -1,4 +1,4 @@
-import { LogLevel, type ILoggingEvent } from "@logback4js/core";
+import { type ILoggingEvent } from "@logback4js/core";
 import { MailAppender } from "./mail.appender";
 
 describe("MailAppender", () => {
