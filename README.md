@@ -35,8 +35,8 @@ List of Appenders library provides:
 | Console Appender | `@logback4js/core` | Output to console. Core module. |
 | HTTP POST Appender | `@logback4js/core` | Post logging API. Core module. |
 | IndexedDB Appender | `@logback4js/core` | Output to IndexedDB. Core module. |
-| LocalStorage Appender | `@logback4js/core` | Output to LocalStorage. Core module. |
-| SessionStorage Appender | `@logback4js/core` | Output to SessionStorage. Core module. |
+| LocalStorage Appender | `@logback4js/webstorage` | Output to LocalStorage. |
+| SessionStorage Appender | `@logback4js/webstorage` | Output to SessionStorage. |
 | Simple Mail Appender | `@logback4js/mail` | Send text mail using [Nodemailer](https://nodemailer.com). |
 | Rich Mail Appender | `@logback4js/mail` | Send html mail using [Nodemailer](https://nodemailer.com). |
 | SQLite Appender | `@logback4js/database` (experimental) | Insert record into SQLite database using [node-sqlite3](https://github.com/TryGhost/node-sqlite3). When using this appender, install [sqlite3](https://www.npmjs.com/package/sqlite3). It is planed to be migrate [node:sqlite](https://nodejs.org/api/sqlite.html#sqlite) after Node.js v20 is going to be EOL. |

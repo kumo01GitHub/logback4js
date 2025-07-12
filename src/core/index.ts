@@ -13,8 +13,6 @@ export * from "./appender/json.appender";
 export * from "./appender/console.appender";
 export * from "./appender/httpPost.appender";
 export * from "./appender/indexedDB.appender";
-export * from "./appender/localStorage.appender";
-export * from "./appender/sessionStorage.appender";
 
 /** Logger (Do NOT export BaseLogger) */
 export * from "./logger/loggerFactory";
