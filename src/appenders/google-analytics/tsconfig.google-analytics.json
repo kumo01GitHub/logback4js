@@ -3,5 +3,6 @@
   "compilerOptions": {
     "outDir": "../../../dist/appenders/google-analytics/",
     "rootDir": "./"
-  }
+  },
+  "references": [{ "path": "../../core/tsconfig.core.json" }]
 }
