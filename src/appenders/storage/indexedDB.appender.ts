@@ -1,5 +1,4 @@
-import { type ILoggingEvent } from "./appender";
-import { JsonAppender } from "./json.appender";
+import { type ILoggingEvent, JsonAppender } from "@logback4js/core";
 
 /**
  * IndexedDB Appender.

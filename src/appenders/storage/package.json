@@ -1,10 +1,14 @@
 {
-  "name": "@logback4js/core",
+  "name": "@logback4js/storage",
   "version": "2.3.1",
-  "description": "Logger for JavaScript inspired by Logback.",
+  "description": "Browser Storage Appenders for Logback4js.",
   "keywords": [
     "log",
-    "logger"
+    "logger",
+    "webstorage",
+    "localStorage",
+    "sessionStorage",
+    "IndexedDB"
   ],
   "exports": {
     ".": {
@@ -23,9 +27,11 @@
   "author": "kumo01",
   "license": "MIT",
   "devDependencies": {
+    "@types/uuid": "^10.0.0",
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "axios": "^1.9.0"
+    "@logback4js/core": "^2.3.1",
+    "uuid": "^10.0.0"
   }
 }

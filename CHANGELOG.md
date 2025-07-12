@@ -1,7 +1,8 @@
 # Changelog
 
-### 2.4.0
+### 3.0.0
 
+- feat: split browser storage
 - feat: template for JSON Appender
 - feat: Support sessionStorage
 - fix(mail): modify `getPriority` access level

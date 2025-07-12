@@ -1,6 +1,5 @@
 import { v4 as uuid } from "uuid";
-import { type ILoggingEvent } from "./appender";
-import { TextAppender } from "./text.appender";
+import { type ILoggingEvent, TextAppender } from "@logback4js/core";
 
 /**
  * SessionStorage Appender. The key is UUID.
