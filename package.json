@@ -30,7 +30,7 @@
     "publish:mail": "npm run build:mail && npm publish ./dist/appenders/mail --access=public",
     "publish:microsoft": "npm run build:microsoft && npm publish ./dist/appenders/microsoft --access=public",
     "publish:slack": "npm run build:slack && npm publish ./dist/appenders/slack --access=public",
-    "publish:storage": "npm run build:storage && npm publish ./dist/appenders/twitter --access=public",
+    "publish:storage": "npm run build:storage && npm publish ./dist/appenders/storage --access=public",
     "publish:twitter": "npm run build:twitter && npm publish ./dist/appenders/twitter --access=public",
     "test": "jest",
     "coverage": "jest --coverage",
