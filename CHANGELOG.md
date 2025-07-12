@@ -1,5 +1,9 @@
 # Changelog
 
+### 3.0.1
+
+- fix: build error
+
 ### 3.0.0
 
 - feat: split browser storage

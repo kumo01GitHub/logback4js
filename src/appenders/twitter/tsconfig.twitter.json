@@ -3,5 +3,6 @@
   "compilerOptions": {
     "outDir": "../../../dist/appenders/twitter/",
     "rootDir": "./"
-  }
+  },
+  "references": [{ "path": "../../core/tsconfig.core.json" }]
 }
