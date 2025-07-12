@@ -5,6 +5,7 @@
 [![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Build](https://github.com/kumo01GitHub/logback4js/actions/workflows/build.yml/badge.svg)](https://github.com/kumo01GitHub/logback4js/actions/workflows/build.yml)
 [![codecov](https://codecov.io/github/kumo01GitHub/logback4js/graph/badge.svg?token=A604UT0OJX)](https://codecov.io/github/kumo01GitHub/logback4js)
+[![CodeQL](https://github.com/kumo01GitHub/logback4js/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/kumo01GitHub/logback4js/actions/workflows/github-code-scanning/codeql)
 
 Logger for JavaScript inspired by Logback.
 

@@ -9,6 +9,7 @@
 - fix(mail): modify `getPriority` access level
 - fix: ignore coverage result
 - ci: update spec
+- doc: add codeql badge
 
 ### 2.3.1
 
