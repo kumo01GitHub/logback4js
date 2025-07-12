@@ -1,5 +1,6 @@
 import { v4 as uuid } from "uuid";
 import { type ILoggingEvent, TextAppender } from "@logback4js/core";
+
 /**
  * LocalStorage Appender. The key is UUID.
  * @extends TextAppender

@@ -11,21 +11,21 @@ export default defineConfig(({ command, mode, isSsrBuild, isPreview }) => {
         targets: [
           {
             src: path.resolve(__dirname, "package.json"),
-            dest: path.resolve(__dirname, "../../../dist/appenders/webstorage/"),
+            dest: path.resolve(__dirname, "../../../dist/appenders/storage/"),
           },
           {
             src: path.resolve(__dirname, "../../../README.md"),
-            dest: path.resolve(__dirname, "../../../dist/appenders/webstorage/"),
+            dest: path.resolve(__dirname, "../../../dist/appenders/storage/"),
           },
         ],
       }),
-      dts({ tsconfigPath: path.resolve(__dirname, "tsconfig.webstorage.json") }),
+      dts({ tsconfigPath: path.resolve(__dirname, "tsconfig.storage.json") }),
       nodePolyfills(),
     ],
     build: {
-      outDir: path.resolve(__dirname, "../../../dist/appenders/webstorage/"),
+      outDir: path.resolve(__dirname, "../../../dist/appenders/storage/"),
       lib: {
-        name: "WebStorageAppenders",
+        name: "StorageAppenders",
         entry: path.resolve(__dirname, "index.ts"),
         formats: ["es", "cjs", "umd"],
         fileName: "index",

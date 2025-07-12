@@ -12,7 +12,6 @@ export * from "./appender/json.appender";
 /** Appenders */
 export * from "./appender/console.appender";
 export * from "./appender/httpPost.appender";
-export * from "./appender/indexedDB.appender";
 
 /** Logger (Do NOT export BaseLogger) */
 export * from "./logger/loggerFactory";

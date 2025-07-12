@@ -2,7 +2,7 @@
 
 ### 3.0.0
 
-- feat: split webstorage
+- feat: split browser storage
 - feat: template for JSON Appender
 - feat: Support sessionStorage
 - fix(mail): modify `getPriority` access level

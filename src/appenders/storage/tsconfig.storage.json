@@ -1,7 +1,7 @@
 {
   "extends": "../../../tsconfig",
   "compilerOptions": {
-    "outDir": "../../../dist/appenders/webstorage/",
+    "outDir": "../../../dist/appenders/storage/",
     "rootDir": "./"
   }
 }

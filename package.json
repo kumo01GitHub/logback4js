@@ -21,7 +21,7 @@
     "build:microsoft": "vite build --config src/appenders/microsoft/vite.config.js",
     "build:slack": "vite build --config src/appenders/slack/vite.config.js",
     "build:twitter": "vite build --config src/appenders/twitter/vite.config.js",
-    "build:webstorage": "vite build --config src/appenders/webstorage/vite.config.js",
+    "build:storage": "vite build --config src/appenders/storage/vite.config.js",
     "updatevers": "node tools/update-versions.js",
     "pubmods": "node tools/publish-modules.js",
     "publish:core": "npm run build:core && npm publish ./dist/core --access=public",
@@ -33,7 +33,7 @@
     "publish:microsoft": "npm run build:microsoft && npm publish ./dist/appenders/microsoft --access=public",
     "publish:slack": "npm run build:slack && npm publish ./dist/appenders/slack --access=public",
     "publish:twitter": "npm run build:twitter && npm publish ./dist/appenders/twitter --access=public",
-    "publish:webstorage": "npm run build:webstorage && npm publish ./dist/appenders/twitter --access=public",
+    "publish:storage": "npm run build:storage && npm publish ./dist/appenders/twitter --access=public",
     "test": "jest",
     "coverage": "jest --coverage",
     "lint": "eslint src"
