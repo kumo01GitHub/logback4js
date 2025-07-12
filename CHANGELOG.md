@@ -5,6 +5,7 @@
 - feat: split browser storage
 - feat: template for JSON Appender
 - feat: Support sessionStorage
+- feat(line): drop line appender
 - fix(mail): modify `getPriority` access level
 - fix: ignore coverage result
 - ci: update spec

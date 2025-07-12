@@ -50,7 +50,6 @@ List of Appenders library provides:
 | Microsoft Teams Appender | `@logback4js/microsoft` | Send message to Teams using [Microsoft Graph](https://learn.microsoft.com/graph/sdks/create-client?tabs=typescript). Use workflow with custom HTTP POST Appender might be better. Not tested yet. |
 | Discord Appender | `@logback4js/discord` | Send message using [discord.js](https://discord.js.org). Use Discord Webhook Appender might be better. Not tested yet. |
 | Discord Webhook Appender | `@logback4js/discord` | Send message using [Discord Webhook](https://discord.com/developers/docs/resources/webhook). Not tested yet. |
-| LINE Messaging API Appender | `@logback4js/line` | Send message using [LINE Messaging API](https://developers.line.biz/en/services/messaging-api/). Not tested yet. |
 
 ## Versioning
 
