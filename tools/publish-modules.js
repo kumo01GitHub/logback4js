@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const { parseArgs } = require("node:util");
-const { execSync } = require("node:child_process");
+const { execFileSync } = require("node:child_process");
 
 /** Core module. */
 const TARGET_CORE_MODULE = "core";
