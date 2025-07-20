@@ -4,6 +4,7 @@
 
 - ci: update build workflow
 - ci: update build tools
+- chore: bump dependencies
 
 ### 3.0.1
 
