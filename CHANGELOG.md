@@ -2,7 +2,8 @@
 
 ### 3.0.2
 
-- fix: fix build tools
+- ci: update build workflow
+- ci: update build tools
 
 ### 3.0.1
 
