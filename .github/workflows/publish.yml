@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       ver:
-        description: 'Version up target'
+        description: "Version up target"
         required: true
         type: choice
         options:

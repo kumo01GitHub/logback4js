@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const { parseArgs } = require("node:util");
-const runScript = require("@npmcli/run-script");
+const { execSync } = require("node:child_process");
 
 /** Core module. */
 const TARGET_CORE_MODULE = "core";
@@ -9,6 +9,8 @@ const TARGET_CORE_MODULE = "core";
 const TARGET_APPENDERS = "appenders";
 /** Project root directory. */
 const ROOT_DIR = path.join(__dirname, "..");
+/** Core module directory. */
+const CORE_DIR = path.join(ROOT_DIR, "src/core");
 /** Appenders directory. */
 const APPENDERS_DIR = path.join(ROOT_DIR, "src/appenders");
 
@@ -22,10 +24,19 @@ async function buildModule(name) {
 
   // Build.
   console.info(`Build ${target}`);
-  return runScript({
-    event: `build:${target}`,
-    path: ROOT_DIR,
-  });
+  if (target === TARGET_CORE_MODULE) {
+    return execSync(
+      `vite build --config ${path.join(CORE_DIR, "vite.config.js")}`
+    );
+  } else {
+    return execSync(
+      `vite build --config ${path.join(
+        APPENDERS_DIR,
+        target,
+        "vite.config.js"
+      )}`
+    );
+  }
 }
 
 /**
