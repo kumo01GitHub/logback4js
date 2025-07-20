@@ -52,7 +52,7 @@ async function updateVersion(name, release) {
       },
     });
   }
-  await pkgJson.save();
+  return pkgJson.save();
 }
 
 /**

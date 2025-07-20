@@ -1,5 +1,9 @@
 # Changelog
 
+### 3.0.2
+
+- fix: fix build tools
+
 ### 3.0.1
 
 - fix: build error

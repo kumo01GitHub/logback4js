@@ -22,7 +22,7 @@ async function publishModule(name) {
 
   // Publish.
   console.info(`Publish ${target}`);
-  runScript({
+  return runScript({
     event: `publish:${target}`,
     path: ROOT_DIR,
   });

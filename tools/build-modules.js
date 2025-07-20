@@ -22,7 +22,7 @@ async function buildModule(name) {
 
   // Build.
   console.info(`Build ${target}`);
-  runScript({
+  return runScript({
     event: `build:${target}`,
     path: ROOT_DIR,
   });
