@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/storage",
-  "version": "3.0.1",
+  "version": "3.0.2",
   "description": "Browser Storage Appenders for Logback4js.",
   "keywords": [
     "log",
@@ -31,7 +31,7 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
-    "@logback4js/core": "^3.0.1",
+    "@logback4js/core": "^3.0.2",
     "uuid": "^11.1.0"
   }
 }
