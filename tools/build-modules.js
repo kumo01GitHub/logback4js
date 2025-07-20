@@ -1,7 +1,7 @@
 const fs = require("node:fs");
 const path = require("node:path");
 const { parseArgs } = require("node:util");
-const { execSync } = require("node:child_process");
+const { execFileSync } = require("node:child_process");
 
 /** Core module. */
 const TARGET_CORE_MODULE = "core";
@@ -25,17 +25,17 @@ async function buildModule(name) {
   // Build.
   console.info(`Build ${target}`);
   if (target === TARGET_CORE_MODULE) {
-    return execSync(
-      `vite build --config ${path.join(CORE_DIR, "vite.config.js")}`
-    );
+    return execFileSync("vite", [
+      "build",
+      "--config",
+      path.join(CORE_DIR, "vite.config.js"),
+    ]);
   } else {
-    return execSync(
-      `vite build --config ${path.join(
-        APPENDERS_DIR,
-        target,
-        "vite.config.js"
-      )}`
-    );
+    return execFileSync("vite", [
+      "build",
+      "--config",
+      path.join(APPENDERS_DIR, target, "vite.config.js"),
+    ]);
   }
 }
 
