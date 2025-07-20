@@ -29,23 +29,23 @@ async function publishModule(name) {
   // Publish.
   console.info(`Publish ${target}`);
   if (target === TARGET_CORE_MODULE) {
-    return execSync(
-      `vite build --config ${path.join(
-        CORE_SRC_DIR,
-        "vite.config.js"
-      )} && npm publish ${CORE_DIST_DIR} --access=public`
-    );
+    execFileSync("vite", [
+      "build",
+      "--config",
+      path.join(CORE_SRC_DIR, "vite.config.js"),
+    ]);
+    return execFileSync("npm", ["publish", CORE_DIST_DIR, "--access=public"]);
   } else {
-    return execSync(
-      `vite build --config ${path.join(
-        APPENDERS_SRC_DIR,
-        target,
-        "vite.config.js"
-      )} && npm publish ${path.join(
-        APPENDERS_DIST_DIR,
-        target
-      )} --access=public`
-    );
+    execFileSync("vite", [
+      "build",
+      "--config",
+      path.join(APPENDERS_SRC_DIR, target, "vite.config.js"),
+    ]);
+    return execFileSync("npm", [
+      "publish",
+      path.join(APPENDERS_DIST_DIR, target),
+      "--access=public",
+    ]);
   }
 }
 
