@@ -34,9 +34,9 @@
   },
   "dependencies": {
     "@logback4js/core": "^3.0.2",
-    "mongodb": "^6.17.0",
+    "mongodb": "^6.18.0",
     "pg": "^8.16.0",
-    "redis": "^5.5.6",
+    "redis": "^5.6.1",
     "sqlite3": "^5.1.7"
   }
 }
