@@ -3,6 +3,7 @@
 ### 3.0.3
 
 - chore: bump dependencies
+- doc(database): fix readme
 
 ### 3.0.2
 
