@@ -1,5 +1,9 @@
 # Changelog
 
+### 3.0.3
+
+- chore: bump dependencies
+
 ### 3.0.2
 
 - ci: update build workflow
