@@ -31,6 +31,6 @@
   },
   "dependencies": {
     "@logback4js/core": "^3.0.2",
-    "firebase": "^11.10.0"
+    "firebase": "^12.0.0"
   }
 }
