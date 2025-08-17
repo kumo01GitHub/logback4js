@@ -1,6 +1,6 @@
 {
   "name": "@logback4js/google-analytics",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Google Analytics Appenders for Logback4js.",
   "keywords": [
     "log",
@@ -30,7 +30,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@logback4js/core": "^3.0.2",
+    "@logback4js/core": "^3.0.3",
     "firebase": "^12.1.0"
   }
 }
