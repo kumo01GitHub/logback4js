@@ -3,6 +3,7 @@
 ### 3.0.4
 
 - chore: bump dependencies
+- ci: support `npm cit`
 
 ### 3.0.3
 

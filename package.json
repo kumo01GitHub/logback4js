@@ -14,7 +14,7 @@
     "build": "node tools/build-modules.js",
     "updatevers": "node tools/update-versions.js",
     "pubmods": "node tools/publish-modules.js",
-    "test": "jest",
+    "test": "npm run lint && npm run build && jest",
     "coverage": "jest --coverage",
     "lint": "eslint src"
   },
