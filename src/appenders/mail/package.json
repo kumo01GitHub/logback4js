@@ -25,7 +25,7 @@
   "author": "kumo01",
   "license": "MIT",
   "devDependencies": {
-    "@types/nodemailer": "^7.0.0",
+    "@types/nodemailer": "^7.0.1",
     "typescript": "^5.9.2"
   },
   "dependencies": {
