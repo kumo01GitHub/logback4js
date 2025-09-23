@@ -32,6 +32,6 @@
   },
   "dependencies": {
     "@logback4js/core": "^3.0.3",
-    "uuid": "^11.1.0"
+    "uuid": "^13.0.0"
   }
 }
