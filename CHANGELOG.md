@@ -1,5 +1,9 @@
 # Changelog
 
+### 3.0.5
+
+- chore: bump dependencies
+
 ### 3.0.4
 
 - chore: bump dependencies

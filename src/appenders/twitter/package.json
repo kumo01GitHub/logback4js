@@ -27,7 +27,7 @@
   "author": "kumo01",
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@logback4js/core": "^3.0.4",

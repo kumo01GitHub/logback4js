@@ -27,10 +27,10 @@
   "license": "MIT",
   "devDependencies": {
     "@types/gtag.js": "^0.0.20",
-    "typescript": "^5.9.2"
+    "typescript": "^5.9.3"
   },
   "dependencies": {
     "@logback4js/core": "^3.0.4",
-    "firebase": "^12.3.0"
+    "firebase": "^12.4.0"
   }
 }
