@@ -7,6 +7,7 @@
 ### 3.0.5
 
 - chore: bump dependencies
+- doc: Add a badge.
 
 ### 3.0.4
 

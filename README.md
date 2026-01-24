@@ -6,6 +6,7 @@
 [![Build](https://github.com/kumo01GitHub/logback4js/actions/workflows/build.yml/badge.svg)](https://github.com/kumo01GitHub/logback4js/actions/workflows/build.yml)
 [![codecov](https://codecov.io/github/kumo01GitHub/logback4js/graph/badge.svg?token=A604UT0OJX)](https://codecov.io/github/kumo01GitHub/logback4js)
 [![CodeQL](https://github.com/kumo01GitHub/logback4js/actions/workflows/github-code-scanning/codeql/badge.svg)](https://github.com/kumo01GitHub/logback4js/actions/workflows/github-code-scanning/codeql)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/7267c3ccac884f9cbbbabea1057f5159)](https://app.codacy.com/gh/kumo01GitHub/logback4js/dashboard?utm_source=gh&utm_medium=referral&utm_content=&utm_campaign=Badge_grade)
 
 Logger for JavaScript inspired by Logback.
 
