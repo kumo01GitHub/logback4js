@@ -28,6 +28,6 @@
   },
   "dependencies": {
     "@logback4js/core": "^3.0.5",
-    "@slack/web-api": "^7.11.0"
+    "@slack/web-api": "^7.13.0"
   }
 }
