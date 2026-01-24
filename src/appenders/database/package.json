@@ -29,14 +29,14 @@
   "author": "kumo01",
   "license": "MIT",
   "devDependencies": {
-    "@types/pg": "^8.15.5",
+    "@types/pg": "^8.16.0",
     "typescript": "^5.9.3"
   },
   "dependencies": {
     "@logback4js/core": "^3.0.5",
-    "mongodb": "^6.20.0",
-    "pg": "^8.16.0",
-    "redis": "^5.8.3",
+    "mongodb": "^7.0.0",
+    "pg": "^8.17.2",
+    "redis": "^5.10.0",
     "sqlite3": "^5.1.7"
   }
 }
