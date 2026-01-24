@@ -3,7 +3,8 @@
 ### 3.0.6
 
 - chore: bump dependencies
-- doc: Add a badge
+- doc: add a badge
+- ci: remove `NODE_AUTH_TOKEN`
 
 ### 3.0.5
 

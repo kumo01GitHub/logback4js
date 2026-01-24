@@ -37,15 +37,11 @@ jobs:
         run: |
           npm run updatevers -- -t core -r ${{ github.event.inputs.ver }}
           npm run pubmods -- -t core
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Publish appenders
         run: |
           npm run updatevers -- -t appenders -r ${{ github.event.inputs.ver }}
           npm run pubmods -- -t appenders
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
       - name: Tag
         run: |
@@ -56,5 +52,3 @@ jobs:
           npm version ${{ github.event.inputs.ver }}
           git push
           git push origin --tags
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
